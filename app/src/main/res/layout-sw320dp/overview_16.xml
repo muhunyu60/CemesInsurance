@@ -1,0 +1,630 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#f8f8fa"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="15.3dp"
+                android:background="#f8f8fa"/>
+
+    <LinearLayout
+        android:background="#ffffff"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <customfonts.MyTextView_SF_Pro_Display_Medium
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total Loan"
+        android:textSize="14.3sp"
+        android:letterSpacing="0.093"
+        android:layout_marginLeft="24.7dp"
+        android:layout_marginTop="26dp"
+        android:textColor="#0f1418"/>
+
+    <customfonts.MyTextView_SF_Pro_Display_Medium
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="18.7dp"
+        android:text="Rs 6.000.000"
+        android:letterSpacing="0.093"
+        android:textColor="#ee6723"
+        android:textSize="19.7sp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24.3dp"
+            android:layout_marginRight="24.3dp"
+            android:layout_marginTop="30.7dp"
+            android:background="@drawable/rect_white_bg"
+            android:orientation="horizontal">
+
+            <customfonts.TextViewSFProDisplayRegular
+                android:id="@+id/txt9"
+                android:layout_width="177.7dp"
+                android:layout_height="wrap_content"
+                android:text="Earned"
+                android:paddingTop="12.5dp"
+                android:paddingBottom="12dp"
+                android:letterSpacing="0.073"
+                android:paddingLeft="18dp"
+                android:paddingRight="70dp"
+                android:background="@drawable/rect_blue_btn"
+                android:textSize="13sp"
+                android:textColor="#ffffff"/>
+            <customfonts.TextViewSFProDisplayRegular
+                android:id="@+id/txt10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Rs 5.800.000"
+                android:letterSpacing="0.073"
+
+                android:gravity="right"
+                android:layout_marginRight="20dp"
+                android:paddingTop="12.5dp"
+                android:paddingBottom="12dp"
+
+                android:background="@drawable/rect_trans_bg"
+                android:textSize="13sp"
+                android:textColor="#000000"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24.3dp"
+            android:layout_marginRight="24.3dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/rect_white_bg"
+            android:orientation="horizontal">
+
+            <customfonts.TextViewSFProDisplayRegular
+                android:id="@+id/txt11"
+                android:layout_width="130.3dp"
+                android:layout_height="wrap_content"
+                android:text="Spent"
+                android:paddingTop="12.5dp"
+                android:paddingBottom="12dp"
+                android:paddingLeft="18dp"
+                android:paddingRight="70dp"
+                android:letterSpacing="0.073"
+
+                android:background="@drawable/rect_pink"
+                android:textSize="13sp"
+                android:textColor="#ffffff"/>
+            <customfonts.TextViewSFProDisplayRegular
+                android:id="@+id/txt12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Rs 5.800.000"
+                android:gravity="right"
+                android:layout_marginRight="20dp"
+                android:paddingTop="12.5dp"
+                android:paddingBottom="12dp"
+                android:letterSpacing="0.073"
+                android:paddingLeft="40dp"
+                android:background="@drawable/rect_trans_bg"
+                android:textSize="13sp"
+                android:textColor="#000000"/>
+        </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="25.8dp"
+        android:background="#f0f0f0"/>
+
+    <LinearLayout
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="12.5dp"
+        android:layout_marginLeft="14dp"
+        android:padding="11dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <customfonts.MyTextView_SF_Pro_Display_Medium
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Good balance"
+                android:letterSpacing="0.073"
+                android:textSize="14.3sp"
+                android:textColor="#0f1418"/>
+
+            <customfonts.MyTextView_SF_Pro_Display_Medium
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Your earned is more than spent!"
+                android:textSize="12.8sp"
+                android:letterSpacing="0.023"
+                android:layout_marginTop="7.7dp"
+                android:textColor="#72777b"/>
+
+        </LinearLayout>
+
+
+        <ImageView
+            android:layout_marginTop="5dp"
+            android:scaleType="centerCrop"
+            android:layout_marginRight="24.3dp"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:src="@drawable/ic_check_mark"/>
+
+    </LinearLayout>
+
+
+    </LinearLayout>
+    
+    
+
+        <LinearLayout
+            android:layout_marginTop="13.3dp"
+            android:background="#ffffff"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        <customfonts.MyTextView_SF_Pro_Display_Medium
+            android:layout_marginTop="23.7dp"
+            android:layout_marginLeft="25.7dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Top Spending"
+            android:letterSpacing="0.043"
+            android:textColor="#0f1418"
+            android:textSize="14.3sp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:orientation="horizontal">
+
+
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="22dp">
+
+
+                    <FrameLayout
+                        android:layout_gravity="center"
+                        android:layout_width="58dp"
+                        android:layout_height="58dp"
+                        android:background="@drawable/oval1_white">
+
+                        <ImageView
+                            android:id="@+id/oval"
+                            android:layout_width="33dp"
+                            android:layout_height="29dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_group_223" />
+
+                    </FrameLayout>
+
+
+                    <customfonts.MyTextView_SF_Pro_Display_Medium
+                        android:id="@+id/txtshopping"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="Rent"
+                        android:layout_marginTop="7dp"
+                        android:textColor="#4f5257"
+                        android:textSize="12.3sp"/>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="22dp">
+
+
+                    <FrameLayout
+                        android:layout_gravity="center"
+                        android:layout_width="58dp"
+                        android:layout_height="58dp"
+                        android:background="@drawable/oval1_white">
+
+                        <ImageView
+                            android:id="@+id/oval1"
+                            android:layout_width="21dp"
+                            android:layout_height="34dp"
+                            android:scaleType="fitXY"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_group_222" />
+
+                    </FrameLayout>
+
+
+                    <customfonts.MyTextView_SF_Pro_Display_Medium
+                        android:id="@+id/txtshopping1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="Utility"
+                        android:layout_marginTop="7dp"
+
+                        android:textColor="#4f5257"
+                        android:textSize="12.3sp"/>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="22dp">
+
+
+                    <FrameLayout
+                        android:layout_width="58dp"
+                        android:layout_height="58dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/oval1_white">
+
+                        <ImageView
+                            android:id="@+id/oval2"
+                            android:layout_width="36dp"
+                            android:layout_height="24dp"
+                            android:scaleType="fitXY"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_xmlid_1" />
+
+                    </FrameLayout>
+
+
+                    <customfonts.MyTextView_SF_Pro_Display_Medium
+                        android:id="@+id/txtshopping2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="Transport"
+                        android:layout_marginTop="7dp"
+
+                        android:textColor="#4f5257"
+                        android:textSize="12.3sp"/>
+
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="22dp">
+
+
+                    <FrameLayout
+                        android:layout_gravity="center"
+                        android:layout_width="58dp"
+                        android:layout_height="58dp"
+                        android:background="@drawable/oval1_white">
+
+                        <ImageView
+                            android:id="@+id/oval3"
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:scaleType="fitCenter"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_donut" />
+
+                    </FrameLayout>
+
+
+                    <customfonts.MyTextView_SF_Pro_Display_Medium
+                        android:id="@+id/txtshopping3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="Food"
+                        android:layout_marginTop="7dp"
+
+                        android:textColor="#4f5257"
+                        android:textSize="12.3sp"/>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <ImageView
+                android:tint="#ee6723"
+                android:layout_width="15dp"
+                android:layout_height="8dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="18.5dp"
+                android:layout_marginTop="27.9dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_path_42" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#f0f0f0"/>
+
+            <LinearLayout
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="12.5dp"
+                android:layout_marginLeft="21dp"
+                android:padding="11dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                    <customfonts.MyTextView_SF_Pro_Display_Medium
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Utility"
+                        android:textSize="14.3sp"
+                        android:letterSpacing="0.043"
+                        android:textColor="#0f1418"/>
+
+                    <customfonts.TextViewSFProDisplayRegular
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="You spent 30 % more than last month"
+                        android:textSize="13sp"
+                        android:letterSpacing="0.043"
+                        android:layout_marginTop="5.7dp"
+                        android:textColor="#72777b"/>
+
+                </LinearLayout>
+
+
+                <ImageView
+                    android:layout_marginTop="5dp"
+                    android:scaleType="centerCrop"
+                    android:layout_marginRight="24.3dp"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:src="@drawable/ic_group_81"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:background="#f8f8fa"
+                android:layout_width="match_parent"
+                android:layout_height="13.3dp"
+                android:orientation="vertical"
+                android:layout_marginTop="10dp">
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:background="#ffffff"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <customfonts.MyTextView_SF_Pro_Display_Medium
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="25.7dp"
+                    android:layout_marginTop="23.7dp"
+                    android:text="Monthly Budget"
+                    android:letterSpacing="0.043"
+                    android:textSize="14.3sp"
+                    android:textColor="#0f1418"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25.7dp"
+                    android:layout_marginLeft="25.7dp"
+                    android:orientation="horizontal">
+
+
+                <FrameLayout
+
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:background="@drawable/oval1_white">
+
+                    <ImageView
+                        android:id="@+id/oval2"
+                        android:layout_width="36dp"
+                        android:layout_height="24dp"
+                        android:scaleType="fitXY"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_xmlid_1" />
+
+                </FrameLayout>
+
+                    <LinearLayout
+                        android:layout_marginLeft="8dp"
+                        android:background="#ffffff"
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+
+                    <customfonts.MyTextView_SF_Pro_Display_Medium
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Transportation"
+                        android:letterSpacing="0.043"
+                        android:textColor="#0f1418"
+                        android:textSize="14sp"/>
+
+
+                    <customfonts.MyTextView_SF_Pro_Display_Medium
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Rs 15.000/day"
+                        android:letterSpacing="0.043"
+                        android:textColor="#696b6e"
+                        android:textSize="12.7sp"/>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="24.3dp"
+                    android:layout_marginRight="22.3dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/rect_white_bg"
+                    android:orientation="horizontal">
+
+                    <customfonts.TextViewSFProDisplayRegular
+                        android:id="@+id/txt1"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Rs.500.000"
+                        android:paddingTop="13dp"
+                        android:paddingBottom="13dp"
+                        android:paddingLeft="18dp"
+
+                        android:background="@drawable/rect_yellow"
+                        android:textSize="13sp"
+                        android:letterSpacing="0.043"
+                        android:textColor="#000000"/>
+                    <customfonts.TextViewSFProDisplayRegular
+                        android:id="@+id/txt2"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Rs.1000.000"
+                        android:gravity="center"
+                        android:paddingTop="13dp"
+                        android:paddingBottom="13dp"
+                        android:paddingLeft="62dp"
+                        android:letterSpacing="0.043"
+                        android:background="@drawable/rect_trans_bg"
+                        android:textSize="13sp"
+                        android:textColor="#000000"/>
+
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="8dp"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="18.5dp"
+                    android:layout_marginTop="27.9dp"
+                    android:src="@drawable/ic_path_42"
+                    android:tint="#ee6723" />
+
+
+
+
+
+
+
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#f0f0f0"/>
+
+            <LinearLayout
+                android:background="#ffffff"
+                android:paddingTop="18dp"
+                android:paddingBottom="24dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_marginLeft="26dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                    <customfonts.MyTextView_SF_Pro_Display_Medium
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Transportation"
+                        android:letterSpacing="0.043"
+                        android:textSize="14.3sp"
+                        android:textColor="#0f1418"/>
+
+                    <customfonts.MyTextView_SF_Pro_Display_Medium
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="You are almost exceedeing your budget"
+                        android:textSize="12.3sp"
+                        android:letterSpacing="0.043"
+                        android:layout_marginTop="5.7dp"
+                        android:textColor="#72777b"/>
+
+                </LinearLayout>
+
+
+                <ImageView
+                    android:layout_marginTop="5dp"
+                    android:scaleType="centerCrop"
+                    android:layout_marginRight="32.3dp"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:src="@drawable/ic_check_mark"/>
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

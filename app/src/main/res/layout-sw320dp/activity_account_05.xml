@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/rect23_bg"
+    tools:context="com.cemesinsurance.cemes_customer.Account_05">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/toolbar_account_05" />
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="153dp"
+                android:layout_height="153dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="43.7dp"
+                android:src="@drawable/l6" />
+
+            <customfonts.MyTextView_SF_Pro_Display_Medium
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="58.3dp"
+                android:gravity="center"
+                android:letterSpacing="0.093"
+                android:lineSpacingExtra="1dp"
+                android:text="One step away to your \n account"
+                android:textColor="#192027"
+                android:textSize="18.7sp" />
+
+            <customfonts.MyTextView_SF_Pro_Display_Medium
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15.7dp"
+                android:letterSpacing="0.093"
+                android:text="Now we need to verify your identity"
+                android:textColor="#808287"
+                android:textSize="13.7sp" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="95dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginTop="15dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="19dp"
+                    android:layout_marginTop="18.7dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/g_100" />
+
+                    <customfonts.MyTextView_SF_Pro_Display_Medium
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="12dp"
+                        android:letterSpacing="0.083"
+                        android:text="Use identity card"
+                        android:textColor="#32353e"
+                        android:textSize="13.3sp" />
+
+                </LinearLayout>
+
+                <customfonts.MyTextView_SF_Pro_Display_Medium
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="62dp"
+                    android:layout_marginTop="5dp"
+                    android:letterSpacing="0.093"
+                    android:lineSpacingExtra="2dp"
+                    android:text="Get the full feature of your IndoAlliz! \nYou can store up to IDR 10 Million"
+                    android:textColor="#818489"
+                    android:textSize="13.3sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="95dp"
+                android:layout_marginBottom="15dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="19dp"
+                    android:layout_marginTop="14.7dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/g_101" />
+
+                    <customfonts.MyTextView_SF_Pro_Display_Medium
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="12dp"
+                        android:letterSpacing="0.083"
+                        android:text="Without identity card"
+                        android:textColor="#32353e"
+                        android:textSize="13.3sp" />
+
+                </LinearLayout>
+
+                <customfonts.MyTextView_SF_Pro_Display_Medium
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="62dp"
+                    android:layout_marginTop="5dp"
+                    android:letterSpacing="0.093"
+                    android:lineSpacingExtra="2dp"
+                    android:text="You only can store IDR 1 Million to\nyour IndoAlliz wallet"
+                    android:textSize="13.3sp" />
+
+            </LinearLayout>
+
+
+            <customfonts.MyTextView_SF_Pro_Display_Medium
+                android:id="@+id/txt1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="22dp"
+                android:layout_marginRight="22dp"
+                android:background="@drawable/rect_btn_purple"
+                android:gravity="center"
+                android:letterSpacing="0.093"
+                android:paddingBottom="15dp"
+                android:paddingTop="16dp"
+                android:text="Continue"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:textAllCaps="false"
+                android:textColor="#ffffff"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+        </ScrollView>
+
+
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

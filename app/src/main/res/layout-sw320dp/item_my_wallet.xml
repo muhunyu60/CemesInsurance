@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginRight="45.7dp"
+            android:layout_marginTop="22dp">
+
+
+            <FrameLayout
+                android:layout_width="45dp"
+                android:layout_height="46dp"
+                android:background="@drawable/oval1">
+
+                <ImageView
+                    android:id="@+id/oval"
+                    android:layout_width="25dp"
+                    android:layout_height="23dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_group_108" />
+
+            </FrameLayout>
+
+
+            <customfonts.MyTextView_SF_Pro_Display_Medium
+                android:id="@+id/txtshopping"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="12dp"
+                android:text="E-Shopping"
+                android:textColor="#78777d"
+                android:textSize="13.7sp"/>
+
+        </LinearLayout>
+
+
+
+</LinearLayout>

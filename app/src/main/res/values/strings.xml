@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Cemes Insurance</string>
+
+    <string name="hello_world"><font fgcolor="#fd9c43">Re-send code in </font>
+
+    <font fgcolor="#ee6723">0:30</font></string>
+
+    <string name="Email">"@ikapuspitasari88"</string>
+
+    <string name="hello_world1"><font fgcolor="#75787f">You are currently </font>
+  <font fgcolor="#5e42f7">under insured</font></string>
+
+        <string name="Score">"Your score is better than other
+40% users out there. Keep
+improving!"</string>
+
+
+
+</resources>

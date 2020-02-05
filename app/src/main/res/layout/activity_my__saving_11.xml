@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.cemesinsurance.cemes_customer.My_Saving_11">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="337dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/group46" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingBottom="10dp">
+
+
+                        <include layout="@layout/toolbar_my_saving_11" />
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="24dp"
+                            android:layout_marginRight="23.8dp"
+                            android:background="@drawable/rect_orange"
+                            android:orientation="horizontal"
+                            android:padding="14dp">
+
+                            <customfonts.MyTextView_SF_Pro_Display_Medium
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:letterSpacing="0.073"
+                                android:text="Balance"
+                                android:textColor="#ffffff"
+                                android:textSize="14sp" />
+
+                            <customfonts.MyTextView_SF_Pro_Display_Medium
+                                android:layout_width="183dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="52dp"
+                                android:letterSpacing="0.043"
+                                android:text="Rs.1.000.000"
+                                android:textColor="#ffffff"
+                                android:textSize="14sp" />
+
+                            <ImageView
+                                android:layout_width="14dp"
+                                android:layout_height="12dp"
+                                android:layout_gravity="center"
+                                android:layout_marginRight="18dp"
+                                android:src="@drawable/g_27"
+                                android:tint="#ffffff" />
+
+                        </LinearLayout>
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15.7dp"
+                            android:gravity="center"
+                            android:text="Account details 2167-890-123"
+                            android:textColor="#ffffff"
+                            android:textSize="14.5dp" />
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="31dp"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <customfonts.MyTextView_SF_Pro_Display_Medium
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:letterSpacing="0.073"
+                                    android:text="Interest Rate"
+                                    android:textColor="#ffffff"
+                                    android:textSize="13sp" />
+
+                                <customfonts.MyTextView_SF_Pro_Display_Medium
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:text="6.5% / year"
+                                    android:textColor="#ffffff"
+                                    android:textSize="19sp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="68.3dp"
+                                android:orientation="vertical">
+
+                                <customfonts.MyTextView_SF_Pro_Display_Medium
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="Your Interest"
+                                    android:textColor="#ffffff"
+                                    android:textSize="13sp" />
+
+                                <customfonts.MyTextView_SF_Pro_Display_Medium
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:text="Rs.150.000"
+                                    android:textColor="#ffffff"
+                                    android:textSize="19sp" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="11dp"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:paddingBottom="20dp"
+                            android:paddingTop="30dp">
+
+                            <android.support.v7.widget.CardView
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="100dp"
+                                android:layout_marginBottom="3dp"
+                                android:layout_marginRight="10dp"
+                                android:layout_marginTop="3dp"
+                                app:cardCornerRadius="7.7dp"
+                                app:cardElevation="5dp">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:layout_width="48.3dp"
+                                        android:layout_height="40dp"
+                                        android:layout_gravity="center"
+                                        android:scaleType="fitXY"
+                                        android:src="@drawable/ic_group_127" />
+
+                                    <customfonts.TextViewSFProDisplayRegular
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginRight="10dp"
+                                        android:layout_marginTop="14.7dp"
+                                        android:letterSpacing="0.073"
+                                        android:text="Add Fund"
+                                        android:textColor="#17171f"
+                                        android:textSize="13sp" />
+
+                                </LinearLayout>
+
+                            </android.support.v7.widget.CardView>
+
+
+                            <android.support.v7.widget.CardView
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="100dp"
+                                android:layout_marginBottom="3dp"
+                                android:layout_marginRight="10dp"
+                                android:layout_marginTop="3dp"
+                                app:cardCornerRadius="7.7dp"
+                                app:cardElevation="5dp">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:layout_width="45.9dp"
+                                        android:layout_height="40dp"
+                                        android:layout_gravity="center"
+                                        android:scaleType="fitXY"
+                                        android:src="@drawable/ic_group_131" />
+
+                                    <customfonts.TextViewSFProDisplayRegular
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginRight="10dp"
+                                        android:layout_marginTop="14.7dp"
+                                        android:letterSpacing="0.073"
+                                        android:text="Withdraw"
+                                        android:textColor="#17171f"
+                                        android:textSize="13sp" />
+
+                                </LinearLayout>
+
+                            </android.support.v7.widget.CardView>
+
+
+                            <android.support.v7.widget.CardView
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="100dp"
+                                android:layout_marginBottom="3dp"
+                                android:layout_marginTop="3dp"
+                                app:cardCornerRadius="7.7dp"
+                                app:cardElevation="5dp">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:layout_width="30.4dp"
+                                        android:layout_height="40dp"
+                                        android:layout_gravity="center"
+                                        android:scaleType="fitXY"
+                                        android:src="@drawable/ic_group_106" />
+
+                                    <customfonts.TextViewSFProDisplayRegular
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginRight="10dp"
+                                        android:layout_marginTop="14.7dp"
+
+                                        android:letterSpacing="0.073"
+                                        android:text="Top Up"
+                                        android:textColor="#17171f"
+                                        android:textSize="13sp" />
+
+                                </LinearLayout>
+
+                            </android.support.v7.widget.CardView>
+
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+                </FrameLayout>
+
+
+            </LinearLayout>
+
+            <customfonts.MyTextView_SF_Pro_Display_Medium
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="28dp"
+                android:letterSpacing="0.073"
+                android:text="My Goals"
+                android:textColor="#17171f"
+                android:textSize="15sp" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="135dp"
+                android:layout_marginTop="10.3dp">
+
+
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/viewpager3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+
+                <customfonts.TextViewSFProDisplayRegular
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginRight="40dp"
+                    android:layout_marginTop="21dp"
+                    android:background="@drawable/rect_green"
+                    android:gravity="center"
+                    android:letterSpacing="0.073"
+                    android:paddingBottom="8dp"
+                    android:paddingLeft="11.5dp"
+                    android:paddingRight="11.5dp"
+                    android:paddingTop="7dp"
+                    android:text="Ongoing"
+                    android:textColor="#ffffff"
+                    android:textSize="11.3sp" />
+
+                <me.relex.circleindicator.CircleIndicator
+                    android:id="@+id/circleindicator3"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="90dp"
+                    app:ci_drawable="@drawable/ic_brightness_1_white"
+                    app:ci_drawable_unselected="@drawable/ic_brightness_1_white_24dp" />
+
+            </FrameLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="28dp"
+                android:layout_marginTop="22dp"
+                android:orientation="horizontal">
+
+
+                <customfonts.MyTextView_SF_Pro_Display_Medium
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:letterSpacing="0.073"
+                    android:text="Japan Trip"
+                    android:textColor="#17171f"
+                    android:textSize="15sp" />
+
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="18dp">
+
+
+                    <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/profile_image"
+                        android:layout_width="36.7dp"
+                        android:layout_height="36.7dp"
+                        android:src="@drawable/profile1"
+                        app:civ_border_color="#ffffff"
+                        app:civ_border_width="2dp" />
+
+                    <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/profile_image1"
+                        android:layout_width="36.7dp"
+                        android:layout_height="36.7dp"
+                        android:layout_marginLeft="19dp"
+                        android:src="@drawable/profile2"
+                        app:civ_border_color="#ffffff"
+                        app:civ_border_width="2dp" />
+
+                    <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/profile_image2"
+                        android:layout_width="36.7dp"
+                        android:layout_height="36.7dp"
+                        android:layout_marginLeft="41dp"
+                        android:src="@drawable/profile"
+                        app:civ_border_color="#ffffff"
+                        app:civ_border_width="2dp" />
+
+                </FrameLayout>
+
+            </LinearLayout>
+
+
+            <customfonts.MyTextView_SF_Pro_Display_Medium
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="28dp"
+                android:layout_marginTop="8dp"
+                android:text="Lorem ipsum dolor sit ament ..."
+                android:textColor="#6e727d"
+                android:textSize="15sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/rect_white_bg"
+                android:orientation="horizontal">
+
+                <customfonts.TextViewSFProDisplayRegular
+                    android:id="@+id/txt1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/rect_yellow"
+                    android:paddingBottom="14dp"
+                    android:paddingLeft="18dp"
+                    android:paddingTop="14dp"
+                    android:text="Rs.91.500.000"
+                    android:textColor="#000000"
+                    android:textSize="13sp" />
+
+                <customfonts.TextViewSFProDisplayRegular
+                    android:id="@+id/txt2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/rect_trans_bg"
+                    android:gravity="center"
+                    android:paddingBottom="14dp"
+                    android:paddingTop="14dp"
+                    android:text="Rs.180.000.000"
+                    android:textColor="#000000"
+                    android:textSize="13sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

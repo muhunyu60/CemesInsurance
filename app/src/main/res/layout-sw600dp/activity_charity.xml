@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.cemesinsurance.cemes_customer.Charity">
+
+
+    <include layout="@layout/toolbar_charity_09" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:orientation="vertical">
+
+            <customfonts.MyTextView_SF_Pro_Display_Medium
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:letterSpacing="0.093"
+                android:lineSpacingExtra="7dp"
+                android:text="Empower everyone \n to contribute"
+                android:textColor="#0f1418"
+                android:textSize="23sp" />
+
+            <customfonts.TextViewSFProDisplayRegular
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="14.7dp"
+                android:gravity="center"
+                android:letterSpacing="0.023"
+                android:lineSpacingExtra="7dp"
+                android:text="Opening a savings account online has never \n been easier."
+                android:textColor="#919296"
+                android:textSize="13.7sp" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:layout_marginTop="56.3dp">
+
+                <!--View Pager is here-->
+
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/viewpager"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+
+                <customfonts.TextViewSFProDisplayRegular
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginRight="40dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/rect_pink"
+                    android:gravity="center"
+                    android:letterSpacing="0.093"
+                    android:paddingBottom="8dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingTop="8dp"
+                    android:text="End Soon"
+                    android:textColor="#ffffff"
+                    android:textSize="11.3sp" />
+
+                <me.relex.circleindicator.CircleIndicator
+                    android:id="@+id/circleindicator"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="90dp"
+                    app:ci_drawable="@drawable/ic_brightness_1_white"
+                    app:ci_drawable_unselected="@drawable/ic_brightness_1_white_24dp" />
+
+            </FrameLayout>
+
+            <customfonts.MyTextView_SF_Pro_Display_Medium
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="26.3dp"
+                android:layout_marginTop="20.7dp"
+                android:letterSpacing="0.013"
+                android:text="Syria Crisis"
+                android:textColor="#0f1418"
+                android:textSize="15sp" />
+
+            <customfonts.TextViewSFProDisplayRegular
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="26.3dp"
+                android:layout_marginTop="17.3dp"
+                android:letterSpacing="0.033"
+                android:lineSpacingExtra="7dp"
+                android:text="As violence increases in Aleppo, thousands are \n now fleeing for their lives, They are ..."
+                android:textColor="#919296"
+                android:textSize="14.7sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/rect_white_bg"
+                android:orientation="horizontal">
+
+                <customfonts.TextViewSFProDisplayRegular
+                    android:id="@+id/txt1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/rect_yellow"
+                    android:paddingBottom="13dp"
+                    android:paddingLeft="18dp"
+                    android:paddingTop="14dp"
+                    android:text="Rs.91.500.000"
+                    android:textColor="#000000"
+                    android:textSize="12sp" />
+
+                <customfonts.TextViewSFProDisplayRegular
+                    android:id="@+id/txt2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/rect_trans_bg"
+                    android:gravity="right"
+                    android:paddingRight="18dp"
+                    android:paddingBottom="13dp"
+                    android:paddingTop="14dp"
+                    android:text="Rs.180.000.000"
+                    android:textColor="#000000"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="25.7dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <customfonts.TextViewSFProDisplayRegular
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Donate Now"
+                    android:textColor="#ee6723"
+                    android:textSize="13sp" />
+
+                <ImageView
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_marginLeft="7dp"
+                    android:layout_marginTop="2dp"
+                    android:src="@drawable/ic_group_18" />
+
+
+            </LinearLayout>
+
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="35dp">
+
+
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/viewpager1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+
+                <customfonts.TextViewSFProDisplayRegular
+                    android:layout_width="105dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginRight="40dp"
+                    android:layout_marginTop="23dp"
+                    android:background="@drawable/rect_green"
+                    android:gravity="center"
+                    android:letterSpacing="0.093"
+                    android:paddingBottom="8dp"
+                    android:paddingLeft="9dp"
+                    android:paddingRight="9dp"
+                    android:paddingTop="8dp"
+                    android:text="3 Days Left"
+                    android:textColor="#ffffff"
+                    android:textSize="11.3sp" />
+
+
+                <me.relex.circleindicator.CircleIndicator
+                    android:id="@+id/circleindicator1"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="90dp"
+                    app:ci_drawable="@drawable/ic_brightness_1_white"
+                    app:ci_drawable_unselected="@drawable/ic_brightness_1_white_24dp" />
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>

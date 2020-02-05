@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/rect23_bg"
+    tools:context="com.cemesinsurance.cemes_customer.Verification">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/toolbar_verification_03" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="126dp"
+                android:layout_height="126dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="40dp"
+                android:src="@drawable/l3" />
+
+
+            <customfonts.MyTextView_SF_Pro_Display_Medium
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="26.3dp"
+                android:letterSpacing="0.096"
+                android:text="Verification"
+                android:textColor="#192027"
+                android:textSize="18.7sp" />
+
+            <customfonts.MyTextView_SF_Pro_Display_Medium
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="15.7dp"
+                android:letterSpacing="0.16"
+                android:text="Enter 4 digit number that sent to"
+                android:textColor="#808287"
+                android:textSize="12.7sp" />
+
+            <customfonts.EditText__SF_Pro_Display_Medium
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="9.3dp"
+                android:background="#00000000"
+                android:text="+62900382349."
+                android:textColor="#808287"
+                android:textSize="12.7sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="65.7dp"
+        android:layout_marginLeft="25.3dp"
+        android:layout_marginRight="25.3dp"
+        android:background="@drawable/rect_white_registration"
+        android:orientation="vertical">
+
+
+        <!--OTP Library is here-->
+
+        <com.mukesh.OtpView
+            android:id="@+id/otp_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="15dp"
+            android:inputType="number"
+            android:textColor="#000000" />
+
+
+        <customfonts.MyTextView_SF_Pro_Display_Medium
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="25dp"
+            android:layout_marginLeft="20.7dp"
+            android:layout_marginRight="20.7dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/rect_btn_purple"
+            android:gravity="center"
+            android:paddingBottom="14dp"
+            android:paddingTop="16dp"
+            android:text="Continue"
+            android:textAllCaps="false"
+            android:textColor="#ffffff"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <customfonts.MyTextView_SF_Pro_Display_Medium
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="22dp"
+        android:layout_marginLeft="135dp"
+        android:gravity="center"
+        android:letterSpacing="0.076"
+        android:text="@string/hello_world" />
+
+
+</RelativeLayout>

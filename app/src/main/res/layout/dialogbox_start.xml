@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="345.3dp"
+    android:layout_height="467.5dp"
+    android:background="@drawable/rect_bg"
+    android:orientation="vertical">
+
+        <ImageView
+            android:layout_marginTop="35dp"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_width="153dp"
+            android:layout_height="153dp"
+            android:src="@drawable/l7"/>
+
+
+        <customfonts.MyTextView_SF_Pro_Display_Medium
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:letterSpacing="0.093"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="33.3dp"
+            android:text="Congratulation"
+            android:textColor="#ee6723"
+            android:textSize="12.7sp"/>
+
+        <customfonts.MyTextView_SF_Pro_Display_Medium
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14.7dp"
+            android:letterSpacing="0.083"
+            android:text="Now you are registered"
+            android:textColor="#030712"
+            android:textSize="19.7sp"/>
+
+        <customfonts.MyTextView_SF_Pro_Display_Medium
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:letterSpacing="0.093"
+            android:text="Get ready with IndoAlliz wallet"
+            android:textColor="#a1a2a6"
+            android:textSize="12.7sp"/>
+
+        <customfonts.MyTextView_SF_Pro_Display_Medium
+            android:layout_width="match_parent"
+            android:layout_marginTop="65dp"
+            android:gravity="center"
+            android:paddingTop="14dp"
+            android:paddingBottom="14dp"
+            android:letterSpacing="0.093"
+            android:layout_height="wrap_content"
+            android:text="Start Now"
+            android:textColor="#ffffff"
+            android:textAllCaps="false"
+            android:textSize="16sp"
+            android:layout_marginLeft="27.7dp"
+            android:layout_marginRight="27.7dp"
+            android:background="@drawable/rect_btn_purple"/>
+
+
+
+
+
+
+
+
+
+
+
+</LinearLayout>

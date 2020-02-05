@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorPrimary">#ffbd3c</color>
+    <color name="colorPrimaryDark">#ff5c5c</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="progressBarColor">#23ce5c</color>
+    <color name="backgroundProgressBarColor">#f1f2f2</color>
+    <color name="progressBarColor1">#ee6723</color>
+    <color name="egIndicatorLineColor">#ee6723</color>
+    <color name="bg_clolor">#fafafa</color>
+    <color name="black">#000000</color>
+    <color name="white">#ffffff</color>
+
+
+</resources>

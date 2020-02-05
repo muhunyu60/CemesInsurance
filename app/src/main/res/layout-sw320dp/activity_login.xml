@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/rect23_bg"
+    tools:context="com.cemesinsurance.cemes_customer.Registration_02">
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_gravity="center">
+
+            <customfonts.MyTextView_SF_Pro_Display_Medium
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="25.5dp"
+                android:letterSpacing="0.076"
+                android:text="Registration"
+                android:textColor="#192027"
+                android:textSize="19.7sp" />
+
+            <customfonts.MyTextView_SF_Pro_Display_Medium
+                android:layout_width="260dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="40.3dp"
+                android:layout_marginTop="24.7dp"
+                android:layout_marginRight="40.3dp"
+                android:gravity="center"
+                android:letterSpacing="0.066"
+                android:lineSpacingExtra="5dp"
+                android:text="Enter your details, we will send you \n OTP to verify later"
+                android:textColor="#808287"
+                android:textSize="8.5sp" />
+
+            <ImageView
+                android:layout_width="208dp"
+                android:layout_height="71dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginRight="8dp"
+                android:src="@drawable/logo" />
+
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginLeft="25.3dp"
+        android:layout_marginRight="25.3dp"
+        android:layout_marginBottom="50.7dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:background="@drawable/rect_white_registration"
+        android:layout_height="300dp">
+        //Name
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="18.7dp"
+            android:layout_marginRight="18.7dp"
+            android:layout_marginTop="25.3dp"
+            android:padding="5dp"
+            android:background="@drawable/rect_white_border">
+
+
+            <customfonts.EditText__SF_Pro_Display_Medium
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+                android:layout_marginLeft="13dp"
+                android:layout_gravity="center"
+                android:hint="Enter Your Full Name"
+                android:textSize="14sp"
+                android:textColor="#282b30"/>
+
+
+        </LinearLayout>
+
+        //Email
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="18.7dp"
+            android:layout_marginRight="18.7dp"
+            android:layout_marginTop="25.3dp"
+            android:padding="5dp"
+            android:background="@drawable/rect_white_border">
+
+
+            <customfonts.EditText__SF_Pro_Display_Medium
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+                android:layout_marginLeft="13dp"
+                android:layout_gravity="center"
+                android:hint="Enter Your E-mail Address"
+                android:textSize="14sp"
+                android:textColor="#282b30"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="18.7dp"
+            android:layout_marginRight="18.7dp"
+            android:layout_marginTop="25.3dp"
+            android:padding="5dp"
+            android:background="@drawable/rect_white_border">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="3dp"
+                android:src="@drawable/kenya"
+                android:maxWidth="10dp"
+                android:maxHeight="7dp"
+                android:layout_gravity="center"/>
+
+
+
+
+            <customfonts.EditText__SF_Pro_Display_Medium
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+                android:layout_marginLeft="13dp"
+                android:layout_gravity="center"
+                android:hint="Enter Your Number"
+                android:textSize="14sp"
+                android:textColor="#282b30"/>
+
+        </LinearLayout>
+
+        //Password
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="18.7dp"
+            android:layout_marginRight="18.7dp"
+            android:layout_marginTop="25.3dp"
+            android:padding="5dp"
+            android:background="@drawable/rect_white_border">
+
+
+            <customfonts.EditText__SF_Pro_Display_Medium
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+                android:layout_marginLeft="13dp"
+                android:layout_gravity="center"
+                android:hint="Enter Your Password"
+                android:textSize="14sp"
+                android:textColor="#282b30"
+                android:inputType="textPassword" />
+
+        </LinearLayout>
+
+        <customfonts.MyTextView_SF_Pro_Display_Medium
+            android:id="@+id/login"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20.7dp"
+            android:layout_marginTop="27dp"
+            android:layout_marginRight="20.7dp"
+            android:background="@drawable/rect_btn_purple"
+            android:gravity="center"
+            android:paddingTop="13dp"
+            android:paddingBottom="14dp"
+            android:text="Continue"
+            android:textAllCaps="false"
+            android:textColor="#ffffff"
+            android:textSize="9sp" />
+
+    </LinearLayout>
+
+
+
+
+</RelativeLayout>

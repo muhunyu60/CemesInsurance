@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/rect23_bg"
+    tools:context="com.cemesinsurance.cemes_customer.Fingerprint_04">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <include layout="@layout/toolbar_fingerprint_04"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_marginTop="20dp"
+                android:layout_width="133dp"
+                android:layout_height="133dp"
+                android:src="@drawable/l4"/>
+
+            <customfonts.MyTextView_SF_Pro_Display_Medium
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50.3dp"
+                android:layout_gravity="center"
+                android:letterSpacing="0.103"
+                android:text="Fingerprint"
+                android:textColor="#192027"
+                android:textSize="19.7sp"/>
+            <customfonts.MyTextView_SF_Pro_Display_Medium
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:lineSpacingExtra="8dp"
+                android:letterSpacing="0.093"
+                android:text="To add your fingerprint, lift and rest your \n finger at home button repeatedly (optional)."
+                android:textSize="13.7sp"
+                android:textColor="#808287"/>
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_above="@+id/bottom_linear"
+        android:scaleType="fitXY"
+        android:layout_marginTop="32.7dp"
+        android:layout_width="64dp"
+        android:layout_height="90dp"
+        android:layout_marginBottom="20dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/l5"/>
+
+    <LinearLayout
+        android:id="@+id/bottom_linear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_above="@+id/continue1">
+
+
+        <customfonts.MyTextView_Roboto_Medium
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Skip This Step"
+            android:letterSpacing="0.02"
+
+            android:textColor="#ee6723"
+            android:gravity="center_horizontal"
+
+            android:textSize="14sp"/>
+
+        <ImageView
+            android:layout_width="13dp"
+            android:layout_height="13dp"
+            android:tint="#ee6723"
+            android:layout_marginTop="1dp"
+            android:layout_marginLeft="15dp"
+            android:src="@drawable/g_27"/>
+    </LinearLayout>
+
+
+
+    <customfonts.MyTextView_SF_Pro_Display_Medium
+        android:layout_alignParentBottom="true"
+        android:id="@+id/continue1"
+        android:layout_marginBottom="22.3dp"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:paddingTop="14dp"
+        android:paddingBottom="14dp"
+        android:layout_height="wrap_content"
+        android:text="Continue"
+        android:textColor="#ffffff"
+        android:textAllCaps="false"
+        android:textSize="15sp"
+        android:layout_marginLeft="50.3dp"
+        android:layout_marginRight="50.3dp"
+        android:background="@drawable/rect_btn_purple"/>
+
+
+
+</RelativeLayout>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f8f8fa"
+    tools:context="com.cemesinsurance.cemes_customer.Web1920_13">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/toolbar_web1920_13"/>
+
+
+        <!--tablayout is here-->
+
+        <android.support.design.widget.TabLayout
+            app:tabTextAppearance="@style/MyCustomTextAppearance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            app:tabMode="fixed"
+            app:tabGravity="fill"
+            app:tabTextColor="#969eab"
+            app:tabSelectedTextColor="#0f1418"
+            app:tabIndicatorColor="#ee6723"
+            android:id="@+id/tablayout"/>
+
+
+        <!--view pager is here-->
+
+
+        <android.support.v4.view.ViewPager
+            android:background="#ffffff"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/viewpager">
+        </android.support.v4.view.ViewPager>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </LinearLayout>
+
+
+
+
+</RelativeLayout>

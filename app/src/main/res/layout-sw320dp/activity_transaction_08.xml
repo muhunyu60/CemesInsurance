@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_finance"
+    android:orientation="vertical"
+    tools:context="com.cemesinsurance.cemes_customer.Transaction_08">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/rect_black"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="50.7dp"
+            android:background="@drawable/rect_bg"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="94dp"
+                android:layout_height="94dp"
+                android:layout_marginTop="30dp"
+                android:src="@drawable/ic_group_121" />
+
+            <customfonts.TextViewSFProDisplayRegular
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24.3dp"
+                android:letterSpacing="0.063"
+                android:text="You sucessfully"
+                android:textColor="#4f5052"
+                android:textSize="15sp" />
+
+            <customfonts.MyTextView_SF_Pro_Display_Medium
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6.3dp"
+                android:letterSpacing="0.073"
+                android:text="send money to Julia."
+                android:textColor="#181a25"
+                android:textSize="16sp" />
+
+            <customfonts.MyTextView_SF_Pro_Display_Medium
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28.3dp"
+                android:letterSpacing="0.043"
+                android:text="Rs 400.000"
+                android:textColor="#ee6723"
+                android:textSize="29.3sp" />
+
+            <LinearLayout
+                android:layout_width="162dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32.7dp"
+                android:background="@drawable/rect_white"
+                android:orientation="horizontal">
+
+                <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/profile_image"
+                    android:layout_width="35.3dp"
+                    android:layout_height="35.3dp"
+                    android:src="@drawable/profile1" />
+
+                <customfonts.MyTextView_SF_Pro_Display_Medium
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="9.7dp"
+                    android:letterSpacing="0.063"
+                    android:text="Julia Kesenia"
+                    android:textColor="#2a2d36"
+                    android:textSize="13.5sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="33.3dp"
+                android:orientation="horizontal">
+
+                <customfonts.TextViewSFProDisplayRegular
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:letterSpacing="0.073"
+                    android:text="Transaction done on"
+                    android:textColor="#83868d"
+                    android:textSize="13.3sp" />
+
+                <customfonts.TextViewSFProDisplayRegular
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5.3dp"
+                    android:letterSpacing="0.073"
+                    android:text="12 January 2016."
+                    android:textColor="#32353e"
+                    android:textSize="13.3sp" />
+
+            </LinearLayout>
+
+            <customfonts.TextViewSFProDisplayRegular
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="9dp"
+                android:letterSpacing="0.073"
+                android:text="Your refernce number is 03492390"
+                android:textColor="#83868d"
+                android:textSize="13.3sp" />
+
+
+            <customfonts.MyTextView_SF_Pro_Display_Medium
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="19dp"
+                android:layout_marginRight="19dp"
+                android:layout_marginTop="35.3dp"
+                android:background="@drawable/rect_btn_purple"
+                android:gravity="center"
+                android:letterSpacing="0.073"
+                android:paddingBottom="16dp"
+                android:paddingTop="16dp"
+                android:text="Done"
+                android:textAllCaps="false"
+                android:textColor="#ffffff"
+                android:layout_marginBottom="30dp"
+                android:textSize="15sp" />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>
