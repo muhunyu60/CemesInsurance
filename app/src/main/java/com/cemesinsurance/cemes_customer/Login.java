@@ -116,7 +116,7 @@ public class Login extends AppCompatActivity  {
                                             object.getString("email"),
                                             object.getString("phone")
                                     );
-                                    Log.e("json", object.toString());
+//                                    Log.e("json", object.toString());
 
                                     SharedPrefManager.getInstance(getApplicationContext()).userLogIn(user);
 

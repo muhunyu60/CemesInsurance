@@ -85,6 +85,7 @@
 
 
             <customfonts.EditText__SF_Pro_Display_Medium
+                android:id="@+id/logInEmailEditText"
                 android:layout_weight="1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -93,7 +94,8 @@
                 android:layout_gravity="center"
                 android:hint="Enter Your E-mail Address"
                 android:textSize="14sp"
-                android:textColor="#282b30"/>
+                android:textColor="#282b30"
+                android:inputType="textEmailAddress" />
 
 
         </LinearLayout>
@@ -110,6 +112,7 @@
 
 
             <customfonts.EditText__SF_Pro_Display_Medium
+                android:id="@+id/logInPasswordEditText"
                 android:layout_weight="1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -140,8 +143,5 @@
             android:background="@drawable/rect_btn_purple"/>
 
     </LinearLayout>
-
-
-
 
 </RelativeLayout>
