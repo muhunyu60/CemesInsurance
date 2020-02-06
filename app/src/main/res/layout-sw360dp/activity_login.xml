@@ -83,6 +83,7 @@
 
 
             <customfonts.EditText__SF_Pro_Display_Medium
+                android:id="@+id/signUpNameEditText"
                 android:layout_weight="1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -109,6 +110,7 @@
 
 
             <customfonts.EditText__SF_Pro_Display_Medium
+                android:id="@+id/signUpEmailEditText"
                 android:layout_weight="1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -117,7 +119,8 @@
                 android:layout_gravity="center"
                 android:hint="Enter Your E-mail Address"
                 android:textSize="14sp"
-                android:textColor="#282b30"/>
+                android:textColor="#282b30"
+                android:inputType="textEmailAddress" />
 
 
         </LinearLayout>
@@ -146,6 +149,7 @@
 
 
             <customfonts.EditText__SF_Pro_Display_Medium
+                android:id="@+id/signUpPhoneEditText"
                 android:layout_weight="1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -154,7 +158,8 @@
                 android:layout_gravity="center"
                 android:hint="Enter Your Number"
                 android:textSize="14sp"
-                android:textColor="#282b30"/>
+                android:textColor="#282b30"
+                android:inputType="phone" />
 
         </LinearLayout>
 
@@ -171,6 +176,7 @@
 
 
             <customfonts.EditText__SF_Pro_Display_Medium
+                android:id="@+id/signUpPasswordEditText"
                 android:layout_weight="1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
