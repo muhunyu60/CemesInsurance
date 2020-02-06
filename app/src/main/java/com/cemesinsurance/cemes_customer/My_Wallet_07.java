@@ -9,6 +9,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -16,10 +17,14 @@ import adapter.View_Pager_Adapter_my_saving;
 import adapter.WalletAdapter1;
 import adapter.WalletAdapter2;
 import me.relex.circleindicator.CircleIndicator;
+import model.User;
 import model.WalletModel;
 import model.WalletModel2;
+import state.SharedPrefManager;
 
 public class My_Wallet_07 extends AppCompatActivity {
+    private TextView nameText;
+    private TextView emailText;
 
     private WalletAdapter1 walletAdapter1;
     private RecyclerView recyclerview;
@@ -47,7 +52,7 @@ public class My_Wallet_07 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_wallet_07);
-
+        setUpViews();
         //rewards slider
         viewPager = (ViewPager) findViewById(R.id.viewpager3);
         circleIndicator = (CircleIndicator) findViewById(R.id.circleindicator3);
@@ -56,7 +61,7 @@ public class My_Wallet_07 extends AppCompatActivity {
         circleIndicator.setViewPager(viewPager);
         view_pager_adapter_my_saving.registerDataSetObserver(circleIndicator.getDataSetObserver());
 
-    //listeners for filter activities
+        //listeners for filter activities
         ImageView hospitals = (ImageView) findViewById(R.id.hospitals);
         hospitals.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -85,5 +90,16 @@ public class My_Wallet_07 extends AppCompatActivity {
         walletAdapter2 = new WalletAdapter2(My_Wallet_07.this, walletModel2ArrayList);
         recyclerview1.setAdapter(walletAdapter2);
 
+    }
+
+    void setUpViews() {
+        //initialise Text Views
+        nameText = findViewById(R.id.walletNameTextView);
+        emailText = findViewById(R.id.walletEmailTextView);
+
+        //set values based on shared preferences
+        User user = SharedPrefManager.getInstance(this).getUser();
+        nameText.setText(user.getName());
+        emailText.setText(user.getEmail());
     }
 }

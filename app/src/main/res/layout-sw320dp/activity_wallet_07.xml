@@ -52,6 +52,7 @@
                             android:orientation="vertical">
 
                             <customfonts.MyTextView_SF_Pro_Display_Medium
+                                android:id="@+id/walletNameTextView"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:letterSpacing="0.093"
@@ -60,6 +61,7 @@
                                 android:textSize="15.7sp" />
 
                             <customfonts.MyTextView_SF_Pro_Display_Medium
+                                android:id="@+id/walletEmailTextView"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="5dp"
