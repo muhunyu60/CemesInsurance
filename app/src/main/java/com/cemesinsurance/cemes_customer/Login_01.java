@@ -9,6 +9,7 @@ import android.view.View;
 import adapter.View_Pager_Adapter;
 import customfonts.MyTextView_SF_Pro_Display_Medium;
 import me.relex.circleindicator.CircleIndicator;
+import state.SharedPrefManager;
 
 public class Login_01 extends AppCompatActivity {
 
@@ -21,7 +22,11 @@ public class Login_01 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_01);
 
-
+        if(SharedPrefManager.getInstance(this).isLoggedIn()) {
+            Intent intent = new Intent(this, My_Wallet_07.class);
+            startActivity(intent);
+            finish();
+        }
 
         //        view pager and circleindicator code is here:
 
