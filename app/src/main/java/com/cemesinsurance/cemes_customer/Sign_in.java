@@ -104,6 +104,7 @@ public class Sign_in extends AppCompatActivity  {
                                     Intent intent = new Intent(getApplicationContext(), My_Wallet_07.class);
                                     Toast.makeText(getBaseContext(), message, Toast.LENGTH_SHORT).show();
                                     startActivity(intent);
+                                    finish();
                                     break;
 
                                 case "invalid password":

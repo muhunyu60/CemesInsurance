@@ -124,6 +124,7 @@ public class Login extends AppCompatActivity  {
                                     Intent intent = new Intent(getApplicationContext(), My_Wallet_07.class);
                                     Toast.makeText(getBaseContext(), message, Toast.LENGTH_SHORT).show();
                                     startActivity(intent);
+                                    finish();
                                     break;
 
                                 case "user exists":
