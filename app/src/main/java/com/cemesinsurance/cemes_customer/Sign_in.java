@@ -96,8 +96,8 @@ public class Sign_in extends AppCompatActivity  {
                                             object.getString("email"),
                                             object.getString("phone")
                                     );
-//                                    Log.e("json", object.toString());
 
+                                    //Store user details in shared preferences
                                     SharedPrefManager.getInstance(getApplicationContext()).userLogIn(user);
 
 //                                    progressBar.setVisibility(View.GONE);
