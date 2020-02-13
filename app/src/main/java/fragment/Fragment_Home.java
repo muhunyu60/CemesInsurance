@@ -20,6 +20,7 @@ import android.widget.TextView;
 import com.cemesinsurance.cemes_customer.Login_01;
 import com.cemesinsurance.cemes_customer.My_Wallet_07;
 import com.cemesinsurance.cemes_customer.R;
+import com.cemesinsurance.cemes_customer.Specific_Insurance_Type;
 
 import java.util.ArrayList;
 
@@ -151,6 +152,14 @@ public class Fragment_Home extends Fragment {
         nameText.setText(user.getName());
         emailText.setText(user.getEmail());
 
-    }
+        ImageView motorImage = getView().findViewById(R.id.motorInsurancePicture);
+        motorImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), Specific_Insurance_Type.class);
+                startActivity(intent);
+            }
+        });
 
+    }
 }

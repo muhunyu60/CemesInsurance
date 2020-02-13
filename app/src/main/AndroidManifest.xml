@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.cemesinsurance.cemes_customer">
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -11,33 +12,32 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.cemesinsurance.cemes_customer.Login_01" >
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".Specific_Insurance_Type"></activity>
+        <activity android:name=".Login_01">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
-        <activity android:name="com.cemesinsurance.cemes_customer.Registration_02" />
-        <activity android:name="com.cemesinsurance.cemes_customer.Sign_in" />
-        <activity android:name="com.cemesinsurance.cemes_customer.Fingerprint_04" />
-        <activity android:name="com.cemesinsurance.cemes_customer.Account_05" />
-        <activity android:name="com.cemesinsurance.cemes_customer.Verification" />
-        <activity android:name="com.cemesinsurance.cemes_customer.Transaction_08" />
-        <activity android:name="com.cemesinsurance.cemes_customer.Charity"/>
-        <activity android:name="com.cemesinsurance.cemes_customer.Login">
-
-        </activity>
-        <activity android:name="com.cemesinsurance.cemes_customer.Splashscreen" />
-        <activity android:name="com.cemesinsurance.cemes_customer.Gift" />
-        <activity android:name="com.cemesinsurance.cemes_customer.My_Saving_11" />
-        <activity android:name="com.cemesinsurance.cemes_customer.Web1920_13" />
-        <activity android:name="com.cemesinsurance.cemes_customer.Web1920_12" />
-        <activity android:name="com.cemesinsurance.cemes_customer.Web1920_16" />
-        <activity android:name="com.cemesinsurance.cemes_customer.Web1920_14" />
-        <activity android:name="com.cemesinsurance.cemes_customer.My_Wallet_07" />
-        <activity android:name="com.cemesinsurance.cemes_customer.Activity_list" />
-        <activity android:name="com.cemesinsurance.cemes_customer.Web1920_15"></activity>
+        <activity android:name=".Registration_02" />
+        <activity android:name=".Sign_in" />
+        <activity android:name=".Fingerprint_04" />
+        <activity android:name=".Account_05" />
+        <activity android:name=".Verification" />
+        <activity android:name=".Transaction_08" />
+        <activity android:name=".Charity" />
+        <activity android:name=".Login"></activity>
+        <activity android:name=".Splashscreen" />
+        <activity android:name=".Gift" />
+        <activity android:name=".My_Saving_11" />
+        <activity android:name=".Web1920_13" />
+        <activity android:name=".Web1920_12" />
+        <activity android:name=".Web1920_16" />
+        <activity android:name=".Web1920_14" />
+        <activity android:name=".My_Wallet_07" />
+        <activity android:name=".Activity_list" />
+        <activity android:name=".Web1920_15" />
     </application>
 
 </manifest>
