@@ -68,10 +68,9 @@
                 android:text="Car Class"
                 android:textSize="15sp"
                 android:textColor="#101010"
-                android:layout_marginTop="30dp"
-                android:layout_marginStart="70dp"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toEndOf="@id/carClassText" />
+                android:layout_marginTop="20dp"
+                app:layout_constraintTop_toBottomOf="@id/carClassSpinner"
+                app:layout_constraintStart_toStartOf="@id/carClassText" />
 
             <EditText
                 android:id="@+id/carUseSpinner"
@@ -79,7 +78,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 app:layout_constraintStart_toStartOf="@id/carUseText"
-                app:layout_constraintTop_toBottomOf="@+id/carClassText" />
+                app:layout_constraintTop_toBottomOf="@+id/carUseText" />
 
 
 
@@ -92,7 +91,7 @@
                 android:textColor="#101010"
                 android:layout_marginTop="20dp"
                 app:layout_constraintStart_toStartOf="@+id/carClassText"
-                app:layout_constraintTop_toBottomOf="@id/carClassSpinner"/>
+                app:layout_constraintTop_toBottomOf="@id/carUseSpinner"/>
 
             <EditText
                 android:id="@+id/registrationEditText"
@@ -149,18 +148,16 @@
                 android:id="@+id/carModelText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="70dp"
                 android:text="Car Model"
                 android:textSize="15sp"
                 android:textColor="#101010"
-                app:layout_constraintStart_toEndOf="@id/carMakeText"
-                app:layout_constraintTop_toTopOf="@id/carMakeText" />
+                app:layout_constraintStart_toStartOf="@id/carMakeText"
+                app:layout_constraintTop_toBottomOf="@id/carMakeSpinner" />
 
             <EditText
                 android:id="@+id/carModelSpinner"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
                 android:layout_marginTop="5dp"
                 app:layout_constraintStart_toStartOf="@id/carModelText"
                 app:layout_constraintTop_toBottomOf="@id/carModelText" />
@@ -174,8 +171,8 @@
                 android:text="Year of manufacture"
                 android:textSize="15sp"
                 android:textColor="#101010"
-                app:layout_constraintStart_toStartOf="@+id/carMakeText"
-                app:layout_constraintTop_toBottomOf="@id/carMakeSpinner" />
+                app:layout_constraintStart_toStartOf="@+id/carModelText"
+                app:layout_constraintTop_toBottomOf="@id/carModelSpinner" />
 
             <EditText
                 android:id="@+id/yearSpinner"
@@ -207,13 +204,31 @@
                 app:layout_constraintStart_toStartOf="@+id/startDateText"
                 app:layout_constraintTop_toBottomOf="@+id/startDateText" />
 
+            <customfonts.MyTextView_SF_Pro_Display_Medium
+                android:id="@+id/get_quote"
+                android:layout_width="220dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="27dp"
+                android:background="@drawable/rect_btn_purple"
+                android:gravity="center"
+                android:paddingTop="13dp"
+                android:paddingBottom="14dp"
+                android:text="Get Quote"
+                android:textAllCaps="false"
+                android:textColor="#ffffff"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/startDateEditText"
+                />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=" "
-                app:layout_constraintTop_toBottomOf="@id/startDateEditText"
+                app:layout_constraintTop_toBottomOf="@id/get_quote"
                 app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginTop="30dp" />
+                android:layout_marginTop="50dp" />
         </android.support.constraint.ConstraintLayout>
 
     </ScrollView>
