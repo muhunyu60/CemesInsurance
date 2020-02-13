@@ -21,7 +21,7 @@ improving!"</string>
     <string name="motor_insurance_text">Motor Insurance</string>
     <string name="vehicle_use_text">Vehicle Use</string>
 
-    <string-array name="classes">
+    <string-array name="car_classes">
         <item>Private</item>
         <item>PSV</item>
         <item>Commercial</item>
