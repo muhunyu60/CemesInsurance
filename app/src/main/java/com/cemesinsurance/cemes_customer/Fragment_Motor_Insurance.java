@@ -218,13 +218,11 @@ public class Fragment_Motor_Insurance extends Fragment implements AdapterView.On
         } else {
             showCarUse();
             if(selectedCarClass.equalsIgnoreCase("commercial")) {
-                // TODO: Populate Car Use Spinner
                 ArrayAdapter carUseAdapter = new ArrayAdapter(view.getContext(), android.R.layout.simple_spinner_item, commercialUses);
                 carUseAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 carUseSpinner.setAdapter(carUseAdapter);
 
             } else if(selectedCarClass.equalsIgnoreCase("PSV")) {
-                // TODO: Populate Car Use Spinner
                 ArrayAdapter carUseAdapter = new ArrayAdapter(view.getContext(), android.R.layout.simple_spinner_item, psvUses);
                 carUseAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 carUseSpinner.setAdapter(carUseAdapter);
