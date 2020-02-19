@@ -44,22 +44,26 @@
 
             <Spinner
                 android:id="@+id/carClassSpinner"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:spinnerMode="dialog"
+                android:spinnerMode="dropdown"
+                android:paddingStart="0dp"
+                android:paddingEnd="0dp"
                 android:layout_marginTop="30dp"
                 android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
 
             <Spinner
                 android:id="@+id/carUseSpinner"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:spinnerMode="dialog"
-                android:prompt="@string/hello_world"
+                android:spinnerMode="dropdown"
                 android:layout_marginTop="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
                 app:layout_constraintStart_toStartOf="@id/carClassSpinner"
                 app:layout_constraintTop_toBottomOf="@+id/carClassSpinner" />
 
@@ -72,6 +76,7 @@
                 android:textSize="15sp"
                 android:textColor="#101010"
                 android:layout_marginTop="20dp"
+                android:layout_marginStart="9dp"
                 app:layout_constraintStart_toStartOf="@+id/carClassSpinner"
                 app:layout_constraintTop_toBottomOf="@id/carUseSpinner"/>
 
@@ -79,10 +84,11 @@
                 android:id="@+id/registrationEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
+                android:layout_marginStart="27dp"
                 android:layout_marginTop="5dp"
+                android:layout_marginEnd="20dp"
                 android:hint="KAA 123A "
-                app:layout_constraintStart_toStartOf="@+id/carClassSpinner"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/registrationText" />
 
             <TextView
@@ -91,6 +97,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:text="Car Value"
+                android:layout_marginStart="9dp"
                 android:textSize="15sp"
                 android:textColor="#101010"
                 app:layout_constraintStart_toStartOf="@id/carClassSpinner"
@@ -100,9 +107,10 @@
                 android:id="@+id/carValueEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
+                android:layout_marginStart="27dp"
                 android:layout_marginTop="5dp"
-                android:hint="850000"
+                android:layout_marginEnd="20dp"
+                android:hint="@string/car_value_hint"
                 android:inputType="number"
                 app:layout_constraintStart_toStartOf="@id/carClassSpinner"
                 app:layout_constraintTop_toBottomOf="@+id/carValueText" />
@@ -110,10 +118,12 @@
 
             <Spinner
                 android:id="@+id/carMakeSpinner"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:prompt="@string/hello_world"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:spinnerMode="dropdown"
                 app:layout_constraintStart_toStartOf="@id/carValueEditText"
                 app:layout_constraintTop_toBottomOf="@id/carValueEditText" />
 
@@ -121,9 +131,12 @@
 
             <Spinner
                 android:id="@+id/carModelSpinner"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:spinnerMode="dropdown"
                 app:layout_constraintStart_toStartOf="@id/carMakeSpinner"
                 app:layout_constraintTop_toBottomOf="@id/carMakeSpinner" />
 
@@ -133,18 +146,21 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:text="Year of manufacture"
+                android:text="@string/year_of_manufacture"
                 android:textSize="15sp"
                 android:textColor="#101010"
-                app:layout_constraintStart_toStartOf="@+id/carModelSpinner"
+                android:layout_marginStart="7dp"
+                app:layout_constraintStart_toStartOf="@+id/carClassSpinner"
                 app:layout_constraintTop_toBottomOf="@id/carModelSpinner" />
 
-            <Spinner
-                android:id="@+id/yearSpinner"
+            <EditText
+                android:id="@+id/yearDatePicker"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
                 android:layout_marginTop="5dp"
+                android:focusableInTouchMode="false"
                 app:layout_constraintStart_toStartOf="@+id/yearText"
                 app:layout_constraintTop_toBottomOf="@+id/yearText" />
 
@@ -156,16 +172,17 @@
                 android:text="Start Date"
                 android:textSize="15sp"
                 android:textColor="#101010"
-                app:layout_constraintTop_toBottomOf="@id/yearSpinner"
-                app:layout_constraintStart_toStartOf="@id/yearSpinner" />
+                app:layout_constraintTop_toBottomOf="@id/yearDatePicker"
+                app:layout_constraintStart_toStartOf="@id/yearDatePicker" />
 
             <EditText
-                android:id="@+id/startDateEditText"
+                android:id="@+id/startDateDatePicker"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
                 android:layout_marginTop="5dp"
-                android:inputType="date"
+                android:focusableInTouchMode="false"
                 app:layout_constraintStart_toStartOf="@+id/startDateText"
                 app:layout_constraintTop_toBottomOf="@+id/startDateText" />
 
@@ -184,7 +201,7 @@
                 android:textSize="20sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/startDateEditText"
+                app:layout_constraintTop_toBottomOf="@id/startDateDatePicker"
                 />
 
             <TextView

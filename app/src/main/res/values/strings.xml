@@ -19,9 +19,14 @@ improving!"</string>
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="motor_insurance_text">Motor Insurance</string>
-    <string name="vehicle_use_text">Vehicle Use</string>
+    <string name="vehicle_use_text">Enter Vehicle Use</string>
+    <string name="enter_car_make">Enter Car Make</string>
+    <string name="enter_car_model">Enter Car Model</string>
+    <string name="year_of_manufacture">Year of manufacture</string>
+    <string name="car_value_hint">850000</string>
 
     <string-array name="car_classes">
+        <item>Select a Car Class</item>
         <item>Private</item>
         <item>PSV</item>
         <item>Commercial</item>

@@ -1,20 +1,24 @@
 package com.cemesinsurance.cemes_customer;
 
 
+import android.app.DatePickerDialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
 import android.support.v4.app.Fragment;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.DatePicker;
+import android.widget.EditText;
+import android.widget.NumberPicker;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import com.android.volley.AuthFailureError;
 import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
 import com.android.volley.Response;
@@ -27,30 +31,33 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import Volley.URLs;
 import Volley.VolleySingleton;
+import fragment.NumberPickerDialogFragment;
 
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Fragment_Motor_Insurance extends Fragment implements AdapterView.OnItemSelectedListener {
+public class Fragment_Motor_Insurance extends Fragment implements AdapterView.OnItemSelectedListener, NumberPicker.OnValueChangeListener {
 
+    EditText yearDatePicker;
+    EditText startDatePicker;
     Spinner carUseSpinner;
     Spinner carClassSpinner;
     Spinner carModelSpinner;
     Spinner carMakeSpinner;
-    TextView carUseText;
     TextView registrationText;
     ConstraintLayout constraintLayout;
     Map<String, List<String>> cars = new HashMap<>();
 
-
     String commercialUses[] = new String[]{
+            "Select Car Use",
             "General Cartage",
             "Own Goods",
             "School Buses",
@@ -60,6 +67,7 @@ public class Fragment_Motor_Insurance extends Fragment implements AdapterView.On
         };
 
     String psvUses[] = new String[] {
+            "Select Car Use",
             "Chauffer Driven",
             "Self Driven",
             "Matatus"
@@ -83,6 +91,57 @@ public class Fragment_Motor_Insurance extends Fragment implements AdapterView.On
         carMakeSpinner = view.findViewById(R.id.carMakeSpinner);
         registrationText = view.findViewById(R.id.registrationText);
         constraintLayout = view.findViewById(R.id.motorConstraintLayout);
+        startDatePicker = view.findViewById(R.id.startDateDatePicker);
+
+        startDatePicker.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Calendar calendar = Calendar.getInstance();
+                int year = calendar.get(Calendar.YEAR);
+                int month = calendar.get(Calendar.MONTH);
+                int day = calendar.get(Calendar.DAY_OF_MONTH);
+
+                if(!TextUtils.isEmpty(startDatePicker.getText().toString())) {
+                    String selectedDate = startDatePicker.getText().toString();
+                    String[] date = selectedDate.split("/");
+
+                    String sYear = date[0].trim();
+                    String sMonth = date[1].trim();
+                    String sDay = date[2].trim();
+
+                    year = Integer.parseInt(sYear);
+                    month = Integer.parseInt(sMonth);
+                    day = Integer.parseInt(sDay);
+
+                }
+
+                DatePickerDialog dp = new DatePickerDialog(
+                        view.getContext(),
+                        new DatePickerDialog.OnDateSetListener() {
+                            @Override
+                            public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
+                                i1 += 1;
+                                startDatePicker.setText(String.valueOf(i) + "/" + String.valueOf(i1) + "/" + String.valueOf(i2));
+                            }
+                        },
+                        year,
+                        month,
+                        day);
+                dp.getDatePicker().setMaxDate(calendar.getTimeInMillis());
+                dp.show();
+
+            }
+        });
+
+        yearDatePicker = view.findViewById(R.id.yearDatePicker);
+        yearDatePicker.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showNumberPicker();
+            }
+        });
+
+
 
         // Set up Spinners
         carClassSpinner.setPrompt("Enter Car Class");
@@ -95,7 +154,7 @@ public class Fragment_Motor_Insurance extends Fragment implements AdapterView.On
         initialList.add("Enter Car Model");
         cars.put("Enter Car Class", initialList);
         hideCarUse();
-        getCars(view.getContext());
+//        getCars(view.getContext());
 
         return view;
     }
@@ -159,7 +218,22 @@ public class Fragment_Motor_Insurance extends Fragment implements AdapterView.On
         } else {
             showCarUse();
             if(selectedCarClass.equalsIgnoreCase("commercial")) {
+                // TODO: Populate Car Use Spinner
+                ArrayAdapter carUseAdapter = new ArrayAdapter(view.getContext(), android.R.layout.simple_spinner_item, commercialUses);
+                carUseAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                carUseSpinner.setAdapter(carUseAdapter);
 
+            } else if(selectedCarClass.equalsIgnoreCase("PSV")) {
+                // TODO: Populate Car Use Spinner
+                ArrayAdapter carUseAdapter = new ArrayAdapter(view.getContext(), android.R.layout.simple_spinner_item, psvUses);
+                carUseAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                carUseSpinner.setAdapter(carUseAdapter);
+            } else {
+                String[] selectUse = new String[1];
+                selectUse[0] = "Select Car Use";
+                ArrayAdapter carUseAdapter = new ArrayAdapter(view.getContext(), android.R.layout.simple_spinner_item, selectUse);
+                carUseAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                carUseSpinner.setAdapter(carUseAdapter);
             }
         }
     }
@@ -180,5 +254,16 @@ public class Fragment_Motor_Insurance extends Fragment implements AdapterView.On
             list.add(exception.toString());
         }
         return list;
+    }
+
+    @Override
+    public void onValueChange(NumberPicker numberPicker, int i, int i1) {
+        yearDatePicker.setText(String.valueOf(numberPicker.getValue()));
+    }
+
+    public void showNumberPicker() {
+        NumberPickerDialogFragment newFragment = new NumberPickerDialogFragment();
+        newFragment.setValueChangeListener(this);
+        newFragment.show(getActivity().getSupportFragmentManager(), "time picker");
     }
 }
