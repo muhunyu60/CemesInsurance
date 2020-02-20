@@ -33,7 +33,6 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import Volley.URLs;
@@ -54,9 +53,11 @@ public class Fragment_Motor_Insurance extends Fragment implements AdapterView.On
     Spinner carMakeSpinner;
     TextView registrationText;
     ConstraintLayout constraintLayout;
-    Map<String, List<String>> cars = new HashMap<>();
+    ArrayList<String> carMakes = new ArrayList<String>();
+    Map<String, ArrayList<String>> cars = new HashMap<>();
 
-    String commercialUses[] = new String[]{
+
+    String[] commercialUses = new String[]{
             "Select Car Use",
             "General Cartage",
             "Own Goods",
@@ -66,7 +67,7 @@ public class Fragment_Motor_Insurance extends Fragment implements AdapterView.On
             "Single Cabin Pick Up"
         };
 
-    String psvUses[] = new String[] {
+    String[] psvUses = new String[] {
             "Select Car Use",
             "Chauffer Driven",
             "Self Driven",
@@ -127,7 +128,7 @@ public class Fragment_Motor_Insurance extends Fragment implements AdapterView.On
                         year,
                         month,
                         day);
-                dp.getDatePicker().setMaxDate(calendar.getTimeInMillis());
+                dp.getDatePicker().setMinDate(calendar.getTimeInMillis());
                 dp.show();
 
             }
@@ -150,56 +151,137 @@ public class Fragment_Motor_Insurance extends Fragment implements AdapterView.On
         carClassSpinner.setAdapter(carClassAdapter);
         carClassSpinner.setOnItemSelectedListener(this);
 
-        List<String> initialList = new ArrayList<String>();
-        initialList.add("Enter Car Model");
-        cars.put("Enter Car Class", initialList);
         hideCarUse();
-//        getCars(view.getContext());
+        getCarMakesNetworkRequest(view.getContext());
+        getCarModelsNetworkRequest(view.getContext());
 
         return view;
     }
 
-    public void getCars(final Context context) {
-        StringRequest stringRequest =  new StringRequest(
+    public void populateCarMakesSpinner(JSONArray array, final Context context) {
+        carMakes.add("Select Car Make");
+        for(int i = 0; i < array.length(); i++) {
+            try {
+                carMakes.add(array.getJSONObject(i).getString("car_make"));
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+        ArrayAdapter carMakeAdapter = new ArrayAdapter(context, android.R.layout.simple_spinner_item, carMakes);
+        carMakeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        carMakeSpinner.setAdapter(carMakeAdapter);
+
+    }
+
+    public void getCarMakesNetworkRequest(final Context context) {
+        StringRequest stringRequest = new StringRequest(
                 Request.Method.GET,
-                URLs.CARS,
+                URLs.CAR_MAKES,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
                         try {
-                            JSONObject object = new JSONObject(response);
+                            JSONObject jsonObject = new JSONObject(response);
+                            JSONArray jsonArray = jsonObject.getJSONArray("car_makes");
+                            populateCarMakesSpinner(jsonArray, context);
 
-                            while (object.keys().hasNext()) {
-                                String key = object.keys().next();
-                                List models = toList(object.getJSONArray(key));
-                                cars.put(key, models);
-
-                                String[] carMakes = cars.keySet().toArray(new String[cars.size()]);
-
-                                ArrayAdapter carMakeAdapter = new ArrayAdapter(context, android.R.layout.simple_spinner_item, carMakes);
-                                carMakeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                                carMakeSpinner.setAdapter(carMakeAdapter);
-                            }
-
-                        } catch (JSONException exception) {
-                            Log.e("JSONerror", exception.toString());
+                        } catch (JSONException e) {
+                            e.printStackTrace();
                         }
+
                     }
                 },
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Log.e("volleyError", "Network connection problem");
+
                     }
                 }
         );
+        VolleySingleton.getInstance(context).addToRequestQueue(stringRequest);
+    }
 
-        int socketTimeout = 30000;
+    public void getCarModelsNetworkRequest(final Context context) {
+        StringRequest stringRequest = new StringRequest(
+                Request.Method.GET,
+                URLs.CAR_MODELS,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONObject jsonObject = new JSONObject(response);
+                            JSONArray array = jsonObject.getJSONArray("car_makes");
+                            populateCarsHashMap(array, context);
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    } // OnResponse
+                }, // Response Listener
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
 
-        RetryPolicy policy = new DefaultRetryPolicy(socketTimeout, DefaultRetryPolicy.DEFAULT_MAX_RETRIES, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT);
-        stringRequest.setRetryPolicy(policy);
+                    } // OnErrorResponse
+                } // Response.ErrorListener
+
+        ); // StringRequest
 
         VolleySingleton.getInstance(context).addToRequestQueue(stringRequest);
+    }
+
+    private void populateCarsHashMap(JSONArray array, final Context context) {
+        String current = "Select Car Make";
+        ArrayList<String> temp = new ArrayList<String>();
+        temp.add("Select a Car Model");
+
+        for (int i = 0; i < array.length(); i++) {
+            try {
+                JSONObject object = array.getJSONObject(i);
+                if(object.getString("car_make").equals(current)) {
+                    temp.add(object.getString("model"));
+                } else {
+                    cars.put(current, temp);
+
+                    temp = new ArrayList<String>();
+                    current = object.getString("car_make");
+                    temp.add(object.getString("model"));
+                }
+
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+
+        //To add the last element
+        cars.put(current, temp);
+
+        ArrayAdapter carMakeAdapter = new ArrayAdapter(context, android.R.layout.simple_spinner_item, carMakes);
+        carMakeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        carMakeSpinner.setAdapter(carMakeAdapter);
+        carMakeSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                String selectedCarMake = adapterView.getItemAtPosition(i).toString();
+                ArrayList<String> models = cars.get(selectedCarMake);
+                ArrayAdapter carModelAdapter = new ArrayAdapter(context, android.R.layout.simple_spinner_dropdown_item, models);
+                carModelAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                try {
+                    carModelSpinner.setAdapter(carModelAdapter);
+                } catch (NullPointerException e) {
+                    Log.e("selectedCarMake:", selectedCarMake);
+                    Log.e("ArraySize", String.valueOf(models.size()));
+                    Log.e("error:", e.toString());
+                } catch (IllegalArgumentException e) {
+                    Log.e("error:", e.toString());
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
     }
 
     public void hideCarUse() {
@@ -241,18 +323,7 @@ public class Fragment_Motor_Insurance extends Fragment implements AdapterView.On
 
     }
 
-    public List toList(JSONArray array) {
-        List<String> list = new ArrayList<String>();
-        try {
-            for(int i = 0; i < array.length(); i++) {
-                list.add(array.getJSONObject(i).getString("model"));
-            }
-        } catch (JSONException exception) {
-            Log.e("JSONException", exception.toString());
-            list.add(exception.toString());
-        }
-        return list;
-    }
+
 
     @Override
     public void onValueChange(NumberPicker numberPicker, int i, int i1) {
