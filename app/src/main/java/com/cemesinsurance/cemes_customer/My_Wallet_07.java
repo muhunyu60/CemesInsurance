@@ -5,6 +5,8 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -31,6 +33,9 @@ public class My_Wallet_07 extends AppCompatActivity {
         //Add behaviour
         CoordinatorLayout.LayoutParams layoutParams = (CoordinatorLayout.LayoutParams) navigationView.getLayoutParams();
         layoutParams.setBehavior(new BottomNavigationBehaviour());
+
+        DrawerLayout drawerLayout = findViewById(R.id.drawer_layout);
+//        drawerLayout.closeDrawer(GravityCompat.START);
     }
 
     public void loadFragment(Fragment fragment) {

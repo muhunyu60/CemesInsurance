@@ -1,33 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.DrawerLayout
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    tools:context="com.cemesinsurance.cemes_customer.My_Wallet_07"
+    tools:openDrawer="start"
     android:layout_height="match_parent"
-    tools:context="com.cemesinsurance.cemes_customer.My_Wallet_07">
+    android:layout_width="match_parent"
+    android:clickable="true"
+    android:focusableInTouchMode="true"
+    android:focusable="true"
+    android:id="@+id/drawer_layout" >
 
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
-
-        <FrameLayout
-            android:id="@+id/frame_container"
+        <android.support.design.widget.CoordinatorLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </ScrollView>
+            android:layout_height="match_parent" >
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <FrameLayout
+                android:id="@+id/frame_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+            </FrameLayout>
+        </ScrollView>
 
 
 
-    <android.support.design.widget.BottomNavigationView
-        android:id="@+id/bottom_navigation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:background="@android:color/white"
-        app:itemTextColor="@color/bottom_navigation_text_grey"
-        app:menu="@menu/navigation" />
+        <android.support.design.widget.BottomNavigationView
+            android:id="@+id/bottom_navigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="@android:color/white"
+            app:itemTextColor="@color/bottom_navigation_text_grey"
+            app:menu="@menu/navigation" />
 
 
+        </android.support.design.widget.CoordinatorLayout>
 
-</android.support.design.widget.CoordinatorLayout>
+    <android.support.design.widget.NavigationView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        app:headerLayout="@layout/drawer_nav_header"
+        app:menu="@menu/drawer_menu" />
+
+</android.support.v4.widget.DrawerLayout>
