@@ -14,16 +14,16 @@
         android:layout_width="18dp"
         android:layout_height="17dp"
         android:layout_marginLeft="23.5dp"
-        android:src="@drawable/ic_group_10"/>
+        android:src="@drawable/ic_group_10"
+        android:id="@+id/hamburger_menu"/>
+
     <TextView
         android:layout_width="200dp"
         android:layout_marginLeft="8dp"
         android:layout_height="20dp"
         android:textSize="10dp"
         android:text="Cemes Insurance App"
-        android:textColor="#ffff"
-        />
-
+        android:textColor="#ffff" />
 
     <ImageView
         android:scaleType="centerCrop"

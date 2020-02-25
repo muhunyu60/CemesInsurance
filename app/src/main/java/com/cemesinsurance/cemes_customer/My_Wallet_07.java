@@ -3,10 +3,12 @@ package com.cemesinsurance.cemes_customer;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.CoordinatorLayout;
+import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -16,6 +18,7 @@ import fragment.Fragment_Claims;
 import fragment.Fragment_SOS;
 
 public class My_Wallet_07 extends AppCompatActivity {
+    private DrawerLayout drawerLayout;
 
 
     @Override
@@ -34,8 +37,13 @@ public class My_Wallet_07 extends AppCompatActivity {
         CoordinatorLayout.LayoutParams layoutParams = (CoordinatorLayout.LayoutParams) navigationView.getLayoutParams();
         layoutParams.setBehavior(new BottomNavigationBehaviour());
 
-        DrawerLayout drawerLayout = findViewById(R.id.drawer_layout);
-//        drawerLayout.closeDrawer(GravityCompat.START);
+        //Drawer Layout
+        drawerLayout = findViewById(R.id.drawer_layout);
+
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.app_name, R.string.app_name);
+        toggle.syncState();
+        drawerLayout.addDrawerListener(toggle);
+
     }
 
     public void loadFragment(Fragment fragment) {

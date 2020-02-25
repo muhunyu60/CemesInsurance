@@ -14,7 +14,8 @@
         android:layout_width="21dp"
         android:layout_height="17dp"
         android:layout_marginLeft="23.5dp"
-        android:src="@drawable/ic_group_10"/>
+        android:src="@drawable/ic_group_10"
+        android:id="@+id/hamburger_menu" />
 
     <ImageView
         android:scaleType="centerCrop"

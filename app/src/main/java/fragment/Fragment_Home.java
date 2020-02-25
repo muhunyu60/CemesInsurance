@@ -8,9 +8,11 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -158,6 +160,15 @@ public class Fragment_Home extends Fragment {
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), Specific_Insurance_Type.class);
                 startActivity(intent);
+            }
+        });
+
+        ImageView hamburgerMenuImage = getView().findViewById(R.id.hamburger_menu);
+        hamburgerMenuImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DrawerLayout drawerLayout = getActivity().findViewById(R.id.drawer_layout);
+                drawerLayout.openDrawer(Gravity.START);
             }
         });
 
