@@ -33,4 +33,15 @@ improving!"</string>
         <item>Commercial</item>
     </string-array>
 
+    <string-array name="cover_limits">
+        <item>Select a Cover Limit</item>
+        <item>Up to 500,000</item>
+        <item>Up to 1,000,000</item>
+        <item>Up to 2,000,000</item>
+        <item>Up to 5,000,000</item>
+        <item>Up to 10,000,000</item>
+        <item>Up to 20,000,000</item>
+        <item>Up to 40,000,000</item>
+    </string-array>
+
 </resources>

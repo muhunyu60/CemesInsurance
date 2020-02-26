@@ -131,7 +131,6 @@ public class Fragment_Motor_Insurance extends Fragment implements AdapterView.On
                         day);
                 dp.getDatePicker().setMinDate(calendar.getTimeInMillis());
                 dp.show();
-
             }
         });
 
