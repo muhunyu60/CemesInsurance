@@ -40,7 +40,8 @@
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/motorConstraintLayout" >
+            android:id="@+id/motorConstraintLayout"
+            android:animateLayoutChanges="true" >
 
             <Spinner
                 android:id="@+id/carClassSpinner"
