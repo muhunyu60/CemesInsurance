@@ -122,7 +122,8 @@ public class Fragment_Motor_Insurance extends Fragment implements AdapterView.On
                             @Override
                             public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
                                 i1 += 1;
-                                startDatePicker.setText(String.valueOf(i) + "/" + String.valueOf(i1) + "/" + String.valueOf(i2));
+                                String dateString = i + "/" + i1 + "/" + i2;
+                                startDatePicker.setText(dateString);
                             }
                         },
                         year,
