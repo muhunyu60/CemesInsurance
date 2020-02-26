@@ -125,13 +125,13 @@
                             android:background="@drawable/oval">
 
                             <ImageView
+                                android:id="@+id/domesticPicture"
                                 android:layout_width="35dp"
                                 android:layout_height="34dp"
                                 android:layout_gravity="center"
                                 android:layout_marginLeft="1dp"
                                 android:layout_marginTop="2dp"
-                                android:src="@drawable/ic_group_223"
-                                android:id="@+id/hospitals"/>
+                                android:src="@drawable/ic_group_223" />
                         </FrameLayout>
 
                         <customfonts.MyTextView_SF_Pro_Display_Medium
@@ -160,6 +160,7 @@
                             android:background="@drawable/oval">
 
                             <ImageView
+                                android:id="@+id/hospitals"
                                 android:layout_width="32dp"
                                 android:layout_height="32dp"
                                 android:layout_gravity="center"

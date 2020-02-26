@@ -134,17 +134,6 @@ public class Fragment_Home extends Fragment {
         walletAdapter2 = new WalletAdapter2(getContext(), walletModel2ArrayList);
         recyclerview1.setAdapter(walletAdapter2);
 
-        //listeners for filter activities
-        ImageView hospitals = (ImageView) getView().findViewById(R.id.hospitals);
-        hospitals.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent myIntent;
-                myIntent = new Intent(getActivity(), Login_01.class);
-                startActivity(myIntent);
-            }
-        });
-
         //initialise Text Views
         nameText = getView().findViewById(R.id.walletNameTextView);
         emailText = getView().findViewById(R.id.walletEmailTextView);
@@ -154,11 +143,33 @@ public class Fragment_Home extends Fragment {
         nameText.setText(user.getName());
         emailText.setText(user.getEmail());
 
+        ImageView hospitals = (ImageView) getView().findViewById(R.id.hospitals);
+        hospitals.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent;
+                myIntent = new Intent(getActivity(), Specific_Insurance_Type.class);
+                myIntent.putExtra("fragment", "medical");
+                startActivity(myIntent);
+            }
+        });
+
         ImageView motorImage = getView().findViewById(R.id.motorInsurancePicture);
         motorImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), Specific_Insurance_Type.class);
+                intent.putExtra("fragment", "motor");
+                startActivity(intent);
+            }
+        });
+
+        ImageView domesticImage = getView().findViewById(R.id.domesticPicture);
+        domesticImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), Specific_Insurance_Type.class);
+                intent.putExtra("fragment", "domestic");
                 startActivity(intent);
             }
         });
