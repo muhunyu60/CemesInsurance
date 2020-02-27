@@ -43,5 +43,27 @@ improving!"</string>
         <item>Up to 20,000,000</item>
         <item>Up to 40,000,000</item>
     </string-array>
+    
+    <string-array name="travel_destination">
+        <item>Select your Destination</item>
+        <item>Africa</item>
+        <item>Asia</item>
+        <item>Europe</item>
+        <item>USA and Canada</item>
+        <item>Worldwide</item>
+    </string-array>
+
+    <string-array name="travel_purpose">
+        <item>Select your purpose of travel</item>
+        <item>Leisure</item>
+        <item>Education/Work</item>
+        <item>Medical Reason</item>
+    </string-array>
+
+    <string-array name="cover_type">
+        <item>Select a type of cover</item>
+        <item>Single Trip</item>
+        <item>Annual</item>
+    </string-array>
 
 </resources>
