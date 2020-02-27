@@ -16,6 +16,7 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -180,6 +181,16 @@ public class Fragment_Home extends Fragment {
             public void onClick(View view) {
                 DrawerLayout drawerLayout = getActivity().findViewById(R.id.drawer_layout);
                 drawerLayout.openDrawer(Gravity.START);
+            }
+        });
+
+        FrameLayout travelFrameLayout = getView().findViewById(R.id.travel_insurance_frame);
+        travelFrameLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), Specific_Insurance_Type.class);
+                intent.putExtra("fragment", "travel");
+                startActivity(intent);
             }
         });
 

@@ -7,6 +7,7 @@ import android.os.Bundle;
 
 import fragment.Fragment_Domestic_Insurance;
 import fragment.Fragment_Medical_Insurance;
+import fragment.Fragment_Travel_Insurance;
 
 public class Specific_Insurance_Type extends AppCompatActivity {
 
@@ -23,6 +24,9 @@ public class Specific_Insurance_Type extends AppCompatActivity {
                 break;
             case "domestic":
                 loadFragment(new Fragment_Domestic_Insurance());
+                break;
+            case "travel":
+                loadFragment(new Fragment_Travel_Insurance());
                 break;
             default:
                 loadFragment(new Fragment_Motor_Insurance());

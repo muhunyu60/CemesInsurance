@@ -222,14 +222,15 @@
                         <FrameLayout
                             android:layout_width="50.3dp"
                             android:layout_height="50.3dp"
-                            android:background="@drawable/oval">
+                            android:background="@drawable/oval"
+                            android:id="@+id/travel_insurance_frame">
 
                             <ImageView
                                 android:layout_width="35dp"
                                 android:layout_height="36dp"
                                 android:layout_gravity="center"
                                 android:layout_marginTop="2dp"
-                                android:src="@drawable/ic_group_217" />
+                                android:src="@drawable/ic_flight" />
                         </FrameLayout>
 
 
@@ -239,7 +240,7 @@
                             android:layout_gravity="center"
                             android:layout_marginTop="7.7dp"
                             android:letterSpacing="0.093"
-                            android:text="Life"
+                            android:text="Travel"
                             android:textColor="#373743"
                             android:textSize="12sp" />
 
