@@ -111,7 +111,7 @@ public class Fragment_Home extends Fragment {
     }
 
     public void setUpViews() {
-        //rewards slider
+        // rewards slider
         viewPager = (ViewPager) getView().findViewById(R.id.viewpager3);
         circleIndicator = (CircleIndicator) getView().findViewById(R.id.circleindicator3);
         view_pager_adapter_my_saving = new View_Pager_Adapter_my_saving(getFragmentManager());
@@ -119,7 +119,7 @@ public class Fragment_Home extends Fragment {
         circleIndicator.setViewPager(viewPager);
         view_pager_adapter_my_saving.registerDataSetObserver(circleIndicator.getDataSetObserver());
 
-        //       promo recyclerview code is here:
+        // promo recyclerview code is here:
         recyclerview1 = getView().findViewById(R.id.recycler2);
         RecyclerView.LayoutManager layoutManager1 = new LinearLayoutManager(getContext());
         recyclerview1.setLayoutManager(layoutManager1);
