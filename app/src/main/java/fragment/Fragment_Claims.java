@@ -1,8 +1,10 @@
 package fragment;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
@@ -13,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
+import com.cemesinsurance.cemes_customer.Add_Claim;
 import com.cemesinsurance.cemes_customer.R;
 
 import java.util.ArrayList;
@@ -29,6 +32,7 @@ public class Fragment_Claims extends Fragment {
     private ClaimsRecyclerAdapter claimsAdapter;
     private RecyclerView claimsRecyclerView;
     private RecyclerView.LayoutManager layoutManager;
+    private FloatingActionButton floatingActionButton;
 
     ArrayList<ClaimModel> exampleClaims = new ArrayList<>();
 
@@ -44,13 +48,10 @@ public class Fragment_Claims extends Fragment {
         View view = inflater.inflate(R.layout.fragment__claims, container, false);
 
         claimsRecyclerView = view.findViewById(R.id.claimsRecycler);
+        floatingActionButton = view.findViewById(R.id.add_claim_fab);
 
 
         exampleClaims.add(new ClaimModel("Motor", "motor", "Motor accident at Thika Superhighway"));
-        exampleClaims.add(new ClaimModel("Domestic", "domestic", "Robbery at 101 avenue"));
-        exampleClaims.add(new ClaimModel("Domestic", "domestic", "Robbery at 101 avenue"));
-        exampleClaims.add(new ClaimModel("Domestic", "domestic", "Robbery at 101 avenue"));
-        exampleClaims.add(new ClaimModel("Domestic", "domestic", "Robbery at 101 avenue"));
         exampleClaims.add(new ClaimModel("Domestic", "domestic", "Robbery at 101 avenue"));
         exampleClaims.add(new ClaimModel("Domestic", "domestic", "Robbery at 101 avenue"));
         exampleClaims.add(new ClaimModel("Domestic", "domestic", "Robbery at 101 avenue"));
@@ -66,11 +67,21 @@ public class Fragment_Claims extends Fragment {
         CardView cardView = view.findViewById(R.id.claimsCardView);
         DisplayMetrics displayMetrics = new DisplayMetrics();
         getActivity().getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
-        int height = displayMetrics.heightPixels - 350;
+        int height = displayMetrics.heightPixels - 400;
         ConstraintLayout.LayoutParams layoutParams = (ConstraintLayout.LayoutParams) cardView.getLayoutParams();
         layoutParams.height = height;
         layoutParams.width = MATCH_PARENT;
         cardView.setLayoutParams(layoutParams);
+
+
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), Add_Claim.class);
+                startActivity(intent);
+            }
+        });
+
         return view;
     }
 
