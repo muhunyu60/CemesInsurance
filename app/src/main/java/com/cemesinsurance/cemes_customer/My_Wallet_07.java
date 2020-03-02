@@ -17,6 +17,8 @@ import android.view.View;
 import fragment.Fragment_Home;
 import fragment.Fragment_Claims;
 import fragment.Fragment_SOS;
+import fragment.Profile_Fragment;
+import fragment.Settings_Fragment;
 
 public class My_Wallet_07 extends AppCompatActivity {
     private DrawerLayout drawerLayout;
@@ -52,6 +54,7 @@ public class My_Wallet_07 extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 int itemId = item.getItemId();
                 drawerNavigation.setCheckedItem(itemId);
+
                 switch(itemId) {
                     case R.id.drawer_home:
                         loadFragment(new Fragment_Home());
@@ -60,11 +63,13 @@ public class My_Wallet_07 extends AppCompatActivity {
                                 .setDuration(200);
                         break;
                     case R.id.drawer_profile:
+                        loadFragment(new Profile_Fragment());
                         navigationView.animate()
                                 .translationY(navigationView.getHeight())
                                 .setDuration(200);
                         break;
                     case R.id.drawer_settings:
+                        loadFragment(new Settings_Fragment());
                         navigationView.animate()
                                 .translationY(navigationView.getHeight())
                                 .setDuration(200);
