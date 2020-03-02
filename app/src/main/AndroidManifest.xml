@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Specific_Insurance_Type"></activity>
+        <activity android:name=".Add_Claim"></activity>
+        <activity android:name=".Specific_Insurance_Type" />
         <activity android:name=".Login_01">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,7 +28,7 @@
         <activity android:name=".Verification" />
         <activity android:name=".Transaction_08" />
         <activity android:name=".Charity" />
-        <activity android:name=".Login"></activity>
+        <activity android:name=".Login" />
         <activity android:name=".Splashscreen" />
         <activity android:name=".Gift" />
         <activity android:name=".My_Saving_11" />

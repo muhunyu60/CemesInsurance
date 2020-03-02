@@ -12,6 +12,7 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 
 import fragment.Fragment_Home;
 import fragment.Fragment_Claims;
@@ -19,6 +20,7 @@ import fragment.Fragment_SOS;
 
 public class My_Wallet_07 extends AppCompatActivity {
     private DrawerLayout drawerLayout;
+    NavigationView drawerNavigation;
 
 
     @Override
@@ -30,7 +32,7 @@ public class My_Wallet_07 extends AppCompatActivity {
         loadFragment(new Fragment_Home());
 
         //set up bottom navigation view
-        BottomNavigationView navigationView = findViewById(R.id.bottom_navigation);
+        final BottomNavigationView navigationView = findViewById(R.id.bottom_navigation);
         navigationView.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener);
 
         //Add behaviour
@@ -43,6 +45,34 @@ public class My_Wallet_07 extends AppCompatActivity {
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.app_name, R.string.app_name);
         toggle.syncState();
         drawerLayout.addDrawerListener(toggle);
+
+        drawerNavigation = findViewById(R.id.drawer_nav);
+        drawerNavigation.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                int itemId = item.getItemId();
+                drawerNavigation.setCheckedItem(itemId);
+                switch(itemId) {
+                    case R.id.drawer_home:
+                        loadFragment(new Fragment_Home());
+                        navigationView.animate()
+                                .translationY(0)
+                                .setDuration(200);
+                        break;
+                    case R.id.drawer_profile:
+                        navigationView.animate()
+                                .translationY(navigationView.getHeight())
+                                .setDuration(200);
+                        break;
+                    case R.id.drawer_settings:
+                        navigationView.animate()
+                                .translationY(navigationView.getHeight())
+                                .setDuration(200);
+                }
+
+                return true;
+            }
+        });
 
     }
 
