@@ -2,14 +2,54 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="fragment.Settings_Fragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="fragment.Settings_Fragment"
+    android:background="@color/white">
 
-    <!-- TODO: Update settings fragment layout -->
-    <TextView
+    <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Settings"
-        android:gravity="center"
-        android:textSize="30sp"/>
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/settingsTextTopBar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="Settings"
+            android:textColor="@color/white"
+            android:textAlignment="center"
+            android:textSize="25sp"
+            android:padding="7dp"
+            android:background="@color/orange"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <Button
+            android:id="@+id/settingsTextChangePassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Change Password"
+            android:textSize="15sp"
+            android:textAlignment="textStart"
+            android:background="@color/white"
+            app:layout_constraintTop_toBottomOf="@+id/settingsTextTopBar"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="20dp"
+            android:padding="20dp"
+            android:elevation="0dp" />
+
+        <Button
+            android:id="@+id/settingsTextLogOut"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Log Out"
+            android:textSize="15sp"
+            android:textAlignment="textStart"
+            android:background="@color/white"
+            app:layout_constraintTop_toBottomOf="@id/settingsTextChangePassword"
+            android:layout_marginTop="20dp"
+            android:padding="20dp"
+            android:elevation="0dp" />
+    </android.support.constraint.ConstraintLayout>
+
 
 </FrameLayout>
