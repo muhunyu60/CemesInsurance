@@ -66,4 +66,12 @@ improving!"</string>
         <item>Annual</item>
     </string-array>
 
+    <string-array name="claim_cover_type">
+        <item>Select Your Insurance Type</item>
+        <item>Domestic</item>
+        <item>Medical</item>
+        <item>Vehicle</item>
+        <item>Travel</item>
+    </string-array>
+
 </resources>
