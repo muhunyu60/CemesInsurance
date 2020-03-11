@@ -1,6 +1,5 @@
 package fragment;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -13,9 +12,6 @@ import com.cemesinsurance.cemes_customer.R;
 import model.User;
 import state.SharedPrefManager;
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class Profile_Fragment extends Fragment {
 
     private EditText nameEditText;
