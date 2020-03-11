@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".HealthResult"></activity>
+        <activity android:name=".MotorResultActivity"></activity>
+        <activity android:name=".HealthResult" />
         <activity android:name=".Add_Claim" />
         <activity android:name=".Specific_Insurance_Type" />
         <activity android:name=".Login_01">
