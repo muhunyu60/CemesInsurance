@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 
 public class AvailableMotorInsuranceAdapter extends RecyclerView.Adapter {
 
-    private class AvailableMotorInsuranceViewHolder extends RecyclerView.ViewHolder{
+    public class AvailableMotorInsuranceViewHolder extends RecyclerView.ViewHolder{
 
         public AvailableMotorInsuranceViewHolder(View itemView) {
             super(itemView);
