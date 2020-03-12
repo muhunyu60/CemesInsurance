@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/textViewInsuranceCompany"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Insurance Company"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp" />
+
+    <TextView
+        android:id="@+id/textViewPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Price"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="10dp" />
+    <TextView
+        android:id="@+id/textViewWindScreen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Windscreen:"
+        app:layout_constraintTop_toBottomOf="@id/textViewInsuranceCompany"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="16dp" />
+
+    <TextView
+        android:id="@+id/textViewWindScreenValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="35000"
+        android:textColor="@color/colorPrimaryDark"
+        app:layout_constraintStart_toEndOf="@id/textViewWindScreen"
+        app:layout_constraintTop_toBottomOf="@id/textViewInsuranceCompany"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp" />
+
+    <TextView
+        android:id="@+id/textViewRadio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Radio"
+        app:layout_constraintTop_toBottomOf="@id/textViewInsuranceCompany"
+        app:layout_constraintEnd_toStartOf="@id/textViewRadioValue"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="16dp" />
+
+    <TextView
+        android:id="@+id/textViewRadioValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="35000"
+        android:textColor="@color/colorPrimaryDark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewInsuranceCompany"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="10dp" />
+
+    <TextView
+        android:id="@+id/textViewExcessProtector"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Excess protector: "
+        app:layout_constraintStart_toStartOf="@id/textViewWindScreen"
+        app:layout_constraintTop_toBottomOf="@id/textViewWindScreen"
+        android:layout_marginTop="8dp" />
+
+    <TextView
+        android:id="@+id/textViewExcessProtectorValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="35000"
+        android:textColor="@color/colorPrimaryDark"
+        app:layout_constraintStart_toEndOf="@id/textViewExcessProtector"
+        app:layout_constraintTop_toTopOf="@id/textViewExcessProtector"/>
+
+    <TextView
+        android:id="@+id/textViewPVT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PVT"
+        app:layout_constraintEnd_toStartOf="@id/textViewPVTValue"
+        app:layout_constraintTop_toTopOf="@id/textViewExcessProtector"
+        android:layout_marginEnd="16dp" />
+
+    <TextView
+        android:id="@+id/textViewPVTValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="35000"
+        android:textColor="@color/colorPrimaryDark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/textViewExcessProtector"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"/>
+
+    <TextView
+        android:id="@+id/textViewLossOfUse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewPVTValue"
+        android:text="Loss of Use"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:id="@+id/textViewLossOfUseValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="35000"
+        android:textColor="@color/colorPrimaryDark"
+        app:layout_constraintStart_toEndOf="@id/textViewLossOfUse"
+        app:layout_constraintTop_toBottomOf="@id/textViewPVTValue"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintTop_toBottomOf="@id/textViewLossOfUse"
+        android:layout_marginTop="16dp" />
+
+</android.support.constraint.ConstraintLayout>
