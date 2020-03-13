@@ -9,16 +9,16 @@ import android.widget.TextView;
 
 import com.cemesinsurance.cemes_customer.R;
 
-public class AvailableMotorInsuranceAdapter extends RecyclerView.Adapter {
+public class AvailableMotorInsuranceAdapter extends RecyclerView.Adapter<AvailableMotorInsuranceAdapter.AvailableMotorInsuranceViewHolder> {
 
     public class AvailableMotorInsuranceViewHolder extends RecyclerView.ViewHolder{
-        TextView price;
-        TextView insuranceTitle;
-        TextView windScreen;
-        TextView radio;
-        TextView excessProtector;
-        TextView PVT;
-        TextView lossOfValue;
+        public TextView price;
+        public TextView insuranceTitle;
+        public TextView windScreen;
+        public TextView radio;
+        public TextView excessProtector;
+        public TextView PVT;
+        public TextView lossOfValue;
 
         public AvailableMotorInsuranceViewHolder(View itemView) {
             super(itemView);
@@ -34,20 +34,25 @@ public class AvailableMotorInsuranceAdapter extends RecyclerView.Adapter {
 
     @NonNull
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public AvailableMotorInsuranceViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.available_motor_insurance_item, parent, false);
         AvailableMotorInsuranceViewHolder viewHolder = new AvailableMotorInsuranceViewHolder(v);
         return viewHolder;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-
-
+    public void onBindViewHolder(@NonNull AvailableMotorInsuranceViewHolder holder, int position) {
+        holder.insuranceTitle.setText("Insurance Company");
+        holder.lossOfValue.setText("0");
+        holder.excessProtector.setText("0");
+        holder.windScreen.setText("0");
+        holder.price.setText("0");
+        holder.radio.setText("0");
+        holder.PVT.setText("0");
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return 2;
     }
 }
