@@ -3,6 +3,7 @@ package com.cemesinsurance.cemes_customer;
 
 import android.app.DatePickerDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
 import android.support.v4.app.Fragment;
@@ -37,6 +38,7 @@ import java.util.Map;
 
 import Volley.URLs;
 import Volley.VolleySingleton;
+import customfonts.MyTextView_SF_Pro_Display_Medium;
 import fragment.NumberPickerDialogFragment;
 
 
@@ -55,6 +57,7 @@ public class Fragment_Motor_Insurance extends Fragment implements AdapterView.On
     ConstraintLayout constraintLayout;
     ArrayList<String> carMakes = new ArrayList<String>();
     Map<String, ArrayList<String>> cars = new HashMap<>();
+    MyTextView_SF_Pro_Display_Medium getQuoteBtn;
 
 
     String[] commercialUses = new String[]{
@@ -93,6 +96,7 @@ public class Fragment_Motor_Insurance extends Fragment implements AdapterView.On
         registrationText = view.findViewById(R.id.registrationText);
         constraintLayout = view.findViewById(R.id.motorConstraintLayout);
         startDatePicker = view.findViewById(R.id.startDateDatePicker);
+        getQuoteBtn = view.findViewById(R.id.get_quote);
 
         startDatePicker.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -155,7 +159,20 @@ public class Fragment_Motor_Insurance extends Fragment implements AdapterView.On
         getCarMakesNetworkRequest(view.getContext());
         getCarModelsNetworkRequest(view.getContext());
 
+        getQuoteBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getQuote();
+            }
+        });
+
         return view;
+    }
+
+    private void getQuote() {
+        Intent intent = new Intent(getActivity(), MotorResultActivity.class);
+        startActivity(intent);
+
     }
 
     public void populateCarMakesSpinner(JSONArray array, final Context context) {

@@ -53,6 +53,6 @@ public class AvailableMotorInsuranceAdapter extends RecyclerView.Adapter<Availab
 
     @Override
     public int getItemCount() {
-        return 2;
+        return 3;
     }
 }
