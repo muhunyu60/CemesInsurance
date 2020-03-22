@@ -84,6 +84,16 @@
                         android:layout_marginTop="10dp"/>
 
                     <customfonts.MyTextView_SF_Pro_Display_Medium
+                        android:id="@+id/windscreenExampleValueTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textColor="@color/colorPrimaryDark"
+                        app:layout_constraintTop_toTopOf="@id/windscreenExampleTextView"
+                        app:layout_constraintStart_toEndOf="@id/windscreenExampleTextView"
+                        android:layout_marginStart="8dp"/>
+
+                    <customfonts.MyTextView_SF_Pro_Display_Medium
                         android:id="@+id/radioExampleTextView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -96,6 +106,111 @@
                         android:layout_marginStart="10dp"
                         android:layout_marginTop="10dp"/>
 
+                    <customfonts.MyTextView_SF_Pro_Display_Medium
+                        android:id="@+id/radioExampleValueTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textColor="@color/colorPrimaryDark"
+                        app:layout_constraintTop_toTopOf="@id/radioExampleTextView"
+                        app:layout_constraintStart_toEndOf="@id/radioExampleTextView"
+                        android:layout_marginStart="8dp"/>
+
+                    <customfonts.MyTextView_SF_Pro_Display_Medium
+                        android:id="@+id/excessProtectorExampleTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:letterSpacing="0.093"
+                        android:text="Excess Protector"
+                        android:textColor="#303030"
+                        android:textSize="16sp"
+                        app:layout_constraintTop_toBottomOf="@id/radioExampleTextView"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"/>
+
+                    <customfonts.MyTextView_SF_Pro_Display_Medium
+                        android:id="@+id/excessProtectorExampleValueTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textColor="@color/colorPrimaryDark"
+                        app:layout_constraintTop_toTopOf="@id/excessProtectorExampleTextView"
+                        app:layout_constraintStart_toEndOf="@id/excessProtectorExampleTextView"
+                        android:layout_marginStart="8dp"/>
+
+                    <customfonts.MyTextView_SF_Pro_Display_Medium
+                        android:id="@+id/lossOfUseExampleTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:letterSpacing="0.093"
+                        android:text="Loss of Use"
+                        android:textColor="#303030"
+                        android:textSize="16sp"
+                        app:layout_constraintTop_toBottomOf="@id/additionalOptionsTextView"
+                        app:layout_constraintEnd_toStartOf="@id/lossOfUseExampleValueTextView"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginTop="10dp"/>
+
+                    <customfonts.MyTextView_SF_Pro_Display_Medium
+                        android:id="@+id/lossOfUseExampleValueTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textColor="@color/colorPrimaryDark"
+                        app:layout_constraintTop_toTopOf="@id/windscreenExampleTextView"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="10dp" />
+
+                    <customfonts.MyTextView_SF_Pro_Display_Medium
+                        android:id="@+id/roadRescueExampleTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:letterSpacing="0.093"
+                        android:text="Radio"
+                        android:textColor="#303030"
+                        android:textSize="16sp"
+                        app:layout_constraintTop_toBottomOf="@id/windscreenExampleTextView"
+                        app:layout_constraintEnd_toStartOf="@id/roadRescueExampleValueTextView"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginTop="10dp"/>
+
+                    <customfonts.MyTextView_SF_Pro_Display_Medium
+                        android:id="@+id/roadRescueExampleValueTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textColor="@color/colorPrimaryDark"
+                        app:layout_constraintTop_toTopOf="@id/radioExampleTextView"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="10dp" />
+
+                    <customfonts.MyTextView_SF_Pro_Display_Medium
+                        android:id="@+id/pvtExampleTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:letterSpacing="0.093"
+                        android:text="PVT"
+                        android:textColor="#303030"
+                        android:textSize="16sp"
+                        app:layout_constraintTop_toBottomOf="@id/radioExampleTextView"
+                        app:layout_constraintEnd_toStartOf="@id/pvtExampleValueTextView"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginTop="10dp"/>
+
+                    <customfonts.MyTextView_SF_Pro_Display_Medium
+                        android:id="@+id/pvtExampleValueTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textColor="@color/colorPrimaryDark"
+                        app:layout_constraintTop_toTopOf="@id/excessProtectorExampleTextView"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="10dp"/>
                 </android.support.constraint.ConstraintLayout>
 
             </android.support.v7.widget.CardView>
