@@ -16,7 +16,7 @@ public class JubileeMotorModel implements AvailableMotorInsuranceModel {
     Boolean lossOfUseValue;
     Boolean roadRescueValue;
 
-    JubileeMotorModel(String insuranceName, String carPrice, String carManufactureYear, String carClass) {
+    public JubileeMotorModel(String insuranceName, String carPrice, String carManufactureYear, String carClass) {
         this.carPrice = carPrice;
         this.insuranceName = insuranceName;
         this.carManufactureYear = carManufactureYear;

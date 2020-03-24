@@ -9,7 +9,24 @@ import android.widget.TextView;
 
 import com.cemesinsurance.cemes_customer.R;
 
+import java.util.ArrayList;
+
+import model.AvailableMotorInsuranceModel;
+import model.motorinsurancemodels.JubileeMotorModel;
+
 public class AvailableMotorInsuranceAdapter extends RecyclerView.Adapter<AvailableMotorInsuranceAdapter.AvailableMotorInsuranceViewHolder> {
+    ArrayList<AvailableMotorInsuranceModel> availableMotorInsuranceModels;
+
+    public AvailableMotorInsuranceAdapter() {
+        availableMotorInsuranceModels = new ArrayList<AvailableMotorInsuranceModel>();
+        availableMotorInsuranceModels.add(
+                new JubileeMotorModel(
+                        "0",
+                        "0",
+                        "1990",
+                        "private")
+            );
+    }
 
     public class AvailableMotorInsuranceViewHolder extends RecyclerView.ViewHolder{
         public TextView price;
@@ -53,6 +70,7 @@ public class AvailableMotorInsuranceAdapter extends RecyclerView.Adapter<Availab
 
     @Override
     public int getItemCount() {
-        return 3;
+        return availableMotorInsuranceModels.size();
     }
+
 }
