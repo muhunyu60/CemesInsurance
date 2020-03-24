@@ -10,6 +10,7 @@ public class JubileeMotorModel implements AvailableMotorInsuranceModel {
     String radioValue;
     String carClass;
     String carUse;
+    String insurancePrice;
     Boolean excessProtectorValue;
     Boolean politicalViolenceAndTerrorismValue;
     Boolean lossOfUseValue;
@@ -29,7 +30,7 @@ public class JubileeMotorModel implements AvailableMotorInsuranceModel {
     @Override
     public String getPrice() {
         // TODO: Calculation of Price
-        return null;
+        return insurancePrice;
     }
 
     @Override
