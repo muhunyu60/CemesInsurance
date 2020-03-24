@@ -19,6 +19,7 @@ import android.widget.EditText;
 import android.widget.NumberPicker;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
@@ -33,6 +34,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 import Volley.URLs;
 import Volley.VolleySingleton;
@@ -40,20 +42,20 @@ import customfonts.MyTextView_SF_Pro_Display_Medium;
 import fragment.NumberPickerDialogFragment;
 
 
-/**
- * A simple {@link Fragment} subclass.
- */
+
 public class Fragment_Motor_Insurance extends Fragment implements AdapterView.OnItemSelectedListener, NumberPicker.OnValueChangeListener {
 
     EditText yearDatePicker;
     EditText startDatePicker;
+    EditText registrationEditText;
+    EditText carValueEditText;
     Spinner carUseSpinner;
     Spinner carClassSpinner;
     Spinner carModelSpinner;
     Spinner carMakeSpinner;
     TextView registrationText;
     ConstraintLayout constraintLayout;
-    ArrayList<String> carMakes = new ArrayList<String>();
+    ArrayList<String> carMakes = new ArrayList<>();
     Map<String, ArrayList<String>> cars = new HashMap<>();
     MyTextView_SF_Pro_Display_Medium getQuoteBtn;
 
@@ -92,6 +94,8 @@ public class Fragment_Motor_Insurance extends Fragment implements AdapterView.On
         carModelSpinner = view.findViewById(R.id.carModelSpinner);
         carMakeSpinner = view.findViewById(R.id.carMakeSpinner);
         registrationText = view.findViewById(R.id.registrationText);
+        registrationEditText = view.findViewById(R.id.registrationEditText);
+        carValueEditText = view.findViewById(R.id.carValueEditText);
         constraintLayout = view.findViewById(R.id.motorConstraintLayout);
         startDatePicker = view.findViewById(R.id.startDateDatePicker);
         getQuoteBtn = view.findViewById(R.id.get_quote);
@@ -168,9 +172,72 @@ public class Fragment_Motor_Insurance extends Fragment implements AdapterView.On
     }
 
     private void getQuote() {
-        Intent intent = new Intent(getActivity(), MotorResultActivity.class);
-        startActivity(intent);
+        //Basic Authentication
+        if(carClassSpinner.getSelectedItem().toString().equalsIgnoreCase("Select a Car Class")) {
+            carClassSpinner.requestFocus();
+            Toast.makeText(getActivity(), "Please select a car class", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
+        if(carUseSpinner.getVisibility() == View.VISIBLE) {
+            if(carUseSpinner.getSelectedItem().toString().equalsIgnoreCase("Select Car Use")) {
+                carUseSpinner.requestFocus();
+                Toast.makeText(getActivity(), "Please select a car Use", Toast.LENGTH_SHORT).show();
+                return;
+            }
+        }
+
+        if(registrationEditText.getText().toString().trim().equals("")) {
+            registrationEditText.requestFocus();
+            registrationEditText.setError("Please fill in the registration number");
+            return;
+        }
+
+        if(carValueEditText.getText().toString().trim().equals("")) {
+            carValueEditText.requestFocus();
+            carValueEditText.setError("Please fill in the value of the car");
+            return;
+        }
+
+        if(carMakeSpinner.getSelectedItem().toString().equalsIgnoreCase("Select Car Make")) {
+            carMakeSpinner.requestFocus();
+            Toast.makeText(getActivity(), "Please select a car Make", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        if(carModelSpinner.getSelectedItem().toString().equalsIgnoreCase("Select a Car Model")) {
+            carModelSpinner.requestFocus();
+            Toast.makeText(getActivity(), "Please select a car Make", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        if(yearDatePicker.getText().toString().trim().equals("")) {
+            yearDatePicker.setError("Please fill in the year of manufacture");
+            return;
+        }
+
+        if(startDatePicker.getText().toString().trim().equals("")) {
+            startDatePicker.setError("Please fill in the start date");
+            return;
+        }
+
+        String carClass = carClassSpinner.getSelectedItem().toString();
+        String carUse = carUseSpinner.getVisibility() == View.VISIBLE ? carUseSpinner.getSelectedItem().toString() : " ";
+        String registration = registrationEditText.getText().toString();
+        String carValue = carValueEditText.getText().toString();
+        String manufactureYear = yearDatePicker.getText().toString();
+        String startYear = startDatePicker.getText().toString();
+
+        Intent intent = new Intent(getActivity(), MotorResultActivity.class);
+
+        intent.putExtra("CAR_CLASS", carClass);
+        intent.putExtra("CAR_USE", carUse);
+        intent.putExtra("CAR_REGISTRATION", registration);
+        intent.putExtra("CAR_VALUE", carValue);
+        intent.putExtra("CAR_MANUFACTURE_YEAR", manufactureYear);
+        intent.putExtra("INSURANCE_START_YEAR", startYear);
+
+        startActivity(intent);
     }
 
     public void populateCarMakesSpinner(JSONArray array, final Context context) {
@@ -182,7 +249,7 @@ public class Fragment_Motor_Insurance extends Fragment implements AdapterView.On
                 e.printStackTrace();
             }
         }
-        ArrayAdapter carMakeAdapter = new ArrayAdapter(context, android.R.layout.simple_spinner_item, carMakes);
+        ArrayAdapter<String> carMakeAdapter = new ArrayAdapter<>(context, android.R.layout.simple_spinner_item, carMakes);
         carMakeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         carMakeSpinner.setAdapter(carMakeAdapter);
 
@@ -246,7 +313,7 @@ public class Fragment_Motor_Insurance extends Fragment implements AdapterView.On
 
     private void populateCarsHashMap(JSONArray array, final Context context) {
         String current = "Select Car Make";
-        ArrayList<String> temp = new ArrayList<String>();
+        ArrayList<String> temp = new ArrayList<>();
         temp.add("Select a Car Model");
 
         for (int i = 0; i < array.length(); i++) {
@@ -257,12 +324,10 @@ public class Fragment_Motor_Insurance extends Fragment implements AdapterView.On
                 } else {
                     cars.put(current, temp);
 
-                    temp = new ArrayList<String>();
+                    temp = new ArrayList<>();
                     current = object.getString("car_make");
                     temp.add(object.getString("model"));
                 }
-
-
             } catch (JSONException e) {
                 e.printStackTrace();
             }
@@ -271,7 +336,7 @@ public class Fragment_Motor_Insurance extends Fragment implements AdapterView.On
         //To add the last element
         cars.put(current, temp);
 
-        ArrayAdapter carMakeAdapter = new ArrayAdapter(context, android.R.layout.simple_spinner_item, carMakes);
+        ArrayAdapter<String> carMakeAdapter = new ArrayAdapter<>(context, android.R.layout.simple_spinner_item, carMakes);
         carMakeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         carMakeSpinner.setAdapter(carMakeAdapter);
         carMakeSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -279,7 +344,7 @@ public class Fragment_Motor_Insurance extends Fragment implements AdapterView.On
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 String selectedCarMake = adapterView.getItemAtPosition(i).toString();
                 ArrayList<String> models = cars.get(selectedCarMake);
-                ArrayAdapter carModelAdapter = new ArrayAdapter(context, android.R.layout.simple_spinner_dropdown_item, models);
+                ArrayAdapter<String> carModelAdapter = new ArrayAdapter<>(context, android.R.layout.simple_spinner_dropdown_item, models);
                 carModelAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 try {
                     carModelSpinner.setAdapter(carModelAdapter);
@@ -315,18 +380,18 @@ public class Fragment_Motor_Insurance extends Fragment implements AdapterView.On
         } else {
             showCarUse();
             if(selectedCarClass.equalsIgnoreCase("commercial")) {
-                ArrayAdapter carUseAdapter = new ArrayAdapter(view.getContext(), android.R.layout.simple_spinner_item, commercialUses);
+                ArrayAdapter<String> carUseAdapter = new ArrayAdapter<>(view.getContext(), android.R.layout.simple_spinner_item, commercialUses);
                 carUseAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 carUseSpinner.setAdapter(carUseAdapter);
 
             } else if(selectedCarClass.equalsIgnoreCase("PSV")) {
-                ArrayAdapter carUseAdapter = new ArrayAdapter(view.getContext(), android.R.layout.simple_spinner_item, psvUses);
+                ArrayAdapter<String> carUseAdapter = new ArrayAdapter<>(view.getContext(), android.R.layout.simple_spinner_item, psvUses);
                 carUseAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 carUseSpinner.setAdapter(carUseAdapter);
             } else {
                 String[] selectUse = new String[1];
                 selectUse[0] = "Select Car Use";
-                ArrayAdapter carUseAdapter = new ArrayAdapter(view.getContext(), android.R.layout.simple_spinner_item, selectUse);
+                ArrayAdapter<String> carUseAdapter = new ArrayAdapter<>(view.getContext(), android.R.layout.simple_spinner_item, selectUse);
                 carUseAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 carUseSpinner.setAdapter(carUseAdapter);
             }
@@ -348,6 +413,6 @@ public class Fragment_Motor_Insurance extends Fragment implements AdapterView.On
     public void showNumberPicker() {
         NumberPickerDialogFragment newFragment = new NumberPickerDialogFragment();
         newFragment.setValueChangeListener(this);
-        newFragment.show(getActivity().getSupportFragmentManager(), "time picker");
+        newFragment.show(Objects.requireNonNull(getActivity()).getSupportFragmentManager(), "time picker");
     }
 }
