@@ -1,27 +1,22 @@
 package model;
 
-public class AvailableMotorInsuranceModel {
-    private Double price;
-    private Double windScreenPrice;
-    private Double radioPrice;
-    private Double excessProtectorPrice;
-    private Double PVTPrice;
-    private Double lossOfUseValue;
-    private Double carValue;
-    private String insuranceCompany;
+public interface AvailableMotorInsuranceModel {
+       String getPrice();
+       String getInsuranceName();
+       String getWindScreenValue();
+       String getRadioValue();
+       Boolean getExcessProtectorValue();
+       Boolean getPVTValue();
+       Boolean getLossOfUseValue();
+       Boolean getRoadRescueValue();
 
-    public AvailableMotorInsuranceModel(String insuranceCompany, Double carValue) {
-        this.insuranceCompany = insuranceCompany;
-        this.carValue = carValue;
-        this.price = 0.0;
-        this.radioPrice = 0.0;
-        this.excessProtectorPrice = 0.0;
-        this.PVTPrice = 0.0;
-        this.windScreenPrice = 0.0;
-        this.lossOfUseValue = 0.0;
-    }
+       void setExtras(
+               String windScreenValue,
+               String radioValue,
+               Boolean excessProtectorValue,
+               Boolean pvtValue,
+               Boolean lossOfUseValue,
+               Boolean roadRescueValue
+       );
 
-    public Double getPrice() {
-        return null;
-    }
 }
