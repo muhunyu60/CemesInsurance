@@ -1,22 +1,24 @@
 package model;
 
 public interface AvailableMotorInsuranceModel {
-       String getPrice();
+       double getPrice();
+       double getRadioValue();
+       double getWindScreenValue();
+
        String getInsuranceName();
-       String getWindScreenValue();
-       String getRadioValue();
-       Boolean getExcessProtectorValue();
-       Boolean getPVTValue();
-       Boolean getLossOfUseValue();
-       Boolean getRoadRescueValue();
+
+       Boolean includesExcessProtector();
+       Boolean includesLossOfUse();
+       Boolean includesPVT();
+       Boolean includesRoadRescue();
 
        void setExtras(
-               String windScreenValue,
-               String radioValue,
-               Boolean excessProtectorValue,
-               Boolean pvtValue,
-               Boolean lossOfUseValue,
-               Boolean roadRescueValue
+               double windScreenValue,
+               double radioValue,
+               Boolean includesExcessProtector,
+               Boolean includesPVT,
+               Boolean includeslossOfUse,
+               Boolean includesRoadRescue
        );
 
 }

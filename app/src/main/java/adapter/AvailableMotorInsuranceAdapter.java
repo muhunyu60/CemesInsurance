@@ -19,13 +19,19 @@ public class AvailableMotorInsuranceAdapter extends RecyclerView.Adapter<Availab
 
     public AvailableMotorInsuranceAdapter() {
         availableMotorInsuranceModels = new ArrayList<AvailableMotorInsuranceModel>();
-        availableMotorInsuranceModels.add(
-                new JubileeMotorModel(
-                        "0",
-                        "0",
-                        "1990",
-                        "private")
+        try {
+            availableMotorInsuranceModels.add(
+                    new JubileeMotorModel(
+                            0,
+                            1990,
+                            "private",
+                            "24/12/2020"
+                    )
             );
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
 
     public class AvailableMotorInsuranceViewHolder extends RecyclerView.ViewHolder{
