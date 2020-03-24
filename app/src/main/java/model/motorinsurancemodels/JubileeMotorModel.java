@@ -51,7 +51,7 @@ public class JubileeMotorModel implements AvailableMotorInsuranceModel {
 
     @Override
     public double getPrice() {
-        // TODO: Calculation of Price
+        calculatePrice();
         return insurancePrice;
     }
 
