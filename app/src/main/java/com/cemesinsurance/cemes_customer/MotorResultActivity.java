@@ -33,6 +33,11 @@ public class MotorResultActivity extends AppCompatActivity implements MotorExtra
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_motor_result);
 
+        String carValue = getIntent().getStringExtra("CAR_VALUE");
+        String carManufactureYear = getIntent().getStringExtra("CAR_MANUFACTURE_YEAR");
+        String carClass = getIntent().getStringExtra("CAR_CLASS");
+        String insuranceStartDate = getIntent().getStringExtra("INSURANCE_START_DATE");
+
         RecyclerView availableMotorInsurance = findViewById(R.id.availableMotorInsuranceRecycler);
         availableMotorInsurance.setLayoutManager(new LinearLayoutManager(this));
         availableMotorInsurance.setAdapter(new AvailableMotorInsuranceAdapter());

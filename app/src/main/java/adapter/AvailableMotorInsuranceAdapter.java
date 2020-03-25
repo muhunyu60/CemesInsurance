@@ -2,6 +2,7 @@ package adapter;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,8 +19,8 @@ public class AvailableMotorInsuranceAdapter extends RecyclerView.Adapter<Availab
     ArrayList<AvailableMotorInsuranceModel> availableMotorInsuranceModels;
 
     public AvailableMotorInsuranceAdapter() {
-        availableMotorInsuranceModels = new ArrayList<AvailableMotorInsuranceModel>();
-        try {
+        availableMotorInsuranceModels = new ArrayList<>();
+        Log.e("aMISize:", "In Constructor");
             availableMotorInsuranceModels.add(
                     new JubileeMotorModel(
                             0,
@@ -28,10 +29,6 @@ public class AvailableMotorInsuranceAdapter extends RecyclerView.Adapter<Availab
                             "24/12/2020"
                     )
             );
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
     }
 
     public class AvailableMotorInsuranceViewHolder extends RecyclerView.ViewHolder{

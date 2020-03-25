@@ -235,7 +235,7 @@ public class Fragment_Motor_Insurance extends Fragment implements AdapterView.On
         intent.putExtra("CAR_REGISTRATION", registration);
         intent.putExtra("CAR_VALUE", carValue);
         intent.putExtra("CAR_MANUFACTURE_YEAR", manufactureYear);
-        intent.putExtra("INSURANCE_START_YEAR", startYear);
+        intent.putExtra("INSURANCE_START_DATE", startYear);
 
         startActivity(intent);
     }

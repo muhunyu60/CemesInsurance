@@ -1,5 +1,6 @@
 package model.motorinsurancemodels;
 
+import java.text.ParsePosition;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -28,16 +29,16 @@ public class JubileeMotorModel implements AvailableMotorInsuranceModel {
     public static final int PVT_PRICE = 3750;
     public static final int EXCESS_PROTECTOR_PRICE = 3750;
 
-    public JubileeMotorModel(double carPrice, int carManufactureYear, String carClass, String insuranceStartDate) throws Exception {
+    public JubileeMotorModel(int carPrice, int carManufactureYear, String carClass, String insuranceStartDate) {
         this.insuranceName = "Jubilee";
         this.carPrice = carPrice;
         this.carManufactureYear = carManufactureYear;
         this.carClass = carClass;
-        this.insuranceStartDate = new SimpleDateFormat("dd/MM/yyyy").parse(insuranceStartDate);
+        this.insuranceStartDate = new SimpleDateFormat("dd/MM/yyyy").parse(insuranceStartDate, new ParsePosition(0));
 
         setExtras(
-                0,
-                0,
+                0.0,
+                0.0,
                 false,
                 false,
                 false,
@@ -98,7 +99,7 @@ public class JubileeMotorModel implements AvailableMotorInsuranceModel {
         this.includesPoliticalViolenceAndTerrorism = includesPVT;
         this.includesLossOfUse = includeslossOfUse;
         this.includesRoadRescue = includesRoadRescue;
-        calculatePrice();
+//        calculatePrice();
     }
 
     public double getWindScreenPrice() {
