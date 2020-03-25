@@ -29,13 +29,14 @@ public class JubileeMotorModel implements AvailableMotorInsuranceModel {
     public static final int PVT_PRICE = 3750;
     public static final int EXCESS_PROTECTOR_PRICE = 3750;
 
-    public JubileeMotorModel(int carPrice, int carManufactureYear, String carClass, String insuranceStartDate) {
+    public JubileeMotorModel(double carPrice, int carManufactureYear, String carClass, String insuranceStartDate, String carUse) {
         this.insuranceName = "Jubilee";
         this.carPrice = carPrice;
         this.carManufactureYear = carManufactureYear;
         this.carClass = carClass;
-        this.insuranceStartDate = new SimpleDateFormat("dd/MM/yyyy").parse(insuranceStartDate, new ParsePosition(0));
-
+        this.insuranceStartDate = new SimpleDateFormat("yyyy/MM/dd").parse(insuranceStartDate, new ParsePosition(0));
+        this.carUse = carUse;
+        this.carUse = "private";
         setExtras(
                 0.0,
                 0.0,
@@ -99,7 +100,7 @@ public class JubileeMotorModel implements AvailableMotorInsuranceModel {
         this.includesPoliticalViolenceAndTerrorism = includesPVT;
         this.includesLossOfUse = includeslossOfUse;
         this.includesRoadRescue = includesRoadRescue;
-//        calculatePrice();
+        calculatePrice();
     }
 
     public double getWindScreenPrice() {
@@ -123,7 +124,7 @@ public class JubileeMotorModel implements AvailableMotorInsuranceModel {
         int startYear = calendar.get(Calendar.YEAR);
         int period = startYear - carManufactureYear;
 
-        if (carUse.toLowerCase().equals("private")) {
+        if (carUse.toLowerCase().equalsIgnoreCase("private")) {
             // Set the car rate based on the age of the car before the start of the insurance date
             if(carPrice < 500000.00) {
                 rate = 0.075;

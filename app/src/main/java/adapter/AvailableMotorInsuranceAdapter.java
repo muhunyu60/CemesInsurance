@@ -18,17 +18,17 @@ import model.motorinsurancemodels.JubileeMotorModel;
 public class AvailableMotorInsuranceAdapter extends RecyclerView.Adapter<AvailableMotorInsuranceAdapter.AvailableMotorInsuranceViewHolder> {
     ArrayList<AvailableMotorInsuranceModel> availableMotorInsuranceModels;
 
-    public AvailableMotorInsuranceAdapter() {
+    public AvailableMotorInsuranceAdapter(double carPrice, int carManufactureYear, String carClass, String insuranceStartDate, String carUse) {
         availableMotorInsuranceModels = new ArrayList<>();
-        Log.e("aMISize:", "In Constructor");
-            availableMotorInsuranceModels.add(
-                    new JubileeMotorModel(
-                            0,
-                            1990,
-                            "private",
-                            "24/12/2020"
-                    )
-            );
+        availableMotorInsuranceModels.add(
+                new JubileeMotorModel(
+                        carPrice,
+                        carManufactureYear,
+                        carClass,
+                        insuranceStartDate,
+                        carUse
+                )
+        );
     }
 
     public class AvailableMotorInsuranceViewHolder extends RecyclerView.ViewHolder{
@@ -39,6 +39,7 @@ public class AvailableMotorInsuranceAdapter extends RecyclerView.Adapter<Availab
         public TextView excessProtector;
         public TextView PVT;
         public TextView lossOfValue;
+        public TextView roadRescue;
 
         public AvailableMotorInsuranceViewHolder(View itemView) {
             super(itemView);
@@ -49,6 +50,7 @@ public class AvailableMotorInsuranceAdapter extends RecyclerView.Adapter<Availab
             excessProtector = itemView.findViewById(R.id.textViewExcessProtectorValue);
             PVT = itemView.findViewById(R.id.textViewPVTValue);
             lossOfValue = itemView.findViewById(R.id.textViewLossOfUseValue);
+            roadRescue = itemView.findViewById(R.id.textViewRoadRescueValue);
         }
     }
 
@@ -62,18 +64,55 @@ public class AvailableMotorInsuranceAdapter extends RecyclerView.Adapter<Availab
 
     @Override
     public void onBindViewHolder(@NonNull AvailableMotorInsuranceViewHolder holder, int position) {
-        holder.insuranceTitle.setText("Insurance Company");
-        holder.lossOfValue.setText("0");
-        holder.excessProtector.setText("0");
-        holder.windScreen.setText("0");
-        holder.price.setText("0");
-        holder.radio.setText("0");
-        holder.PVT.setText("0");
+        AvailableMotorInsuranceModel model = availableMotorInsuranceModels.get(position);
+
+        holder.insuranceTitle.setText(model.getInsuranceName());
+        if(model.includesLossOfUse()) {
+            holder.lossOfValue.setText(String.valueOf(JubileeMotorModel.EXCESS_PROTECTOR_PRICE));
+        } else {
+            holder.lossOfValue.setText("0");
+        }
+
+        if(model.includesExcessProtector()) {
+            holder.excessProtector.setText(String.valueOf(JubileeMotorModel.EXCESS_PROTECTOR_PRICE));
+        } else {
+            holder.excessProtector.setText("0");
+        }
+
+        if(model.includesPVT()) {
+            holder.PVT.setText(String.valueOf(JubileeMotorModel.PVT_PRICE));
+        } else {
+            holder.PVT.setText("0");
+        }
+
+        if(model.includesRoadRescue()) {
+            holder.roadRescue.setText(String.valueOf(JubileeMotorModel.ROAD_RESCUE_PRICE));
+        } else {
+            holder.roadRescue.setText("0");
+        }
+
+        holder.windScreen.setText(String.valueOf(model.getWindScreenValue()));
+        holder.radio.setText(String.valueOf(model.getRadioValue()));
+        holder.price.setText(String.valueOf(model.getPrice()));
     }
 
     @Override
     public int getItemCount() {
         return availableMotorInsuranceModels.size();
+    }
+
+    public void setExtras(Double windScreenValue, Double radioValue, Boolean includesExcessProtector, Boolean includesPVT, Boolean includesLossOfUse, Boolean includesRoadRescue) {
+        for (AvailableMotorInsuranceModel model : availableMotorInsuranceModels) {
+            model.setExtras(
+                    windScreenValue,
+                    radioValue,
+                    includesExcessProtector,
+                    includesPVT,
+                    includesLossOfUse,
+                    includesRoadRescue
+            );
+        }
+        notifyDataSetChanged();
     }
 
 }

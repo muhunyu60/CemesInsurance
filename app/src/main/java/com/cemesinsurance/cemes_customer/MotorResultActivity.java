@@ -28,6 +28,8 @@ public class MotorResultActivity extends AppCompatActivity implements MotorExtra
     String roadRescueValue = "0";
     String lossOfUseValue = "0";
 
+    AvailableMotorInsuranceAdapter motorInsuranceAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,10 +39,18 @@ public class MotorResultActivity extends AppCompatActivity implements MotorExtra
         String carManufactureYear = getIntent().getStringExtra("CAR_MANUFACTURE_YEAR");
         String carClass = getIntent().getStringExtra("CAR_CLASS");
         String insuranceStartDate = getIntent().getStringExtra("INSURANCE_START_DATE");
+        String carUse = getIntent().getStringExtra("CAR_USE");
 
         RecyclerView availableMotorInsurance = findViewById(R.id.availableMotorInsuranceRecycler);
         availableMotorInsurance.setLayoutManager(new LinearLayoutManager(this));
-        availableMotorInsurance.setAdapter(new AvailableMotorInsuranceAdapter());
+        motorInsuranceAdapter = new AvailableMotorInsuranceAdapter(
+                Double.parseDouble(carValue),
+                Integer.parseInt(carManufactureYear),
+                carClass,
+                insuranceStartDate,
+                carUse
+        );
+        availableMotorInsurance.setAdapter(motorInsuranceAdapter);
 
         extraOptionsCardView = findViewById(R.id.additionalOptionsCardView);
         extraOptionsCardView.setOnClickListener(new View.OnClickListener() {
@@ -81,7 +91,16 @@ public class MotorResultActivity extends AppCompatActivity implements MotorExtra
         excessProtectorValue = excessProtector ? "yes" : "no";
         PVTValue = politicalViolenceAndTerrorism ? "yes" : "no";
         lossOfUseValue = lossOfUse ? "yes" : "no";
-        roadRescueValue = lossOfUse ? "yes" : "no";
+        roadRescueValue = roadRescue ? "yes" : "no";
         setTextViewValues();
+
+        motorInsuranceAdapter.setExtras(
+                Double.parseDouble(windscreenValue),
+                Double.parseDouble(radioValue),
+                excessProtector,
+                politicalViolenceAndTerrorism,
+                lossOfUse,
+                roadRescue
+        );
     }
 }
