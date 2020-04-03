@@ -3,6 +3,7 @@ package fragment;
 
 import android.app.DatePickerDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -18,7 +19,9 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.cemesinsurance.cemes_customer.HealthResult;
 import com.cemesinsurance.cemes_customer.R;
 
 import java.util.Calendar;
@@ -38,6 +41,8 @@ public class Fragment_Medical_Insurance extends Fragment {
     RadioButton noInsureSpouseRadioButton;
     RadioButton familyRadioButton;
     RadioButton singleRadioButton;
+    RadioButton yesExistingConditionRadioButton;
+    RadioButton noExistingConditionRadioButton;
 
     public Fragment_Medical_Insurance() {
         // Required empty public constructor
@@ -65,6 +70,8 @@ public class Fragment_Medical_Insurance extends Fragment {
         noInsureSpouseRadioButton = view.findViewById(R.id.noInsureSpouseRadioBtn);
         familyRadioButton = view.findViewById(R.id.familyRadioBtn);
         singleRadioButton = view.findViewById(R.id.singleRadioBtn);
+        yesExistingConditionRadioButton = view.findViewById(R.id.yesConditionRadioBtn);
+        noExistingConditionRadioButton = view.findViewById(R.id.noConditionRadioBtn);
 
         // Set up Spinner
         ArrayAdapter<CharSequence>  coverLimitsAdapter = ArrayAdapter.createFromResource(view.getContext(), R.array.cover_limits, android.R.layout.simple_spinner_item);
@@ -211,5 +218,68 @@ public class Fragment_Medical_Insurance extends Fragment {
         showFamilyOptionsWithoutSpouse();
         spouseDateOfBirthTextView.setVisibility(View.VISIBLE);
         spouseDateOfBirthEditText.setVisibility(View.VISIBLE);
+    }
+
+    public void openAvailableMedicalInsuranceResult() {
+        if(coverLimitSpinner.getSelectedItem().toString().equalsIgnoreCase("Select a Cover Limit")) {
+            coverLimitSpinner.requestFocus();
+            Toast.makeText(getContext(), "Please fill in the cover limit", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        if (applicantDateOfBirthEditText.getText().toString().trim().equals("")) {
+           applicantDateOfBirthEditText.requestFocus();
+           applicantDateOfBirthEditText.setError("Please enter your birth date");
+           return;
+        }
+
+        String coverLimit = coverLimitSpinner.getSelectedItem().toString();
+        String applicantDateOfBirth = applicantDateOfBirthEditText.getText().toString();
+        Boolean hasPreExistingCondition = yesExistingConditionRadioButton.isChecked();
+
+        if(insureSpouseTextView.getVisibility() == View.GONE) {
+           Intent intent = new Intent(getActivity(), HealthResult.class);
+           intent.putExtra("COVER_LIMIT", coverLimit);
+           intent.putExtra("APPLICANT_DOB", applicantDateOfBirth);
+           intent.putExtra("HAS_PREEXISTING_CONDITION", hasPreExistingCondition);
+           intent.putExtra("INSURE_SPOUSE", false);
+           startActivity(intent);
+           return;
+        }
+
+        String numberOfChildren = numberOfChildrenEditText.getText().toString();
+
+        if(numberOfChildren.trim().equals("")) {
+           numberOfChildrenEditText.setError("Fill in the number of Children");
+           numberOfChildrenEditText.requestFocus();
+           return;
+        }
+
+        if(spouseDateOfBirthEditText.getVisibility() == View.GONE) {
+           Intent intent = new Intent(getActivity(), HealthResult.class);
+           intent.putExtra("COVER_LIMIT", coverLimit);
+           intent.putExtra("APPLICANT_DOB", applicantDateOfBirth);
+           intent.putExtra("HAS_PREEXISTING_CONDITION", hasPreExistingCondition);
+           intent.putExtra("NUMBER_OF_CHILDREN", numberOfChildren);
+           intent.putExtra("INSURE_SPOUSE", false);
+           startActivity(intent);
+           return;
+        }
+
+        if(spouseDateOfBirthEditText.getText().toString().trim().equals("")) {
+            spouseDateOfBirthEditText.requestFocus();
+            spouseDateOfBirthEditText.setError("Please fill in your spouse date of birth");
+            return;
+        }
+
+        Intent intent = new Intent(getActivity(), HealthResult.class);
+        intent.putExtra("COVER_LIMIT", coverLimit);
+        intent.putExtra("APPLICANT_DOB", applicantDateOfBirth);
+        intent.putExtra("HAS_PREEXISTING_CONDITION", hasPreExistingCondition);
+        intent.putExtra("NUMBER_OF_CHILDREN", numberOfChildren);
+        intent.putExtra("SPOUSE_DOB", spouseDateOfBirthEditText.getText().toString());
+        intent.putExtra("INSURE_SPOUSE", true);
+        startActivity(intent);
+
     }
 }
