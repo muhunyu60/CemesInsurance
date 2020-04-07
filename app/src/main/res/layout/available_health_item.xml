@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" 
+    android:layout_height="wrap_content"
+    android:padding="8dp">
+    
+    <TextView
+        android:id="@+id/insuranceNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Insurance Title"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+    
+    <TextView
+        android:id="@+id/insurancePrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Price"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/insurancePrice"
+        android:text="Additional Benefits"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:layout_marginTop="10dp"/>
+
+</RelativeLayout>
