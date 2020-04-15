@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.cemesinsurance.cemes_customer.R;
 
+import java.text.NumberFormat;
 import java.util.ArrayList;
 
 import model.AvailableMotorInsuranceModel;
@@ -93,7 +94,10 @@ public class AvailableMotorInsuranceAdapter extends RecyclerView.Adapter<Availab
 
         holder.windScreen.setText(String.valueOf(model.getWindScreenValue()));
         holder.radio.setText(String.valueOf(model.getRadioValue()));
-        holder.price.setText(String.valueOf(model.getPrice()));
+
+        int premium = model.getPrice();
+        NumberFormat nf = NumberFormat.getInstance();
+        holder.price.setText(nf.format(premium));
     }
 
     @Override

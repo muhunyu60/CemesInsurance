@@ -1,7 +1,8 @@
 package model;
 
 public interface AvailableMotorInsuranceModel {
-       double getPrice();
+       int getPrice();
+
        double getRadioValue();
        double getWindScreenValue();
 
