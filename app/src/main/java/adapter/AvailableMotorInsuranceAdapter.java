@@ -68,35 +68,35 @@ public class AvailableMotorInsuranceAdapter extends RecyclerView.Adapter<Availab
         AvailableMotorInsuranceModel model = availableMotorInsuranceModels.get(position);
 
         holder.insuranceTitle.setText(model.getInsuranceName());
+        NumberFormat nf = NumberFormat.getInstance();
         if(model.includesLossOfUse()) {
-            holder.lossOfValue.setText(String.valueOf(JubileeMotorModel.EXCESS_PROTECTOR_PRICE));
+            holder.lossOfValue.setText(nf.format(JubileeMotorModel.EXCESS_PROTECTOR_PRICE));
         } else {
             holder.lossOfValue.setText("0");
         }
 
         if(model.includesExcessProtector()) {
-            holder.excessProtector.setText(String.valueOf(JubileeMotorModel.EXCESS_PROTECTOR_PRICE));
+            holder.excessProtector.setText(nf.format(JubileeMotorModel.EXCESS_PROTECTOR_PRICE));
         } else {
             holder.excessProtector.setText("0");
         }
 
         if(model.includesPVT()) {
-            holder.PVT.setText(String.valueOf(JubileeMotorModel.PVT_PRICE));
+            holder.PVT.setText(JubileeMotorModel.PVT_PRICE);
         } else {
             holder.PVT.setText("0");
         }
 
         if(model.includesRoadRescue()) {
-            holder.roadRescue.setText(String.valueOf(JubileeMotorModel.ROAD_RESCUE_PRICE));
+            holder.roadRescue.setText(nf.format(JubileeMotorModel.ROAD_RESCUE_PRICE));
         } else {
             holder.roadRescue.setText("0");
         }
 
-        holder.windScreen.setText(String.valueOf(model.getWindScreenValue()));
-        holder.radio.setText(String.valueOf(model.getRadioValue()));
+        holder.windScreen.setText(nf.format(model.getWindScreenValue()));
+        holder.radio.setText(nf.format(model.getRadioValue()));
 
         int premium = model.getPrice();
-        NumberFormat nf = NumberFormat.getInstance();
         holder.price.setText(nf.format(premium));
     }
 
