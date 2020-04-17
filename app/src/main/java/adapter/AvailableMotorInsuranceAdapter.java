@@ -70,25 +70,25 @@ public class AvailableMotorInsuranceAdapter extends RecyclerView.Adapter<Availab
         holder.insuranceTitle.setText(model.getInsuranceName());
         NumberFormat nf = NumberFormat.getInstance();
         if(model.includesLossOfUse()) {
-            holder.lossOfValue.setText(nf.format(JubileeMotorModel.EXCESS_PROTECTOR_PRICE));
+            holder.lossOfValue.setText(nf.format((double) JubileeMotorModel.EXCESS_PROTECTOR_PRICE));
         } else {
             holder.lossOfValue.setText("0");
         }
 
         if(model.includesExcessProtector()) {
-            holder.excessProtector.setText(nf.format(JubileeMotorModel.EXCESS_PROTECTOR_PRICE));
+            holder.excessProtector.setText(nf.format((double) JubileeMotorModel.EXCESS_PROTECTOR_PRICE));
         } else {
             holder.excessProtector.setText("0");
         }
 
         if(model.includesPVT()) {
-            holder.PVT.setText(JubileeMotorModel.PVT_PRICE);
+            holder.PVT.setText((JubileeMotorModel.PVT_PRICE));
         } else {
             holder.PVT.setText("0");
         }
 
         if(model.includesRoadRescue()) {
-            holder.roadRescue.setText(nf.format(JubileeMotorModel.ROAD_RESCUE_PRICE));
+            holder.roadRescue.setText(nf.format((double) JubileeMotorModel.ROAD_RESCUE_PRICE));
         } else {
             holder.roadRescue.setText("0");
         }
@@ -97,7 +97,7 @@ public class AvailableMotorInsuranceAdapter extends RecyclerView.Adapter<Availab
         holder.radio.setText(nf.format(model.getRadioValue()));
 
         int premium = model.getPrice();
-        holder.price.setText(nf.format(premium));
+        holder.price.setText(nf.format((double) premium));
     }
 
     @Override

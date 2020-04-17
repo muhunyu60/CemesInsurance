@@ -54,7 +54,7 @@ public class JubileeMotorModel implements AvailableMotorInsuranceModel {
     @Override
     public int getPrice() {
         calculatePrice();
-        return Integer.parseInt(String.valueOf(insurancePrice));
+        return Integer.parseInt(String.valueOf((int) insurancePrice));
     }
 
     @Override

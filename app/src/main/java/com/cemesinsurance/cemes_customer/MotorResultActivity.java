@@ -36,6 +36,9 @@ public class MotorResultActivity extends AppCompatActivity implements MotorExtra
         setContentView(R.layout.activity_motor_result);
 
         String carValue = getIntent().getStringExtra("CAR_VALUE");
+        // To Prevent a crash from a numberFormatException
+        carValue = carValue.replaceAll(",", "");
+
         String carManufactureYear = getIntent().getStringExtra("CAR_MANUFACTURE_YEAR");
         String carClass = getIntent().getStringExtra("CAR_CLASS");
         String insuranceStartDate = getIntent().getStringExtra("INSURANCE_START_DATE");

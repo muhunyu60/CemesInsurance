@@ -7,7 +7,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
 import android.support.v4.app.Fragment;
+import android.text.Editable;
 import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -30,6 +32,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
@@ -99,6 +102,42 @@ public class Fragment_Motor_Insurance extends Fragment implements AdapterView.On
         constraintLayout = view.findViewById(R.id.motorConstraintLayout);
         startDatePicker = view.findViewById(R.id.startDateDatePicker);
         getQuoteBtn = view.findViewById(R.id.get_quote);
+
+        //Format the number of the car value to be comma separated as it is being typed
+        carValueEditText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                carValueEditText.removeTextChangedListener(this);
+                try {
+                    String carValueText = carValueEditText.getText().toString();
+                    if(carValueText.trim().length() != 0) {
+                        carValueText.replace('.', ',');
+                        carValueText = carValueText.replaceAll(",", "");
+                        Double carValue = Double.parseDouble(carValueText);
+                        NumberFormat nf = NumberFormat.getInstance();
+
+                        carValueText = nf.format(carValue);
+                        carValueEditText.setText(carValueText);
+                        carValueEditText.setSelection(carValueEditText.getText().toString().length());
+                    }
+                } catch (Exception e) {
+                    Log.e("carValueException", e.toString());
+                    e.printStackTrace();
+                    carValueEditText.addTextChangedListener(this);
+                }
+                carValueEditText.addTextChangedListener(this);
+            }
+        });
 
         startDatePicker.setOnClickListener(new View.OnClickListener() {
             @Override
