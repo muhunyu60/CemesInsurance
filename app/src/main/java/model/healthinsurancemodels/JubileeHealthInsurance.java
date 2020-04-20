@@ -53,8 +53,6 @@ public class JubileeHealthInsurance implements AvailableHealthInsuranceInterface
 
     @Override
     public int getPrice() {
-        Calendar calendar = Calendar.getInstance();
-
         int applicantAge = getAge(applicantDOB);
         int applicantPremium = 0;
 
@@ -88,7 +86,7 @@ public class JubileeHealthInsurance implements AvailableHealthInsuranceInterface
                     }
                 }
 
-                // If children are ensured, multiply the rate per child by the number of children
+                // If children are insured, multiply the rate per child by the number of children
                 // Then add it to the premium
                 if(isFamilyInsured) {
                     applicantPremium += numberOfChildren*8200;
@@ -125,7 +123,7 @@ public class JubileeHealthInsurance implements AvailableHealthInsuranceInterface
                     }
                 }
 
-                // If children are ensured, multiply the rate per child by the number of children
+                // If children are insured, multiply the rate per child by the number of children
                 // Then add it to the premium
                 if(isFamilyInsured) {
                     applicantPremium += numberOfChildren*11500;
@@ -162,7 +160,7 @@ public class JubileeHealthInsurance implements AvailableHealthInsuranceInterface
                     }
                 }
 
-                // If children are ensured, multiply the rate per child by the number of children
+                // If children are insured, multiply the rate per child by the number of children
                 // Then add it to the premium
                 if(isFamilyInsured) {
                     applicantPremium += numberOfChildren*14000;
@@ -198,7 +196,7 @@ public class JubileeHealthInsurance implements AvailableHealthInsuranceInterface
                     }
                 }
 
-                // If children are ensured, multiply the rate per child by the number of children
+                // If children are insured, multiply the rate per child by the number of children
                 // Then add it to the premium
                 if(isFamilyInsured) {
                     applicantPremium += numberOfChildren*17300;
