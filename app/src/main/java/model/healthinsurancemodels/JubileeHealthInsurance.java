@@ -204,12 +204,42 @@ public class JubileeHealthInsurance implements AvailableHealthInsuranceInterface
 
                 // TODO: Update Calculation after extras
                 break;
-            case "up to 5,000,000":
-                // TODO: Update Calculation
-                break;
             default:
-                // TODO: Update Calculation
-                break;
+                if(applicantAge <= 30) {
+                    applicantPremium = 35000;
+                } else if(applicantAge <= 40) {
+                    applicantPremium = 37000;
+                } else if(applicantAge <= 50) {
+                    applicantPremium = 45410;
+                } else if(applicantAge <= 59) {
+                    applicantPremium = 57420;
+                } else {
+                    applicantPremium = 63162;
+                }
+
+                //If spouse is insured, add the calculations
+                if(isSpouseInsured) {
+                    int spouseAge = getAge(spouseDOB);
+                    if(spouseAge<=30) {
+                        applicantPremium += 31000;
+                    } else if(spouseAge <= 40) {
+                        applicantPremium += 32000;
+                    } else if(spouseAge <= 50) {
+                        applicantPremium += 38095;
+                    } else if(spouseAge <= 59) {
+                        applicantPremium += 48240;
+                    } else {
+                        applicantPremium += 53064;
+                    }
+                }
+
+                // If children are insured, multiply the rate per child by the number of children
+                // Then add it to the premium
+                if(isFamilyInsured) {
+                    applicantPremium += numberOfChildren*20000;
+                }
+
+                // TODO: Update Calculation after extras
         }
         return applicantPremium;
     }
