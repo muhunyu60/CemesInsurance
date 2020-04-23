@@ -18,13 +18,15 @@ public class JubileeHealthInsurance implements AvailableHealthInsuranceInterface
     private Boolean isSpouseInsured = false;
     private Boolean hasPreexistingCondition;
 
-    JubileeHealthInsurance(String coverLimit, String applicantDOB, Boolean hasPreexistingCondition) {
+    // Applicant Only
+    public JubileeHealthInsurance(String coverLimit, String applicantDOB, Boolean hasPreexistingCondition) {
         this.coverLimit = coverLimit;
         this.applicantDOB = applicantDOB;
         this.hasPreexistingCondition = hasPreexistingCondition;
     }
 
-    JubileeHealthInsurance(String coverLimit, String applicantDOB, String spouseDOB, Boolean hasPreexistingCondition) {
+    // Applicant and Spouse
+    public JubileeHealthInsurance(String coverLimit, String applicantDOB, String spouseDOB, Boolean hasPreexistingCondition) {
         this.coverLimit = coverLimit;
         this.applicantDOB = applicantDOB;
         this.spouseDOB = spouseDOB;
@@ -34,7 +36,19 @@ public class JubileeHealthInsurance implements AvailableHealthInsuranceInterface
         this.hasPreexistingCondition = hasPreexistingCondition;
     }
 
-    JubileeHealthInsurance(String coverLimit, String applicantDOB, String spouseDOB, int numberOfChildren, Boolean hasPreexistingCondition) {
+    // Applicant and Kids
+    public JubileeHealthInsurance(String coverLimit, String applicantDOB, int numberOfChildren, Boolean hasPreexistingCondition) {
+        this.coverLimit = coverLimit;
+        this.applicantDOB = applicantDOB;
+        this.numberOfChildren = numberOfChildren;
+        isFamilyInsured = true;
+
+        //If any family member has a preexisting condition
+        this.hasPreexistingCondition = hasPreexistingCondition;
+    }
+
+    // Applicant, Spouse and Kids
+    public JubileeHealthInsurance(String coverLimit, String applicantDOB, String spouseDOB, int numberOfChildren, Boolean hasPreexistingCondition) {
         this.coverLimit = coverLimit;
         this.applicantDOB = applicantDOB;
         this.spouseDOB = spouseDOB;
