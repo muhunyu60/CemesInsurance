@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.cemesinsurance.cemes_customer.R;
 
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -64,11 +65,16 @@ public class AvailableHealthInsuranceAdapter extends RecyclerView.Adapter<Availa
     @Override
     public void onBindViewHolder(@NonNull AvailableHealthInsuranceHolder holder, int position) {
 
+        String price = NumberFormat.getInstance().format(healthProviders.get(position).getPrice());
+        String name = healthProviders.get(position).getInsuranceProviderName();
+
+        holder.insurancePriceTextView.setText(price);
+        holder.insuranceNameTextView.setText(name);
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return healthProviders.size();
     }
 
     public class AvailableHealthInsuranceHolder extends RecyclerView.ViewHolder {
@@ -78,6 +84,8 @@ public class AvailableHealthInsuranceAdapter extends RecyclerView.Adapter<Availa
 
         public AvailableHealthInsuranceHolder(View itemView) {
             super(itemView);
+            insuranceNameTextView = itemView.findViewById(R.id.insuranceNameTextView);
+            insurancePriceTextView = itemView.findViewById(R.id.insurancePrice);
         }
     }
 }
