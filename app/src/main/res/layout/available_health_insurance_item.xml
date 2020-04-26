@@ -1,32 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout 
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" 
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
     android:padding="8dp">
     
     <TextView
         android:id="@+id/insuranceNameTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Insurance Title"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+        tools:text="Insurance Title"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp" />
     
     <TextView
         android:id="@+id/insurancePrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Price"
+        tools:text="Price"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/colorPrimaryDark"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="10dp"/>
 
     <TextView
+        android:id="@+id/tapForBenefitsTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/insurancePrice"
-        android:text="Additional Benefits"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        android:text="@string/availablehealthitem_tap_for_benefit"
         android:textAppearance="@style/TextAppearance.AppCompat"
-        android:layout_marginTop="10dp"/>
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="@color/colorPrimaryDark"
+        android:layout_below="@id/tapForBenefitsTextView"
+        android:layout_marginTop="15dp" />
 
 </RelativeLayout>
