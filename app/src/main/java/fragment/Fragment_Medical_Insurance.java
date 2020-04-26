@@ -26,14 +26,16 @@ import com.cemesinsurance.cemes_customer.R;
 
 import java.util.Calendar;
 
+import customfonts.MyTextView_SF_Pro_Display_Medium;
+
 public class Fragment_Medical_Insurance extends Fragment {
-    RadioGroup applicantsRadioGroup;
     Spinner coverLimitSpinner;
     EditText applicantDateOfBirthEditText;
-    RadioGroup existingConditionRadioGroup;
-    RadioGroup insureSpouseRadioGroup;
     EditText spouseDateOfBirthEditText;
     EditText numberOfChildrenEditText;
+    RadioGroup applicantsRadioGroup;
+    RadioGroup existingConditionRadioGroup;
+    RadioGroup insureSpouseRadioGroup;
     TextView spouseDateOfBirthTextView;
     TextView insureSpouseTextView;
     TextView numberOfChildrenTextView;
@@ -43,6 +45,8 @@ public class Fragment_Medical_Insurance extends Fragment {
     RadioButton singleRadioButton;
     RadioButton yesExistingConditionRadioButton;
     RadioButton noExistingConditionRadioButton;
+    MyTextView_SF_Pro_Display_Medium getQuoteButton;
+
 
     public Fragment_Medical_Insurance() {
         // Required empty public constructor
@@ -72,6 +76,7 @@ public class Fragment_Medical_Insurance extends Fragment {
         singleRadioButton = view.findViewById(R.id.singleRadioBtn);
         yesExistingConditionRadioButton = view.findViewById(R.id.yesConditionRadioBtn);
         noExistingConditionRadioButton = view.findViewById(R.id.noConditionRadioBtn);
+        getQuoteButton = view.findViewById(R.id.get_quote);
 
         // Set up Spinner
         ArrayAdapter<CharSequence>  coverLimitsAdapter = ArrayAdapter.createFromResource(view.getContext(), R.array.cover_limits, android.R.layout.simple_spinner_item);
@@ -192,6 +197,14 @@ public class Fragment_Medical_Insurance extends Fragment {
             }
         });
 
+        // Set the OnClickListener for the button
+        getQuoteButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openAvailableMedicalInsuranceResult();
+            }
+        });
+
         // Initially only the options for a single applicant will be visible
         showOnlySingleOptions();
         return view;
@@ -237,12 +250,13 @@ public class Fragment_Medical_Insurance extends Fragment {
         String applicantDateOfBirth = applicantDateOfBirthEditText.getText().toString();
         Boolean hasPreExistingCondition = yesExistingConditionRadioButton.isChecked();
 
-        if(insureSpouseTextView.getVisibility() == View.GONE) {
+        if(insureSpouseTextView.getVisibility() == View.GONE ) {
            Intent intent = new Intent(getActivity(), HealthResult.class);
            intent.putExtra("COVER_LIMIT", coverLimit);
            intent.putExtra("APPLICANT_DOB", applicantDateOfBirth);
            intent.putExtra("HAS_PREEXISTING_CONDITION", hasPreExistingCondition);
            intent.putExtra("INSURE_SPOUSE", false);
+           intent.putExtra("INSURE_FAMILY", false);
            startActivity(intent);
            return;
         }
@@ -262,6 +276,7 @@ public class Fragment_Medical_Insurance extends Fragment {
            intent.putExtra("HAS_PREEXISTING_CONDITION", hasPreExistingCondition);
            intent.putExtra("NUMBER_OF_CHILDREN", numberOfChildren);
            intent.putExtra("INSURE_SPOUSE", false);
+            intent.putExtra("INSURE_FAMILY", true);
            startActivity(intent);
            return;
         }
@@ -279,6 +294,7 @@ public class Fragment_Medical_Insurance extends Fragment {
         intent.putExtra("NUMBER_OF_CHILDREN", numberOfChildren);
         intent.putExtra("SPOUSE_DOB", spouseDateOfBirthEditText.getText().toString());
         intent.putExtra("INSURE_SPOUSE", true);
+        intent.putExtra("INSURE_FAMILY", true);
         startActivity(intent);
 
     }
