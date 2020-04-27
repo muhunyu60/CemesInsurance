@@ -71,7 +71,7 @@ public class JubileeHealthInsurance implements AvailableHealthInsuranceInterface
         int applicantPremium = 0;
 
         switch (coverLimit) {
-            case "up to 500,000":
+            case "Up to 500,000":
                 if(applicantAge <= 30) {
                     applicantPremium = 17000;
                 } else if(applicantAge <= 40) {
@@ -108,7 +108,7 @@ public class JubileeHealthInsurance implements AvailableHealthInsuranceInterface
 
                 // TODO: Update Calculation After Extra Options
                 break;
-            case "up to 1,000,000":
+            case "Up to 1,000,000":
                 if(applicantAge <= 30) {
                     applicantPremium = 21200;
                 } else if(applicantAge <= 40) {
@@ -145,7 +145,7 @@ public class JubileeHealthInsurance implements AvailableHealthInsuranceInterface
 
                 // TODO: Update Calculation after adding extras
                 break;
-            case "up to 2,000,000":
+            case "Up to 2,000,000":
                 if(applicantAge <= 30) {
                     applicantPremium = 25000;
                 } else if(applicantAge <= 40) {
@@ -181,7 +181,7 @@ public class JubileeHealthInsurance implements AvailableHealthInsuranceInterface
                 }
                 // TODO: Update Calculation after extras
                 break;
-            case "up to 3,000,000":
+            case "Up to 3,000,000":
                 if(applicantAge <= 30) {
                     applicantPremium = 30000;
                 } else if(applicantAge <= 40) {
