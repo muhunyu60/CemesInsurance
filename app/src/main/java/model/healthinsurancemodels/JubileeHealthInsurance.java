@@ -1,9 +1,6 @@
 package model.healthinsurancemodels;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.HashMap;
 
 import model.AvailableHealthInsuranceInterface;
@@ -17,6 +14,12 @@ public class JubileeHealthInsurance implements AvailableHealthInsuranceInterface
     private Boolean isFamilyInsured = false;
     private Boolean isSpouseInsured = false;
     private Boolean hasPreexistingCondition;
+    private Boolean includesOutpatient = false;
+    private Boolean includesMaternity = false;
+    private Boolean includesDental = false;
+    private Boolean includesOptical = false;
+    private Boolean includesLastExpense = false;
+    private Boolean includesPersonalAccident = false;
 
     // Applicant Only
     public JubileeHealthInsurance(String coverLimit, String applicantDOB, Boolean hasPreexistingCondition) {
@@ -84,6 +87,22 @@ public class JubileeHealthInsurance implements AvailableHealthInsuranceInterface
                     applicantPremium = 30894;
                 }
 
+                if(includesDental) {
+                    applicantPremium += 2300;
+                }
+
+                if(includesOptical) {
+                    applicantPremium += 2300;
+                }
+
+                if(includesLastExpense) {
+                    applicantPremium += 900;
+                }
+
+                if(includesPersonalAccident) {
+                    applicantPremium += 500;
+                }
+
                 //If spouse is insured, add the calculations
                 if(isSpouseInsured) {
                     int spouseAge = getAge(spouseDOB);
@@ -98,15 +117,46 @@ public class JubileeHealthInsurance implements AvailableHealthInsuranceInterface
                     } else {
                         applicantPremium += 25960;
                     }
+
+                    if(includesDental) {
+                        applicantPremium += 2300;
+                    }
+
+                    if(includesOptical) {
+                        applicantPremium += 2300;
+                    }
+
+                    if(includesLastExpense) {
+                        applicantPremium += 900;
+                    }
+
+                    if(includesPersonalAccident) {
+                        applicantPremium += 500;
+                    }
                 }
 
                 // If children are insured, multiply the rate per child by the number of children
                 // Then add it to the premium
                 if(isFamilyInsured) {
                     applicantPremium += numberOfChildren*8200;
+
+                    if(includesDental) {
+                        applicantPremium += numberOfChildren*2300;
+                    }
+
+                    if(includesOptical) {
+                        applicantPremium += numberOfChildren*2300;
+                    }
+
+                    if(includesLastExpense) {
+                        applicantPremium += numberOfChildren*900;
+                    }
                 }
 
-                // TODO: Update Calculation After Extra Options
+                if(includesMaternity) {
+                    applicantPremium += 25700;
+                }
+
                 break;
             case "Up to 1,000,000":
                 if(applicantAge <= 30) {
@@ -255,6 +305,7 @@ public class JubileeHealthInsurance implements AvailableHealthInsuranceInterface
 
                 // TODO: Update Calculation after extras
         }
+
         return applicantPremium;
     }
 
@@ -279,5 +330,53 @@ public class JubileeHealthInsurance implements AvailableHealthInsuranceInterface
     @Override
     public void removeBenefit(String key) {
 
+    }
+
+    public Boolean getIncludesOutpatient() {
+        return includesOutpatient;
+    }
+
+    public void setIncludesOutpatient(Boolean includesOutpatient) {
+        this.includesOutpatient = includesOutpatient;
+    }
+
+    public Boolean getIncludesMaternity() {
+        return includesMaternity;
+    }
+
+    public void setIncludesMaternity(Boolean includesMaternity) {
+        this.includesMaternity = includesMaternity;
+    }
+
+    public Boolean getIncludesDental() {
+        return includesDental;
+    }
+
+    public void setIncludesDental(Boolean includesDental) {
+        this.includesDental = includesDental;
+    }
+
+    public Boolean getIncludesOptical() {
+        return includesOptical;
+    }
+
+    public void setIncludesOptical(Boolean includesOptical) {
+        this.includesOptical = includesOptical;
+    }
+
+    public Boolean getIncludesLastExpense() {
+        return includesLastExpense;
+    }
+
+    public void setIncludesLastExpense(Boolean includesLastExpense) {
+        this.includesLastExpense = includesLastExpense;
+    }
+
+    public Boolean getIncludesPersonalAccident() {
+        return includesPersonalAccident;
+    }
+
+    public void setIncludesPersonalAccident(Boolean includesPersonalAccident) {
+        this.includesPersonalAccident = includesPersonalAccident;
     }
 }
