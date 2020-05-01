@@ -339,6 +339,22 @@ public class JubileeHealthInsurance implements AvailableHealthInsuranceInterface
                     applicantPremium = 54747;
                 }
 
+                if(includesDental) {
+                    applicantPremium += 9100;
+                }
+
+                if(includesOptical) {
+                    applicantPremium += 9100;
+                }
+
+                if(includesLastExpense) {
+                    applicantPremium += 1800;
+                }
+
+                if(includesPersonalAccident) {
+                    applicantPremium += 500;
+                }
+
                 //If spouse is insured, add the calculations
                 if(isSpouseInsured) {
                     int spouseAge = getAge(spouseDOB);
@@ -353,15 +369,42 @@ public class JubileeHealthInsurance implements AvailableHealthInsuranceInterface
                     } else {
                         applicantPremium += 45936;
                     }
+
+                    if(includesDental) {
+                        applicantPremium += 9100;
+                    }
+
+                    if(includesOptical) {
+                        applicantPremium += 9100;
+                    }
+
+                    if(includesLastExpense) {
+                        applicantPremium += 1800;
+                    }
+
+                    if(includesPersonalAccident) {
+                        applicantPremium += 500;
+                    }
                 }
 
                 // If children are insured, multiply the rate per child by the number of children
                 // Then add it to the premium
                 if(isFamilyInsured) {
                     applicantPremium += numberOfChildren*17300;
+
+                    if(includesDental) {
+                        applicantPremium += numberOfChildren*9100;
+                    }
+
+                    if(includesOptical) {
+                        applicantPremium += numberOfChildren*9100;
+                    }
+
+                    if(includesLastExpense) {
+                        applicantPremium += numberOfChildren*1800;
+                    }
                 }
 
-                // TODO: Update Calculation after extras
                 break;
             default:
                 if(applicantAge <= 30) {
