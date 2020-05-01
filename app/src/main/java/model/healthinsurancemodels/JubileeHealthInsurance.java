@@ -74,6 +74,8 @@ public class JubileeHealthInsurance implements AvailableHealthInsuranceInterface
         int applicantPremium = 0;
 
         switch (coverLimit) {
+            //TODO: Add Outpatient calculations for each
+
             case "Up to 500,000":
                 if(applicantAge <= 30) {
                     applicantPremium = 17000;
@@ -171,6 +173,22 @@ public class JubileeHealthInsurance implements AvailableHealthInsuranceInterface
                     applicantPremium = 40613;
                 }
 
+                if(includesDental) {
+                    applicantPremium += 3000;
+                }
+
+                if(includesOptical) {
+                    applicantPremium += 3000;
+                }
+
+                if(includesLastExpense) {
+                    applicantPremium += 900;
+                }
+
+                if(includesPersonalAccident) {
+                    applicantPremium += 500;
+                }
+
                 //If spouse is insured, add the calculations
                 if(isSpouseInsured) {
                     int spouseAge = getAge(spouseDOB);
@@ -185,15 +203,45 @@ public class JubileeHealthInsurance implements AvailableHealthInsuranceInterface
                     } else {
                         applicantPremium += 34088;
                     }
+
+                    if(includesDental) {
+                        applicantPremium += 3000;
+                    }
+
+                    if(includesOptical) {
+                        applicantPremium += 3000;
+                    }
+
+                    if(includesLastExpense) {
+                        applicantPremium += 900;
+                    }
+
+                    if(includesPersonalAccident) {
+                        applicantPremium += 500;
+                    }
                 }
 
                 // If children are insured, multiply the rate per child by the number of children
                 // Then add it to the premium
                 if(isFamilyInsured) {
                     applicantPremium += numberOfChildren*11500;
+
+                    if(includesDental) {
+                        applicantPremium += numberOfChildren*3000;
+                    }
+
+                    if(includesOptical) {
+                        applicantPremium += numberOfChildren*3000;
+                    }
+
+                    if(includesLastExpense) {
+                        applicantPremium += numberOfChildren*900;
+                    }
                 }
 
-                // TODO: Update Calculation after adding extras
+                if(includesMaternity) {
+                    applicantPremium += 27600;
+                }
                 break;
             case "Up to 2,000,000":
                 if(applicantAge <= 30) {
@@ -206,6 +254,22 @@ public class JubileeHealthInsurance implements AvailableHealthInsuranceInterface
                     applicantPremium = 39870;
                 } else {
                     applicantPremium = 49838;
+                }
+
+                if(includesDental) {
+                    applicantPremium += 6100;
+                }
+
+                if(includesOptical) {
+                    applicantPremium += 6100;
+                }
+
+                if(includesLastExpense) {
+                    applicantPremium += 1400;
+                }
+
+                if(includesPersonalAccident) {
+                    applicantPremium += 500;
                 }
 
                 //If spouse is insured, add the calculations
@@ -222,14 +286,45 @@ public class JubileeHealthInsurance implements AvailableHealthInsuranceInterface
                     } else {
                         applicantPremium += 41850;
                     }
+
+                    if(includesDental) {
+                        applicantPremium += 6100;
+                    }
+
+                    if(includesOptical) {
+                        applicantPremium += 6100;
+                    }
+
+                    if(includesLastExpense) {
+                        applicantPremium += 1400;
+                    }
+
+                    if(includesPersonalAccident) {
+                        applicantPremium += 500;
+                    }
                 }
 
                 // If children are insured, multiply the rate per child by the number of children
                 // Then add it to the premium
                 if(isFamilyInsured) {
                     applicantPremium += numberOfChildren*14000;
+
+                    if(includesDental) {
+                        applicantPremium += numberOfChildren*6100;
+                    }
+
+                    if(includesOptical) {
+                        applicantPremium += numberOfChildren*6100;
+                    }
+
+                    if(includesLastExpense) {
+                        applicantPremium += numberOfChildren*1400;
+                    }
                 }
-                // TODO: Update Calculation after extras
+
+                if(includesMaternity) {
+                    applicantPremium += 29700;
+                }
                 break;
             case "Up to 3,000,000":
                 if(applicantAge <= 30) {
