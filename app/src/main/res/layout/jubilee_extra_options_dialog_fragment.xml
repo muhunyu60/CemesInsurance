@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="fragment.JubileeExtraOptionsDialogFragment">
+
+    <CheckBox
+        android:id="@+id/outpatientCheckbox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Outpatient"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp" />
+
+    <CheckBox
+        android:id="@+id/maternityCheckbox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Maternity"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/outpatientCheckbox"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp" />
+
+    <CheckBox
+        android:id="@+id/dentalCheckbox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Dental"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/maternityCheckbox"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp" />
+
+    <CheckBox
+        android:id="@+id/opticalCheckbox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Optical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dentalCheckbox"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp" />
+
+    <CheckBox
+        android:id="@+id/lastExpenseCheckbox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Last Expense"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/opticalCheckbox"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp" />
+
+    <CheckBox
+        android:id="@+id/personalAccidentCheckbox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Personal Accident"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lastExpenseCheckbox"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp" />
+</android.support.constraint.ConstraintLayout>

@@ -258,7 +258,7 @@ public class JubileeHealthInsurance implements AvailableHealthInsuranceInterface
         return applicantPremium;
     }
 
-    int getAge(String dateOfBirth) {
+    private int getAge(String dateOfBirth) {
         int age;
         int yearOfBirth = Integer.parseInt(dateOfBirth.substring(0, dateOfBirth.indexOf('/')));
         int currentYear = Calendar.getInstance().get(Calendar.YEAR);
