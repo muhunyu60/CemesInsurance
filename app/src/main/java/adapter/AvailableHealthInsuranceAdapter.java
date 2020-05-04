@@ -70,6 +70,8 @@ public class AvailableHealthInsuranceAdapter extends RecyclerView.Adapter<Availa
 
         holder.insurancePriceTextView.setText(price);
         holder.insuranceNameTextView.setText(name);
+
+
     }
 
     @Override
@@ -87,5 +89,12 @@ public class AvailableHealthInsuranceAdapter extends RecyclerView.Adapter<Availa
             insuranceNameTextView = itemView.findViewById(R.id.insuranceNameTextView);
             insurancePriceTextView = itemView.findViewById(R.id.insurancePrice);
         }
+    }
+
+    public void setExtras(Boolean maternity, Boolean dental, Boolean optical, Boolean personalAccident, Boolean outpatient) {
+        for(AvailableHealthInsuranceInterface i : healthProviders) {
+            i.setExtras(maternity, dental, optical, personalAccident, outpatient);
+        }
+        notifyDataSetChanged();
     }
 }

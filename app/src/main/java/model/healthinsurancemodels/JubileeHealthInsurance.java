@@ -506,65 +506,11 @@ public class JubileeHealthInsurance implements AvailableHealthInsuranceInterface
     }
 
     @Override
-    public HashMap getBenefits() {
-        return null;
-    }
-
-    @Override
-    public void addBenefit(String key, float Value) {
-
-    }
-
-    @Override
-    public void removeBenefit(String key) {
-
-    }
-
-    public Boolean getIncludesOutpatient() {
-        return includesOutpatient;
-    }
-
-    public void setIncludesOutpatient(Boolean includesOutpatient) {
-        this.includesOutpatient = includesOutpatient;
-    }
-
-    public Boolean getIncludesMaternity() {
-        return includesMaternity;
-    }
-
-    public void setIncludesMaternity(Boolean includesMaternity) {
-        this.includesMaternity = includesMaternity;
-    }
-
-    public Boolean getIncludesDental() {
-        return includesDental;
-    }
-
-    public void setIncludesDental(Boolean includesDental) {
-        this.includesDental = includesDental;
-    }
-
-    public Boolean getIncludesOptical() {
-        return includesOptical;
-    }
-
-    public void setIncludesOptical(Boolean includesOptical) {
-        this.includesOptical = includesOptical;
-    }
-
-    public Boolean getIncludesLastExpense() {
-        return includesLastExpense;
-    }
-
-    public void setIncludesLastExpense(Boolean includesLastExpense) {
-        this.includesLastExpense = includesLastExpense;
-    }
-
-    public Boolean getIncludesPersonalAccident() {
-        return includesPersonalAccident;
-    }
-
-    public void setIncludesPersonalAccident(Boolean includesPersonalAccident) {
-        this.includesPersonalAccident = includesPersonalAccident;
+    public void setExtras(Boolean maternity, Boolean dental, Boolean optical, Boolean personalAccident, Boolean outpatient) {
+        this.includesMaternity = maternity;
+        this.includesDental = dental;
+        this.includesOptical = optical;
+        this.includesPersonalAccident = personalAccident;
+        this.includesOutpatient = outpatient;
     }
 }

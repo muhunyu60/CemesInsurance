@@ -1,11 +1,13 @@
 package model;
 
-import java.util.HashMap;
-
 public interface AvailableHealthInsuranceInterface {
     int getPrice();
     String getInsuranceProviderName();
-    HashMap getBenefits();
-    void addBenefit(String key, float Value);
-    void removeBenefit(String key);
+    void setExtras(
+            Boolean maternity,
+            Boolean dental,
+            Boolean optical,
+            Boolean personalAccident,
+            Boolean outpatient
+    );
 }
