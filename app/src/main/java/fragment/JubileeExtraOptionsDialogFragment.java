@@ -2,6 +2,8 @@ package fragment;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatDialogFragment;
@@ -12,12 +14,21 @@ import android.widget.CheckBox;
 import com.cemesinsurance.cemes_customer.R;
 
 public class JubileeExtraOptionsDialogFragment extends AppCompatDialogFragment {
-    CheckBox maternity;
-    CheckBox dental;
-    CheckBox optical;
-    CheckBox personalAccident;
-    CheckBox lastExpense;
-    CheckBox outpatient;
+    private CheckBox maternity;
+    private CheckBox dental;
+    private CheckBox optical;
+    private CheckBox personalAccident;
+    private CheckBox lastExpense;
+    private CheckBox outpatient;
+
+    private HealthExtraOptionsOnClickListener healthExtraOptionsOnClickListener;
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+
+        healthExtraOptionsOnClickListener = (HealthExtraOptionsOnClickListener) context;
+    }
 
     @NonNull
     @Override
@@ -34,7 +45,22 @@ public class JubileeExtraOptionsDialogFragment extends AppCompatDialogFragment {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         builder.setView(view);
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+            }
+        }).setPositiveButton("Confirm extra options", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+            }
+        });
 
         return builder.create();
+    }
+
+    public interface HealthExtraOptionsOnClickListener {
+        void applyExtras(Boolean maternity, Boolean dental, Boolean optical, Boolean personalAccident, Boolean outpatient);
     }
 }

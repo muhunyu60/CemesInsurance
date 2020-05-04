@@ -6,8 +6,10 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import adapter.AvailableHealthInsuranceAdapter;
+import fragment.JubileeExtraOptionsDialogFragment;
 
-public class HealthResult extends AppCompatActivity {
+public class HealthResult extends AppCompatActivity implements JubileeExtraOptionsDialogFragment.HealthExtraOptionsOnClickListener {
+    AvailableHealthInsuranceAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +26,7 @@ public class HealthResult extends AppCompatActivity {
             Boolean hasPreExistingCondition = getIntent().getBooleanExtra("HAS_PREEXISTING_CONDITION", false);
 
             // Set up the recycler view
-            AvailableHealthInsuranceAdapter adapter = new AvailableHealthInsuranceAdapter(coverLimit, applicantDOB, hasPreExistingCondition);
+            adapter = new AvailableHealthInsuranceAdapter(coverLimit, applicantDOB, hasPreExistingCondition);
             recyclerView.setLayoutManager(new LinearLayoutManager(this));
             recyclerView.setAdapter(adapter);
         } else if(getIntent().getBooleanExtra("INSURE_SPOUSE", false)) {
@@ -39,5 +41,15 @@ public class HealthResult extends AppCompatActivity {
         } else {
             // TODO: If the applicant insures the family but not the spouse
         }
+    }
+
+    public void showDialog() {
+        JubileeExtraOptionsDialogFragment dialogFragment = new JubileeExtraOptionsDialogFragment();
+        dialogFragment.show(getSupportFragmentManager(), "Jubilee Extra Options");
+    }
+
+    @Override
+    public void applyExtras(Boolean maternity, Boolean dental, Boolean optical, Boolean personalAccident, Boolean outpatient) {
+        adapter.setExtras(maternity, dental, optical, personalAccident, outpatient);
     }
 }

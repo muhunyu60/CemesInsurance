@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.TextView;
 
 import com.cemesinsurance.cemes_customer.R;
@@ -18,6 +19,15 @@ import model.healthinsurancemodels.JubileeHealthInsurance;
 
 public class AvailableHealthInsuranceAdapter extends RecyclerView.Adapter<AvailableHealthInsuranceAdapter.AvailableHealthInsuranceHolder> {
     List<AvailableHealthInsuranceInterface> healthProviders = new ArrayList<>();
+    private onItemClickListener listener;
+
+    public interface onItemClickListener {
+        void onItemClick();
+    }
+
+    public void setOnItemClickListener(onItemClickListener listener) {
+        this.listener = listener;
+    }
 
     public AvailableHealthInsuranceAdapter(String coverLimit, String applicantDOB, Boolean hasPreExistingCondition) {
             healthProviders.add(new JubileeHealthInsurance(
@@ -88,6 +98,15 @@ public class AvailableHealthInsuranceAdapter extends RecyclerView.Adapter<Availa
             super(itemView);
             insuranceNameTextView = itemView.findViewById(R.id.insuranceNameTextView);
             insurancePriceTextView = itemView.findViewById(R.id.insurancePrice);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if(listener!=null) {
+                        listener.onItemClick();
+                    }
+                }
+            });
         }
     }
 
