@@ -38,9 +38,27 @@ public class HealthResult extends AppCompatActivity implements JubileeExtraOptio
             String spouseDOB = getIntent().getStringExtra("SPOUSE_DOB");
             String numberOfChildren = getIntent().getStringExtra("NUMBER_OF_CHILDREN");
             Boolean hasPreExistingCondition = getIntent().getBooleanExtra("HAS_PREEXISTING_CONDITION", false);
+
+            adapter = new AvailableHealthInsuranceAdapter(coverLimit, applicantDOB, spouseDOB, Integer.parseInt(numberOfChildren), hasPreExistingCondition);
+            recyclerView.setLayoutManager(new LinearLayoutManager(this));
+            recyclerView.setAdapter(adapter);
         } else {
-            // TODO: If the applicant insures the family but not the spouse
+            String coverLimit = getIntent().getStringExtra("COVER_LIMIT");
+            String applicantDOB = getIntent().getStringExtra("APPLICANT_DOB");
+            String numberOfChildren = getIntent().getStringExtra("NUMBER_OF_CHILDREN");
+            Boolean hasPreExistingCondition = getIntent().getBooleanExtra("HAS_PREEXISTING_CONDITION", false);
+
+            adapter = new AvailableHealthInsuranceAdapter(coverLimit, applicantDOB, Integer.parseInt(numberOfChildren), hasPreExistingCondition);
+            recyclerView.setLayoutManager(new LinearLayoutManager(this));
+            recyclerView.setAdapter(adapter);
         }
+
+        adapter.setOnItemClickListener(new AvailableHealthInsuranceAdapter.onItemClickListener() {
+            @Override
+            public void onItemClick() {
+                showDialog();
+            }
+        });
     }
 
     public void showDialog() {

@@ -50,10 +50,16 @@ public class JubileeExtraOptionsDialogFragment extends AppCompatDialogFragment {
             public void onClick(DialogInterface dialogInterface, int i) {
 
             }
-        }).setPositiveButton("Confirm extra options", new DialogInterface.OnClickListener() {
+        }).setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-
+                healthExtraOptionsOnClickListener.applyExtras(
+                        maternity.isChecked(),
+                        dental.isChecked(),
+                        optical.isChecked(),
+                        personalAccident.isChecked(),
+                        outpatient.isChecked()
+                );
             }
         });
 
