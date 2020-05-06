@@ -9,9 +9,9 @@
         android:id="@+id/insuranceLogo"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
-        android:src="@drawable/jubilee" />
+        android:src="@drawable/jubilee"
+        android:layout_centerHorizontal="true"/>
 
     <TextView
         android:id="@+id/insuranceNameTextView"
@@ -30,6 +30,7 @@
         tools:text="Price"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/colorPrimaryDark"
+        android:layout_below="@id/insuranceLogo"
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="10dp"
         android:layout_marginTop="10dp"/>
