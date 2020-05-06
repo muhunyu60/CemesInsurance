@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.cemesinsurance.cemes_customer.R;
@@ -77,6 +78,7 @@ public class AvailableHealthInsuranceAdapter extends RecyclerView.Adapter<Availa
 
         String price = NumberFormat.getInstance().format(healthProviders.get(position).getPrice());
         String name = healthProviders.get(position).getInsuranceProviderName();
+        healthProviders.get(position).setLogo(holder.insuranceLogo);
 
         holder.insurancePriceTextView.setText(price);
         holder.insuranceNameTextView.setText(name);
@@ -93,11 +95,13 @@ public class AvailableHealthInsuranceAdapter extends RecyclerView.Adapter<Availa
 
         private TextView insuranceNameTextView;
         private TextView insurancePriceTextView;
+        private ImageView insuranceLogo;
 
         public AvailableHealthInsuranceHolder(View itemView) {
             super(itemView);
             insuranceNameTextView = itemView.findViewById(R.id.insuranceNameTextView);
             insurancePriceTextView = itemView.findViewById(R.id.insurancePrice);
+            insuranceLogo = itemView.findViewById(R.id.insuranceLogo);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override

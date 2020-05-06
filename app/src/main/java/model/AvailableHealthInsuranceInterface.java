@@ -1,5 +1,7 @@
 package model;
 
+import android.widget.ImageView;
+
 public interface AvailableHealthInsuranceInterface {
     int getPrice();
     String getInsuranceProviderName();
@@ -10,4 +12,5 @@ public interface AvailableHealthInsuranceInterface {
             Boolean personalAccident,
             Boolean outpatient
     );
+    void setLogo(ImageView image);
 }

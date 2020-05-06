@@ -4,13 +4,22 @@
     android:layout_height="wrap_content"
     xmlns:tools="http://schemas.android.com/tools"
     android:padding="8dp">
-    
+
+    <ImageView
+        android:id="@+id/insuranceLogo"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/jubilee" />
+
     <TextView
         android:id="@+id/insuranceNameTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:text="Insurance Title"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:layout_below="@id/insuranceLogo"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp" />
     
@@ -29,7 +38,7 @@
         android:id="@+id/tapForBenefitsTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/insurancePrice"
+        android:layout_below="@id/insuranceNameTextView"
         android:layout_marginTop="10dp"
         android:layout_marginStart="10dp"
         android:text="@string/availablehealthitem_tap_for_benefit"

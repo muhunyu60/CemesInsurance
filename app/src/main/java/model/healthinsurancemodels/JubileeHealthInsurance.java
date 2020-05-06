@@ -1,5 +1,9 @@
 package model.healthinsurancemodels;
 
+import android.widget.ImageView;
+
+import com.cemesinsurance.cemes_customer.R;
+
 import java.util.Calendar;
 import java.util.HashMap;
 
@@ -512,5 +516,10 @@ public class JubileeHealthInsurance implements AvailableHealthInsuranceInterface
         this.includesOptical = optical;
         this.includesPersonalAccident = personalAccident;
         this.includesOutpatient = outpatient;
+    }
+
+    @Override
+    public void setLogo(ImageView image) {
+        image.setImageResource(R.drawable.jubilee);
     }
 }
