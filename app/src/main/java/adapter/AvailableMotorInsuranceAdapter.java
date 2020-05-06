@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.cemesinsurance.cemes_customer.R;
@@ -33,14 +34,15 @@ public class AvailableMotorInsuranceAdapter extends RecyclerView.Adapter<Availab
     }
 
     public class AvailableMotorInsuranceViewHolder extends RecyclerView.ViewHolder{
-        public TextView price;
-        public TextView insuranceTitle;
-        public TextView windScreen;
-        public TextView radio;
-        public TextView excessProtector;
-        public TextView PVT;
-        public TextView lossOfValue;
-        public TextView roadRescue;
+        private TextView price;
+        private TextView insuranceTitle;
+        private TextView windScreen;
+        private TextView radio;
+        private TextView excessProtector;
+        private TextView PVT;
+        private TextView lossOfValue;
+        private TextView roadRescue;
+        private ImageView logo;
 
         public AvailableMotorInsuranceViewHolder(View itemView) {
             super(itemView);
@@ -52,6 +54,7 @@ public class AvailableMotorInsuranceAdapter extends RecyclerView.Adapter<Availab
             PVT = itemView.findViewById(R.id.textViewPVTValue);
             lossOfValue = itemView.findViewById(R.id.textViewLossOfUseValue);
             roadRescue = itemView.findViewById(R.id.textViewRoadRescueValue);
+            logo = itemView.findViewById(R.id.insuranceLogo);
         }
     }
 
@@ -67,6 +70,7 @@ public class AvailableMotorInsuranceAdapter extends RecyclerView.Adapter<Availab
     public void onBindViewHolder(@NonNull AvailableMotorInsuranceViewHolder holder, int position) {
         AvailableMotorInsuranceModel model = availableMotorInsuranceModels.get(position);
 
+        holder.logo.setImageResource(model.getLogoId());
         holder.insuranceTitle.setText(model.getInsuranceName());
         NumberFormat nf = NumberFormat.getInstance();
         if(model.includesLossOfUse()) {

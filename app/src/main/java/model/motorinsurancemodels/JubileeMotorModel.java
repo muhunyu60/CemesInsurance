@@ -1,5 +1,7 @@
 package model.motorinsurancemodels;
 
+import com.cemesinsurance.cemes_customer.R;
+
 import java.text.ParsePosition;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -49,6 +51,11 @@ public class JubileeMotorModel implements AvailableMotorInsuranceModel {
 
     public void setCarUse(String carUse) {
         this.carUse = carUse;
+    }
+
+    @Override
+    public int getLogoId() {
+        return R.drawable.jubilee;
     }
 
     @Override
