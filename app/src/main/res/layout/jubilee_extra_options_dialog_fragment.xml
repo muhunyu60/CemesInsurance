@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             android:text="Jubilee Extra Options"
             android:textColor="@color/white"
-            android:textSize="32sp"
+            android:textSize="28sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
