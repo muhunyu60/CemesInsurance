@@ -73,6 +73,11 @@ public class JubileeHealthInsurance implements AvailableHealthInsuranceInterface
     }
 
     @Override
+    public int getLogoId() {
+        return R.drawable.jubilee;
+    }
+
+    @Override
     public int getPrice() {
         int applicantAge = getAge(applicantDOB);
         int applicantPremium = 0;
@@ -516,10 +521,5 @@ public class JubileeHealthInsurance implements AvailableHealthInsuranceInterface
         this.includesOptical = optical;
         this.includesPersonalAccident = personalAccident;
         this.includesOutpatient = outpatient;
-    }
-
-    @Override
-    public void setLogo(ImageView image) {
-        image.setImageResource(R.drawable.jubilee);
     }
 }

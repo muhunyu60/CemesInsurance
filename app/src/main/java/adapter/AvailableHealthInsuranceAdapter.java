@@ -78,8 +78,8 @@ public class AvailableHealthInsuranceAdapter extends RecyclerView.Adapter<Availa
 
         String price = NumberFormat.getInstance().format(healthProviders.get(position).getPrice());
         String name = healthProviders.get(position).getInsuranceProviderName();
-        healthProviders.get(position).setLogo(holder.insuranceLogo);
 
+        holder.insuranceLogo.setImageResource(healthProviders.get(position).getLogoId());
         holder.insurancePriceTextView.setText(price);
         holder.insuranceNameTextView.setText(name);
 
