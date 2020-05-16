@@ -25,7 +25,7 @@ improving!"</string>
     <string name="year_of_manufacture">Year of manufacture</string>
     <string name="car_value_hint">850000</string>
     <string name="domestic_insurance">Domestic Insurance</string>
-    <string name="availablehealthitem_tap_for_benefit">Tap To View Additional Benefits</string>
+    <string name="availablehealthitem_tap_for_benefit">Additional Benefits</string>
 
     <string-array name="car_classes">
         <item>Select a Car Class</item>
