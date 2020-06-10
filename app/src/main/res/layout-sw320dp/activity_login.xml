@@ -98,6 +98,32 @@
 
         </LinearLayout>
 
+        //ID
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="18.7dp"
+            android:layout_marginRight="18.7dp"
+            android:layout_marginTop="25.3dp"
+            android:padding="5dp"
+            android:background="@drawable/rect_white_border">
+
+            <customfonts.EditText__SF_Pro_Display_Medium
+                android:id="@+id/signUpNationalIDEditText"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+                android:layout_marginLeft="13dp"
+                android:layout_gravity="center"
+                android:hint="Enter Your National ID Number"
+                android:textSize="14sp"
+                android:textColor="#282b30"
+                android:inputType="number" />
+
+        </LinearLayout>
+
         //Email
         <LinearLayout
             android:layout_width="match_parent"
@@ -126,6 +152,7 @@
 
         </LinearLayout>
 
+        //Phone
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

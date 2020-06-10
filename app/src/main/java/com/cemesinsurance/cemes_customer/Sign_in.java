@@ -89,7 +89,7 @@ public class Sign_in extends AppCompatActivity  {
                             JSONObject object = new JSONObject(response);
                             String message = object.getString("message");
                             switch (message) {
-                                case "login successful":
+                                case "_":
                                     User user = new User(
                                             object.getInt("id"),
                                             object.getString("name"),

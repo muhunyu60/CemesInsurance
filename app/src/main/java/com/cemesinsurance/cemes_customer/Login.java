@@ -35,6 +35,7 @@ public class Login extends AppCompatActivity  {
     private EditText nameText;
     private EditText phoneText;
     private EditText passwordText;
+    private EditText nationalIDText;
 
 
     @Override
@@ -60,6 +61,7 @@ public class Login extends AppCompatActivity  {
         nameText = findViewById(R.id.signUpNameEditText);
         passwordText = findViewById(R.id.signUpPasswordEditText);
         phoneText = findViewById(R.id.signUpPhoneEditText);
+        nationalIDText = findViewById(R.id.signUpNationalIDEditText);
     }
 
     public void signUp() {
@@ -67,6 +69,7 @@ public class Login extends AppCompatActivity  {
         final String password = passwordText.getText().toString().trim();
         final String phone = phoneText.getText().toString().trim();
         final String name = nameText.getText().toString().trim();
+        final String nationalID = nationalIDText.getText().toString().trim();
 
         if(TextUtils.isEmpty(email)) {
             emailText.requestFocus();
@@ -92,10 +95,18 @@ public class Login extends AppCompatActivity  {
             return;
         }
 
+        if(TextUtils.isEmpty(nationalID)) {
+            nationalIDText.requestFocus();
+            nationalIDText.setError("Please fill in your national ID Number");
+            return;
+        }
+
         if(!isNetworkAvailable()) {
             Toast.makeText(getApplicationContext(), "Please connect to the internet", Toast.LENGTH_SHORT).show();
             return;
         }
+
+
 
 //        progressBar.setVisibility(View.VISIBLE);
 
@@ -111,7 +122,7 @@ public class Login extends AppCompatActivity  {
                             switch (message) {
                                 case "sign up successful":
                                     User user = new User(
-                                            object.getInt("id"),
+                                            object.getInt("national_id"),
                                             object.getString("name"),
                                             object.getString("email"),
                                             object.getString("phone")
@@ -160,6 +171,7 @@ public class Login extends AppCompatActivity  {
                 params.put("password", password);
                 params.put("phone", phone);
                 params.put("name", name);
+                params.put("national_id", nationalID);
                 return params;
             }
         };
