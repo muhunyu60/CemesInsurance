@@ -71,6 +71,13 @@ public class MotorResultActivity extends AppCompatActivity implements MotorExtra
         lossOfUseValueTextView = findViewById(R.id.lossOfUseExampleValueTextView);
 
         setTextViewValues();
+
+        motorInsuranceAdapter.setOnItemClickListener(new AvailableMotorInsuranceAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(int position) {
+                // TODO: Volley push details to the online repository
+            }
+        });
     }
 
     public void showExtraOptionsDialogFragment() {
@@ -106,4 +113,6 @@ public class MotorResultActivity extends AppCompatActivity implements MotorExtra
                 roadRescue
         );
     }
+
+
 }

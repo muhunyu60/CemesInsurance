@@ -13,11 +13,22 @@ import com.cemesinsurance.cemes_customer.R;
 import java.text.NumberFormat;
 import java.util.ArrayList;
 
+import customfonts.MyTextView_SF_Pro_Display_Medium;
 import model.AvailableMotorInsuranceModel;
 import model.motorinsurancemodels.JubileeMotorModel;
 
 public class AvailableMotorInsuranceAdapter extends RecyclerView.Adapter<AvailableMotorInsuranceAdapter.AvailableMotorInsuranceViewHolder> {
     ArrayList<AvailableMotorInsuranceModel> availableMotorInsuranceModels;
+
+    private OnItemClickListener onItemClickListener;
+
+    public interface OnItemClickListener {
+        void onItemClick(int position);
+    }
+
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        onItemClickListener = listener;
+    };
 
     public AvailableMotorInsuranceAdapter(double carPrice, int carManufactureYear, String carClass, String insuranceStartDate, String carUse) {
         availableMotorInsuranceModels = new ArrayList<>();
@@ -42,8 +53,9 @@ public class AvailableMotorInsuranceAdapter extends RecyclerView.Adapter<Availab
         private TextView lossOfValue;
         private TextView roadRescue;
         private ImageView logo;
+        private MyTextView_SF_Pro_Display_Medium getQuote;
 
-        public AvailableMotorInsuranceViewHolder(View itemView) {
+        public AvailableMotorInsuranceViewHolder(View itemView, final OnItemClickListener listener) {
             super(itemView);
             price = itemView.findViewById(R.id.textViewPrice);
             insuranceTitle = itemView.findViewById(R.id.textViewInsuranceCompany);
@@ -54,6 +66,19 @@ public class AvailableMotorInsuranceAdapter extends RecyclerView.Adapter<Availab
             lossOfValue = itemView.findViewById(R.id.textViewLossOfUseValue);
             roadRescue = itemView.findViewById(R.id.textViewRoadRescueValue);
             logo = itemView.findViewById(R.id.insuranceLogo);
+            getQuote = itemView.findViewById(R.id.get_quote);
+
+            getQuote.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if(listener!=null) {
+                        int position = getAdapterPosition();
+                        if(position != RecyclerView.NO_POSITION) {
+                            listener.onItemClick(position);
+                        }
+                    }
+                }
+            });
         }
     }
 
@@ -61,7 +86,7 @@ public class AvailableMotorInsuranceAdapter extends RecyclerView.Adapter<Availab
     @Override
     public AvailableMotorInsuranceViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.available_motor_insurance_item, parent, false);
-        AvailableMotorInsuranceViewHolder viewHolder = new AvailableMotorInsuranceViewHolder(v);
+        AvailableMotorInsuranceViewHolder viewHolder = new AvailableMotorInsuranceViewHolder(v, onItemClickListener);
         return viewHolder;
     }
 
