@@ -1,5 +1,8 @@
 package com.cemesinsurance.cemes_customer;
 
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
@@ -115,7 +118,17 @@ public class MotorResultActivity extends AppCompatActivity implements MotorExtra
                                     JSONObject object = new JSONObject(response);
                                     String message = object.getString("message");
                                     Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
-
+                                    AlertDialog.Builder dialog = new AlertDialog.Builder(MotorResultActivity.this);
+                                    dialog.setMessage("One of our agents will get in touch with you")
+                                        .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                                            @Override
+                                            public void onClick(DialogInterface dialogInterface, int i) {
+                                                Intent intent = new Intent(MotorResultActivity.this, My_Wallet_07.class);
+                                                startActivity(intent);
+                                                finish();
+                                            }
+                                        })
+                                        .show();
                                 } catch (JSONException e) {
                                     e.printStackTrace();
                                 }
