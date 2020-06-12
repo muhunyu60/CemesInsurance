@@ -18,7 +18,7 @@ import model.AvailableMotorInsuranceModel;
 import model.motorinsurancemodels.JubileeMotorModel;
 
 public class AvailableMotorInsuranceAdapter extends RecyclerView.Adapter<AvailableMotorInsuranceAdapter.AvailableMotorInsuranceViewHolder> {
-    ArrayList<AvailableMotorInsuranceModel> availableMotorInsuranceModels;
+    public ArrayList<AvailableMotorInsuranceModel> availableMotorInsuranceModels;
 
     private OnItemClickListener onItemClickListener;
 
