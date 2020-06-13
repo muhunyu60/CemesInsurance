@@ -15,6 +15,7 @@ import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
 
+import customfonts.MyTextView_SF_Pro_Display_Medium;
 import model.AvailableHealthInsuranceInterface;
 import model.healthinsurancemodels.JubileeHealthInsurance;
 
@@ -24,6 +25,7 @@ public class AvailableHealthInsuranceAdapter extends RecyclerView.Adapter<Availa
 
     public interface onItemClickListener {
         void onItemClick();
+        void onGetQuoteClick();
     }
 
     public void setOnItemClickListener(onItemClickListener listener) {
@@ -96,12 +98,23 @@ public class AvailableHealthInsuranceAdapter extends RecyclerView.Adapter<Availa
         private TextView insuranceNameTextView;
         private TextView insurancePriceTextView;
         private ImageView insuranceLogo;
+        private MyTextView_SF_Pro_Display_Medium getQuoteBtn;
 
         public AvailableHealthInsuranceHolder(View itemView) {
             super(itemView);
             insuranceNameTextView = itemView.findViewById(R.id.insuranceNameTextView);
             insurancePriceTextView = itemView.findViewById(R.id.insurancePrice);
             insuranceLogo = itemView.findViewById(R.id.insuranceLogo);
+            getQuoteBtn = itemView.findViewById(R.id.get_quote);
+
+            getQuoteBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if(listener!=null) {
+                        listener.onGetQuoteClick();
+                    }
+                }
+            });
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override

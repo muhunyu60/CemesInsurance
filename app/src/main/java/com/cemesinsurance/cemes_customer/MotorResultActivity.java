@@ -99,7 +99,6 @@ public class MotorResultActivity extends AppCompatActivity implements MotorExtra
         motorInsuranceAdapter.setOnItemClickListener(new AvailableMotorInsuranceAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
-                // TODO: Volley push details to the online repository
                 User user = SharedPrefManager.getInstance(getApplicationContext()).getUser();
                 AvailableMotorInsuranceModel selectedInsurance = motorInsuranceAdapter.availableMotorInsuranceModels.get(position);
                 final String underwriter = selectedInsurance.getInsuranceName();

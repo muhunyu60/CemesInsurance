@@ -44,7 +44,6 @@ public class Fragment_Claims extends Fragment {
         // Required empty public constructor
     }
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -54,13 +53,11 @@ public class Fragment_Claims extends Fragment {
         claimsRecyclerView = view.findViewById(R.id.claimsRecycler);
         floatingActionButton = view.findViewById(R.id.add_claim_fab);
 
-
         exampleClaims.add(new ClaimModel("Motor", "motor", "Motor accident at Thika Superhighway"));
         exampleClaims.add(new ClaimModel("Domestic", "domestic", "Robbery at 101 avenue"));
         exampleClaims.add(new ClaimModel("Domestic", "domestic", "Robbery at 101 avenue"));
         exampleClaims.add(new ClaimModel("Domestic", "domestic", "Robbery at 101 avenue"));
         exampleClaims.add(new ClaimModel("Domestic", "domestic", "Robbery at 101 avenue"));
-
 
         claimsAdapter = new ClaimsRecyclerAdapter(exampleClaims);
         layoutManager = new LinearLayoutManager(getActivity());
@@ -77,7 +74,6 @@ public class Fragment_Claims extends Fragment {
         layoutParams.width = MATCH_PARENT;
         cardView.setLayoutParams(layoutParams);
 
-
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -85,8 +81,6 @@ public class Fragment_Claims extends Fragment {
                 startActivity(intent);
             }
         });
-
-//        floatingActionButton.setImageBitmap(textAsBitmap("Make Claim", 200, Color.WHITE));
 
         return view;
     }
