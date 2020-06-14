@@ -38,7 +38,7 @@ public class Fragment_Claims extends Fragment {
     private RecyclerView.LayoutManager layoutManager;
     private FloatingActionButton floatingActionButton;
 
-    ArrayList<ClaimModel> exampleClaims = new ArrayList<>();
+    ArrayList<ClaimModel> myClaims = new ArrayList<>();
 
     public Fragment_Claims() {
         // Required empty public constructor
@@ -53,13 +53,13 @@ public class Fragment_Claims extends Fragment {
         claimsRecyclerView = view.findViewById(R.id.claimsRecycler);
         floatingActionButton = view.findViewById(R.id.add_claim_fab);
 
-        exampleClaims.add(new ClaimModel("Motor", "motor", "Motor accident at Thika Superhighway"));
-        exampleClaims.add(new ClaimModel("Domestic", "domestic", "Robbery at 101 avenue"));
-        exampleClaims.add(new ClaimModel("Domestic", "domestic", "Robbery at 101 avenue"));
-        exampleClaims.add(new ClaimModel("Domestic", "domestic", "Robbery at 101 avenue"));
-        exampleClaims.add(new ClaimModel("Domestic", "domestic", "Robbery at 101 avenue"));
+        myClaims.add(new ClaimModel("Motor", "motor", "Motor accident at Thika Superhighway"));
+        myClaims.add(new ClaimModel("Domestic", "domestic", "Robbery at 101 avenue"));
+        myClaims.add(new ClaimModel("Domestic", "domestic", "Robbery at 101 avenue"));
+        myClaims.add(new ClaimModel("Domestic", "domestic", "Robbery at 101 avenue"));
+        myClaims.add(new ClaimModel("Domestic", "domestic", "Robbery at 101 avenue"));
 
-        claimsAdapter = new ClaimsRecyclerAdapter(exampleClaims);
+        claimsAdapter = new ClaimsRecyclerAdapter(myClaims);
         layoutManager = new LinearLayoutManager(getActivity());
         claimsRecyclerView.setLayoutManager(layoutManager);
         claimsRecyclerView.setAdapter(claimsAdapter);
@@ -100,4 +100,7 @@ public class Fragment_Claims extends Fragment {
         return image;
     }
 
+    void getMyClaims() {
+
+    }
 }

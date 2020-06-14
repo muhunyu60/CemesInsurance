@@ -48,10 +48,14 @@ public class ClaimsRecyclerAdapter extends RecyclerView.Adapter<ClaimsRecyclerAd
         holder.claimTitle.setText(claim.getTitle());
         holder.claimDescription.setText(claim.getDescription());
 
-        if(claim.getType() == "motor") {
+        if(claim.getType().equalsIgnoreCase("auto")) {
             holder.claimIcon.setImageResource(R.drawable.ic_xmlid_1);
-        } else {
+        } else if(claim.getType().equalsIgnoreCase("medical")) {
+            holder.claimIcon.setImageResource(R.drawable.ic_group_199);
+        } else if(claim.getType().equalsIgnoreCase("domestic")){
             holder.claimIcon.setImageResource(R.drawable.ic_group_223);
+        } else {
+            holder.claimIcon.setImageResource(R.drawable.ic_flight);
         }
 
     }

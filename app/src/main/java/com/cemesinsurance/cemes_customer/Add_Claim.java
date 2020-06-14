@@ -71,9 +71,10 @@ public class Add_Claim extends AppCompatActivity {
         final User user = SharedPrefManager.getInstance(getApplicationContext()).getUser();
         final String claimType = insuranceTypeSpinner.getSelectedItem().toString();
         final String descriptionText = description.getText().toString();
+
         StringRequest stringRequest = new StringRequest(
                 Request.Method.POST,
-                URLs.ADD_CLAIM,
+                URLs.ADD_CLAIM_ANDROID,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -109,7 +110,7 @@ public class Add_Claim extends AppCompatActivity {
                 params.put("description", descriptionText);
                 params.put("name", user.getName());
                 params.put("phone", user.getPhone());
-                params.put("claim_type", claimType);
+                params.put("claim_type", claimType.toLowerCase());
                 return params;
             }
         };
