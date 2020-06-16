@@ -4,7 +4,6 @@ package fragment;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
-import android.graphics.Color;
 import android.graphics.Paint;
 import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
@@ -17,15 +16,29 @@ import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
 import com.cemesinsurance.cemes_customer.Add_Claim;
 import com.cemesinsurance.cemes_customer.R;
 
-import java.util.ArrayList;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
+import Volley.URLs;
+import Volley.VolleySingleton;
 import adapter.ClaimsRecyclerAdapter;
 import model.ClaimModel;
+import model.User;
+import state.SharedPrefManager;
 
 import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
 
@@ -53,12 +66,6 @@ public class Fragment_Claims extends Fragment {
         claimsRecyclerView = view.findViewById(R.id.claimsRecycler);
         floatingActionButton = view.findViewById(R.id.add_claim_fab);
 
-        myClaims.add(new ClaimModel("Motor", "motor", "Motor accident at Thika Superhighway"));
-        myClaims.add(new ClaimModel("Domestic", "domestic", "Robbery at 101 avenue"));
-        myClaims.add(new ClaimModel("Domestic", "domestic", "Robbery at 101 avenue"));
-        myClaims.add(new ClaimModel("Domestic", "domestic", "Robbery at 101 avenue"));
-        myClaims.add(new ClaimModel("Domestic", "domestic", "Robbery at 101 avenue"));
-
         claimsAdapter = new ClaimsRecyclerAdapter(myClaims);
         layoutManager = new LinearLayoutManager(getActivity());
         claimsRecyclerView.setLayoutManager(layoutManager);
@@ -82,7 +89,15 @@ public class Fragment_Claims extends Fragment {
             }
         });
 
+        getMyClaims();
+
         return view;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        getMyClaims();
     }
 
     public static Bitmap textAsBitmap(String text, float textSize, int textColor) {
@@ -101,6 +116,53 @@ public class Fragment_Claims extends Fragment {
     }
 
     void getMyClaims() {
+        final User user = SharedPrefManager.getInstance(getContext()).getUser();
+        myClaims = new ArrayList<>();
 
+        StringRequest stringRequest = new StringRequest(
+                Request.Method.POST,
+                URLs.GET_CLAIM,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONObject object = new JSONObject(response);
+                            if(object.getString("message").equalsIgnoreCase("successful")) {
+                                JSONArray array = object.getJSONArray("claims");
+
+                                for(int i = 0; i < array.length(); i++) {
+                                    JSONObject jsonObject = array.getJSONObject(i);
+                                    String claimType = jsonObject.getString("claim_type");
+                                    String description = jsonObject.getString("description");
+                                    myClaims.add(new ClaimModel(claimType, claimType, description));
+
+                                    claimsAdapter = new ClaimsRecyclerAdapter(myClaims);
+                                    layoutManager = new LinearLayoutManager(getActivity());
+                                    claimsRecyclerView.setLayoutManager(layoutManager);
+                                    claimsRecyclerView.setAdapter(claimsAdapter);
+                                }
+                            }
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+
+                    }
+                }
+        ) {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> params = new HashMap<>();
+                params.put("email", user.getEmail());
+                return params;
+            }
+        };
+
+        VolleySingleton.getInstance(getContext()).addToRequestQueue(stringRequest);
     }
 }
