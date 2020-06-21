@@ -10,7 +10,7 @@
 
         <item android:id="@+id/drawer_policies"
             android:icon="@drawable/ic_settings_black_24dp"
-            android:title="My policies" />
+            android:title="My registered policies" />
 
         <item android:id="@+id/drawer_profile"
             android:icon="@drawable/ic_person_outline_black_24dp"

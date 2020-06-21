@@ -110,7 +110,7 @@ public class AvailableMotorInsuranceAdapter extends RecyclerView.Adapter<Availab
         }
 
         if(model.includesPVT()) {
-            holder.PVT.setText((JubileeMotorModel.PVT_PRICE));
+            holder.PVT.setText(nf.format((double) JubileeMotorModel.PVT_PRICE));
         } else {
             holder.PVT.setText("0");
         }
