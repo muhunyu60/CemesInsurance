@@ -37,14 +37,8 @@ public class ClaimsRecyclerAdapter extends RecyclerView.Adapter<ClaimsRecyclerAd
     @NonNull
     @Override
     public ClaimsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v;
-        if(getItemCount() > 0) {
-            v = LayoutInflater.from(parent.getContext()).inflate(R.layout.claim_item, parent, false);
-        } else {
-            v = LayoutInflater.from(parent.getContext()).inflate(R.layout.no_claim_item, parent, false);
-        }
-        ClaimsViewHolder viewHolder = new ClaimsViewHolder(v);
-        return viewHolder;
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.claim_item, parent, false);
+        return new ClaimsViewHolder(v);
     }
 
     @Override

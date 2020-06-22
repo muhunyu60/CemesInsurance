@@ -16,6 +16,7 @@ import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -117,7 +118,6 @@ public class Fragment_Claims extends Fragment {
 
     void getMyClaims() {
         final User user = SharedPrefManager.getInstance(getContext()).getUser();
-        myClaims = new ArrayList<>();
 
         StringRequest stringRequest = new StringRequest(
                 Request.Method.POST,
@@ -129,18 +129,19 @@ public class Fragment_Claims extends Fragment {
                             JSONObject object = new JSONObject(response);
                             if(object.getString("message").equalsIgnoreCase("successful")) {
                                 JSONArray array = object.getJSONArray("claims");
+                                myClaims = new ArrayList<>();
 
                                 for(int i = 0; i < array.length(); i++) {
                                     JSONObject jsonObject = array.getJSONObject(i);
                                     String claimType = jsonObject.getString("claim_type");
                                     String description = jsonObject.getString("description");
                                     myClaims.add(new ClaimModel(claimType, claimType, description));
-
-                                    claimsAdapter = new ClaimsRecyclerAdapter(myClaims);
-                                    layoutManager = new LinearLayoutManager(getActivity());
-                                    claimsRecyclerView.setLayoutManager(layoutManager);
-                                    claimsRecyclerView.setAdapter(claimsAdapter);
                                 }
+
+                                claimsAdapter = new ClaimsRecyclerAdapter(myClaims);
+                                layoutManager = new LinearLayoutManager(getActivity());
+                                claimsRecyclerView.setLayoutManager(layoutManager);
+                                claimsRecyclerView.setAdapter(claimsAdapter);
                             }
 
                         } catch (JSONException e) {
