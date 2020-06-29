@@ -26,6 +26,7 @@ improving!"</string>
     <string name="car_value_hint">850000</string>
     <string name="domestic_insurance">Domestic Insurance</string>
     <string name="availablehealthitem_tap_for_benefit">Additional Benefits</string>
+    <string name="my_policies_text">My Policies</string>
 
     <string-array name="car_classes">
         <item>Select a Car Class</item>
