@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -49,7 +50,11 @@ public class MotorResultActivity extends AppCompatActivity implements MotorExtra
     String roadRescueValue = "0";
     String lossOfUseValue = "0";
 
+    String carClass;
+    String carManufactureYear;
     String carRegistration;
+    String carUse;
+    String insuranceStartDate;
 
     AvailableMotorInsuranceAdapter motorInsuranceAdapter;
 
@@ -62,10 +67,10 @@ public class MotorResultActivity extends AppCompatActivity implements MotorExtra
         // To Prevent a crash from a numberFormatException
         carValue = carValue.replaceAll(",", "");
 
-        String carManufactureYear = getIntent().getStringExtra("CAR_MANUFACTURE_YEAR");
-        String carClass = getIntent().getStringExtra("CAR_CLASS");
-        String insuranceStartDate = getIntent().getStringExtra("INSURANCE_START_DATE");
-        String carUse = getIntent().getStringExtra("CAR_USE");
+        carManufactureYear = getIntent().getStringExtra("CAR_MANUFACTURE_YEAR");
+        carClass = getIntent().getStringExtra("CAR_CLASS");
+        insuranceStartDate = getIntent().getStringExtra("INSURANCE_START_DATE");
+        carUse = getIntent().getStringExtra("CAR_USE");
         carRegistration = getIntent().getStringExtra("CAR_REGISTRATION");
 
         RecyclerView availableMotorInsurance = findViewById(R.id.availableMotorInsuranceRecycler);
@@ -96,11 +101,14 @@ public class MotorResultActivity extends AppCompatActivity implements MotorExtra
 
         setTextViewValues();
 
+        final String finalCarValue = carValue;
+
         motorInsuranceAdapter.setOnItemClickListener(new AvailableMotorInsuranceAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
                 User user = SharedPrefManager.getInstance(getApplicationContext()).getUser();
                 AvailableMotorInsuranceModel selectedInsurance = motorInsuranceAdapter.availableMotorInsuranceModels.get(position);
+                final double cost = selectedInsurance.getPrice();
                 final String underwriter = selectedInsurance.getInsuranceName();
                 final String policyType = "auto";
                 final int id = user.getId();
@@ -109,7 +117,7 @@ public class MotorResultActivity extends AppCompatActivity implements MotorExtra
 
                 StringRequest stringRequest = new StringRequest(
                         Request.Method.POST,
-                        URLs.ADD_CLAIM,
+                        URLs.ADD_POLICY,
                         new Response.Listener<String>() {
                             @Override
                             public void onResponse(String response) {
@@ -130,13 +138,15 @@ public class MotorResultActivity extends AppCompatActivity implements MotorExtra
                                         .show();
                                 } catch (JSONException e) {
                                     e.printStackTrace();
+                                    Log.e("OnResponseError", e.getMessage());
+                                    Log.e("OnResponseError", e.toString());
                                 }
                             }
                         },
                         new Response.ErrorListener() {
                             @Override
                             public void onErrorResponse(VolleyError error) {
-
+                                Log.e("OnResponseError", error.getMessage());
                             }
                         }
                 ) {
@@ -145,9 +155,14 @@ public class MotorResultActivity extends AppCompatActivity implements MotorExtra
                         Map<String, String> params = new HashMap<>();
                         params.put("name", name);
                         params.put("email", email);
+                        params.put("car_use", carUse);
+                        params.put("car_value", finalCarValue);
+                        params.put("car_class", carClass);
+                        params.put("manufacture_year", carManufactureYear);
                         params.put("underwriter", underwriter);
                         params.put("policy_type", policyType);
-                        params.put("registration_number", carRegistration);
+                        params.put("car_registration", carRegistration);
+                        params.put("insurance_cost", String.valueOf(cost));
                         params.put("id", String.valueOf(id));
                         return params;
                     }

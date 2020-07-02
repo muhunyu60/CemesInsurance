@@ -73,6 +73,12 @@ public class My_Wallet_07 extends AppCompatActivity {
                         navigationView.animate()
                                 .translationY(navigationView.getHeight())
                                 .setDuration(200);
+                        break;
+                    case R.id.drawer_policies:
+                        loadFragment(new Fragment_Policies());
+                        navigationView.animate()
+                                .translationY(navigationView.getHeight())
+                                .setDuration(200);
                 }
 
                 return true;
