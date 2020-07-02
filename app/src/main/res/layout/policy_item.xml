@@ -6,7 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <ImageView
-        android:id="@+id/UnderwriterLogo"
+        android:id="@+id/underwriterLogo"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:scaleType="fitCenter"
@@ -25,7 +25,7 @@
         android:textSize="24sp"
         android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/UnderwriterLogo"/>
+        app:layout_constraintTop_toTopOf="@id/underwriterLogo"/>
 
     <TextView
         android:id="@+id/underwriterTextView"
@@ -34,8 +34,8 @@
         android:text="UnderWriter Name"
         android:textSize="16sp"
         android:layout_marginTop="16dp"
-        app:layout_constraintStart_toStartOf="@id/UnderwriterLogo"
-        app:layout_constraintTop_toBottomOf="@id/UnderwriterLogo" />
+        app:layout_constraintStart_toStartOf="@id/underwriterLogo"
+        app:layout_constraintTop_toBottomOf="@id/underwriterLogo" />
 
     <TextView
         android:id="@+id/insuranceTypeTextView"
