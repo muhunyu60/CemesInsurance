@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -94,13 +95,15 @@ public class Fragment_Policies extends Fragment {
 
                         } catch (JSONException e) {
                             e.printStackTrace();
+                            Log.e("onErrorResponse", e.getMessage());
+                            Log.e("onErrorResponse", e.toString());
                         }
                     }
                 },
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-
+                        Log.e("onErrorResponse", error.getMessage());
                     }
                 }
         ) {
